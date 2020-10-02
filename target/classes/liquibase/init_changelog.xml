@@ -1,0 +1,276 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="tarfa (generated)" id="1594722135953-1">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="addressPK"/>
+            </column>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="house_number" type="INT"/>
+            <column name="rue" type="VARCHAR(255)"/>
+            <column name="zip_code" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-2">
+        <createTable tableName="authorization">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="authorizationPK"/>
+            </column>
+            <column name="permission" type="VARCHAR(255)"/>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-3">
+        <createTable tableName="billing">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="billingPK"/>
+            </column>
+            <column name="current_time" type="datetime(6)"/>
+            <column name="tax" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-4">
+        <createTable tableName="category">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="categoryPK"/>
+            </column>
+            <column name="image" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="restaurant_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-5">
+        <createTable tableName="client">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="clientPK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-6">
+        <createTable tableName="coordinate">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="coordinatePK"/>
+            </column>
+            <column name="latitude" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="longitude" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-7">
+        <createTable tableName="dish">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="dishPK"/>
+            </column>
+            <column name="available" type="BIT"/>
+            <column name="avg_delivery" type="INT"/>
+            <column name="base_price" type="DOUBLE"/>
+            <column name="create_at" type="datetime(6)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="preparation_time" type="INT"/>
+            <column name="value" type="INT"/>
+            <column name="category_id" type="BIGINT"/>
+            <column name="dish_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-8">
+        <createTable tableName="dish_dish_images">
+            <column name="dish_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dish_images" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-9">
+        <createTable tableName="order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="orderPK"/>
+            </column>
+            <column name="timestamp" type="datetime(6)"/>
+            <column name="billing_id" type="BIGINT"/>
+            <column name="client_id" type="BIGINT"/>
+            <column name="order_state_id" type="BIGINT"/>
+            <column name="restaurant_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-10">
+        <createTable tableName="order_details">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="order_detailsPK"/>
+            </column>
+            <column name="price" type="DOUBLE"/>
+            <column name="quantity" type="DOUBLE"/>
+            <column name="dish_id_fk" type="BIGINT"/>
+            <column name="order_id_fk" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-11">
+        <createTable tableName="order_state">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="order_statePK"/>
+            </column>
+            <column name="accepted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivered" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="new_order" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="processing" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rejected" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-12">
+        <createTable tableName="restaurant">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="restaurantPK"/>
+            </column>
+            <column name="restaurant_availability" type="BIT"/>
+            <column name="restaurant_description" type="VARCHAR(255)"/>
+            <column name="restaurant_image_profile" type="VARCHAR(255)"/>
+            <column name="restaurant_name" type="VARCHAR(255)"/>
+            <column name="restaurant_phone_number" type="VARCHAR(255)"/>
+            <column name="address_id" type="BIGINT"/>
+            <column name="coordinate_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-13">
+        <createTable tableName="restaurant_configuration">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="restaurant_configurationPK"/>
+            </column>
+            <column name="key" type="VARCHAR(255)"/>
+            <column name="value" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-14">
+        <createTable tableName="restaurant_restaurant_configurations">
+            <column name="restaurant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_configurations_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-15">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="rolesPK"/>
+            </column>
+            <column name="role_context" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-16">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="userPK"/>
+            </column>
+            <column name="age" type="INT"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="number_phone" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="user_avatar" type="VARCHAR(255)"/>
+            <column name="address_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-17">
+        <createTable tableName="user_roles">
+            <column name="user_id_fk" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="role_id_key" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-18">
+        <addUniqueConstraint columnNames="id" constraintName="UC_ADDRESSID_COL" tableName="address"/>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-19">
+        <addUniqueConstraint columnNames="id" constraintName="UC_USERID_COL" tableName="user"/>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-20">
+        <addUniqueConstraint columnNames="restaurant_configurations_id" constraintName="UK_2h2xc44sun58d0e1ii0yh8e1b" tableName="restaurant_restaurant_configurations"/>
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-21">
+        <addForeignKeyConstraint baseColumnNames="dish_id" baseTableName="dish_dish_images" constraintName="FK2o3jptbauobe9ouqkk05w8lkl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-22">
+        <addForeignKeyConstraint baseColumnNames="dish_id" baseTableName="dish" constraintName="FK2pfnquime4nw2r624c65olhoy" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-23">
+        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="dish" constraintName="FK3h7qfevodvyk24ss68mwu8ap6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="category"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-24">
+        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="restaurant_restaurant_configurations" constraintName="FK4lpwfiwh2s2ojmqiskkg9yfpn" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-25">
+        <addForeignKeyConstraint baseColumnNames="restaurant_configurations_id" baseTableName="restaurant_restaurant_configurations" constraintName="FK52pvtkpf8h7lqpxlqcygq21p8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant_configuration"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-26">
+        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="order" constraintName="FK64rch5g46ue4a83ww6cq7r92w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-27">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="authorization" constraintName="FK804ttdh164wo6xn15tp1nrc5t" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-28">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="restaurant" constraintName="FK96q13p1ptpewvus590a8o83xt" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-29">
+        <addForeignKeyConstraint baseColumnNames="order_state_id" baseTableName="order" constraintName="FK9aic5c086nl3jsslo9vcjjyou" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order_state"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-30">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="billing" constraintName="FK9mwc19cseuhrxnqqm4lq1ljte" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-31">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="order" constraintName="FKbb5wakyppwqmfuhp53p3jvs5u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="client"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-32">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="user" constraintName="FKddefmvbrws3hvl5t0hnnsv8ox" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-33">
+        <addForeignKeyConstraint baseColumnNames="coordinate_id" baseTableName="restaurant" constraintName="FKe4brfxep9hgjosuq25kgg3122" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="coordinate"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-34">
+        <addForeignKeyConstraint baseColumnNames="role_id_key" baseTableName="user_roles" constraintName="FKiv3nlfpwxe1behku9j43ysbb9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-35">
+        <addForeignKeyConstraint baseColumnNames="billing_id" baseTableName="order" constraintName="FKj4arc59ipyxxc07eyt4y67led" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="billing"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-36">
+        <addForeignKeyConstraint baseColumnNames="user_id_fk" baseTableName="user_roles" constraintName="FKjcqwtqywj0ny5jfwhqt028826" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-37">
+        <addForeignKeyConstraint baseColumnNames="order_id_fk" baseTableName="order_details" constraintName="FKku9bk0148vlool0s4hhynrrxg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-38">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="order_state" constraintName="FKn61ogfsxmv0xs3dw1xm14ko3d" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-39">
+        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="category" constraintName="FKp6n44aqw5n74qc4f1d6eyqgha" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"  />
+    </changeSet>
+    <changeSet author="tarfa (generated)" id="1594722135953-40">
+        <addForeignKeyConstraint baseColumnNames="dish_id_fk" baseTableName="order_details" constraintName="FKqls7y813sft2ic2dqff2biwok" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"  />
+    </changeSet>
+</databaseChangeLog>
