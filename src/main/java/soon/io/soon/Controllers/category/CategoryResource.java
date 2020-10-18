@@ -33,4 +33,10 @@ public class CategoryResource {
         List<CategoryDTO> result = categoryService.getCategoriesByRestaurantId(restaurantId);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity updateCategory(@PathVariable("id") Long categoryId) {
+        categoryService.delete(categoryId);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }

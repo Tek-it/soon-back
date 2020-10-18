@@ -10,6 +10,7 @@ import soon.io.soon.models.category.CategoryRepository;
 import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -48,5 +49,10 @@ public class CategoryService {
                 .map(categoryRepository::save)
                 .map(categoryMapper::toDTO)
                 .orElse(null);
+    }
+
+    @Transactional
+    public void delete(Long categoryId) {
+        categoryRepository.deleteById(categoryId);
     }
 }

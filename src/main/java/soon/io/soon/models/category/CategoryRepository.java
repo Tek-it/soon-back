@@ -7,5 +7,8 @@ import java.util.List;
 
 @Repository
 public interface CategoryRepository extends CrudRepository<Category, String> {
+
     List<Category> findAllByRestaurantId(long id);
+
+    void deleteById(Long id);
 }

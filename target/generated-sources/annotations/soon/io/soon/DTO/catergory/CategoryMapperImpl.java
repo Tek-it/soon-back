@@ -3,13 +3,11 @@ package soon.io.soon.DTO.catergory;
 import javax.annotation.Generated;
 import org.springframework.stereotype.Component;
 import soon.io.soon.models.category.Category;
-import soon.io.soon.models.category.Category.CategoryBuilder;
 import soon.io.soon.models.restaurant.Restaurant;
-import soon.io.soon.models.restaurant.Restaurant.RestaurantBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-15T22:57:04+0200",
+    date = "2020-10-18T21:52:09+0200",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
 )
 @Component
@@ -21,14 +19,15 @@ public class CategoryMapperImpl extends CategoryMapper {
             return null;
         }
 
-        CategoryBuilder category = Category.builder();
+        Category category = new Category();
 
-        category.restaurant( categoryDTOToRestaurant( categoryDTO ) );
-        category.id( categoryDTO.getId() );
-        category.name( categoryDTO.getName() );
-        category.image( categoryDTO.getImage() );
+        category.setRestaurant( categoryDTOToRestaurant( categoryDTO ) );
+        category.setId( categoryDTO.getId() );
+        category.setName( categoryDTO.getName() );
+        category.setDescription( categoryDTO.getDescription() );
+        category.setImage( categoryDTO.getImage() );
 
-        return category.build();
+        return category;
     }
 
     @Override
@@ -42,6 +41,7 @@ public class CategoryMapperImpl extends CategoryMapper {
         categoryDTO.setRestaurant( categoryRestaurantId( category ) );
         categoryDTO.setId( category.getId() );
         categoryDTO.setName( category.getName() );
+        categoryDTO.setDescription( category.getDescription() );
         categoryDTO.setImage( category.getImage() );
 
         categoryDTO.setDishes( getDishes(category) );
@@ -54,11 +54,11 @@ public class CategoryMapperImpl extends CategoryMapper {
             return null;
         }
 
-        RestaurantBuilder restaurant = Restaurant.builder();
+        Restaurant restaurant = new Restaurant();
 
-        restaurant.id( categoryDTO.getRestaurant() );
+        restaurant.setId( categoryDTO.getRestaurant() );
 
-        return restaurant.build();
+        return restaurant;
     }
 
     private Long categoryRestaurantId(Category category) {

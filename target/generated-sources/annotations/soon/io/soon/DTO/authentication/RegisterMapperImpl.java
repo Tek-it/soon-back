@@ -7,7 +7,7 @@ import soon.io.soon.models.user.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-14T18:47:28+0200",
+    date = "2020-10-18T21:52:10+0200",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
 )
 @Component
