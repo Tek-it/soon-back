@@ -1,36 +1,32 @@
 package soon.io.soon.DTO.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import org.jetbrains.annotations.NotNull;
 import soon.io.soon.models.user.Address;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Setter
+@Getter
 public class UserDTO {
 
     private Long id;
 
-    @NotNull(message = "error.firstName.required")
     private String firstName;
 
-    @NotNull(message = "error.lastName.required")
     private String lastName;
 
-    @Email
-    @NotNull(message = "error.email.required")
     private String email;
 
-    @NotNull(message = "error.numberPhone.required")
+    private String password;
+
+    @NotNull("error.numberPhone.required")
     private String numberPhone;
 
     private Address address;
 
-
+    private Long restaurantId;
 }

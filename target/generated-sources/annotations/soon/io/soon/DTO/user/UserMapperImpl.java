@@ -6,8 +6,8 @@ import soon.io.soon.models.user.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-08-23T21:26:16+0200",
-    comments = "version: 1.3.0.Beta2, compiler: javac, environment: Java 1.8.0_152-release (JetBrains s.r.o)"
+    date = "2020-10-14T18:47:28+0200",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
 )
 @Component
 public class UserMapperImpl extends UserMapper {
@@ -20,6 +20,13 @@ public class UserMapperImpl extends UserMapper {
 
         UserDTO userDTO = new UserDTO();
 
+        userDTO.setId( user.getId() );
+        userDTO.setFirstName( user.getFirstName() );
+        userDTO.setLastName( user.getLastName() );
+        userDTO.setEmail( user.getEmail() );
+        userDTO.setNumberPhone( user.getNumberPhone() );
+        userDTO.setAddress( user.getAddress() );
+
         return userDTO;
     }
 
@@ -30,6 +37,14 @@ public class UserMapperImpl extends UserMapper {
         }
 
         User user = new User();
+
+        user.setId( userDTO.getId() );
+        user.setFirstName( userDTO.getFirstName() );
+        user.setLastName( userDTO.getLastName() );
+        user.setNumberPhone( userDTO.getNumberPhone() );
+        user.setEmail( userDTO.getEmail() );
+        user.setPassword( userDTO.getPassword() );
+        user.setAddress( userDTO.getAddress() );
 
         return user;
     }

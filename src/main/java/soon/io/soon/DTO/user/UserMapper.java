@@ -1,14 +1,15 @@
 package soon.io.soon.DTO.user;
 
-import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import soon.io.soon.models.user.User;
 
-@Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface UserMapper {
+@Mapper(componentModel = "spring")
+public abstract class UserMapper {
 
-    public UserDTO toDTO(User user);
+    @Mapping(target = "password", ignore = true)
+    public abstract UserDTO toDTO(User user);
 
-    public User toModel(UserDTO userDTO);
+    public abstract User toModel(UserDTO userDTO);
 
 }

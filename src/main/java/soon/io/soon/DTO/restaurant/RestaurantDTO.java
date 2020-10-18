@@ -1,0 +1,21 @@
+package soon.io.soon.DTO.restaurant;
+
+import lombok.*;
+import soon.io.soon.DTO.user.UserDTO;
+
+import java.util.Set;
+
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class RestaurantDTO {
+
+    private Long id;
+    private String name;
+    private String description;
+    private String avatar;
+    private UserDTO owner;
+    private Set<Long> categories;
+}

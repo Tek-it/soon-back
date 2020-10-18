@@ -7,11 +7,11 @@ import soon.io.soon.models.user.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-08-23T21:26:16+0200",
-    comments = "version: 1.3.0.Beta2, compiler: javac, environment: Java 1.8.0_152-release (JetBrains s.r.o)"
+    date = "2020-10-14T18:47:28+0200",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
 )
 @Component
-public class RegisterMapperImpl extends RegisterMapper {
+public class RegisterMapperImpl implements RegisterMapper {
 
     @Override
     public RegisterDTO toRegisterDTO(UserDTO userDTO) {
@@ -20,6 +20,10 @@ public class RegisterMapperImpl extends RegisterMapper {
         }
 
         RegisterDTO registerDTO = new RegisterDTO();
+
+        registerDTO.setEmail( userDTO.getEmail() );
+        registerDTO.setPassword( userDTO.getPassword() );
+        registerDTO.setNumberPhone( userDTO.getNumberPhone() );
 
         return registerDTO;
     }
@@ -31,6 +35,11 @@ public class RegisterMapperImpl extends RegisterMapper {
         }
 
         User user = new User();
+
+        user.setNumberPhone( registerDTO.getNumberPhone() );
+        user.setEmail( registerDTO.getEmail() );
+        user.setPassword( registerDTO.getPassword() );
+        user.setProfilePicture( registerDTO.getProfilePicture() );
 
         return user;
     }

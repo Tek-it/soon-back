@@ -2,4 +2,10 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <include file="/init_changelog.xml" relativeToChangelogFile="true"/>
+    <include file="/token.xml" relativeToChangelogFile="true"/>
+    <include file="/reset-password-table.xml" relativeToChangelogFile="true"/>
+    <include file="/add_column_holder_to_token.xml" relativeToChangelogFile="true"/>
+    <include file="/add-owner.xml" relativeToChangelogFile="true"/>
+    <include file="/add-ticket_to-user.xml" relativeToChangelogFile="true"/>
+    <include file="/change-log-add-column-description-category.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

@@ -4,6 +4,7 @@ package soon.io.soon.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -12,8 +13,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static soon.io.soon.security.SecurityUtils.AUTH_URL;
+import static soon.io.soon.security.SecurityUtils.FORGOT_PASSWORD_URL;
 import static soon.io.soon.security.SecurityUtils.REGISTER_URL;
 
 @Configuration
@@ -27,19 +31,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.headers().frameOptions().sameOrigin();
-        http.cors()
+        http
+                .cors()
                 .and()
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers(AUTH_URL).permitAll()
                 .antMatchers(REGISTER_URL).permitAll()
+                .antMatchers("**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
-                .addFilter(new JwtAuthFilter(authenticationManager(), jwtProvider))
-                .addFilter(new JWTAutorizationFilter(authenticationManager()));
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider))
+                .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
     }
 
     @Override
@@ -58,6 +62,29 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration corsConfigs = new CorsConfiguration().applyPermitDefaultValues();
+        corsConfigs.addAllowedOrigin(CorsConfiguration.ALL);
+        corsConfigs.addAllowedMethod(HttpMethod.GET);
+        corsConfigs.addAllowedMethod(HttpMethod.POST);
+        corsConfigs.addAllowedMethod(HttpMethod.PUT);
+        corsConfigs.addAllowedMethod(HttpMethod.PATCH);
+        corsConfigs.addAllowedMethod(HttpMethod.DELETE);
+        corsConfigs.addAllowedMethod(HttpMethod.OPTIONS);
+        corsConfigs.setAllowCredentials(true);
+        corsConfigs.setMaxAge(3600L);
+        corsConfigs.addAllowedHeader("Content-Type");
+        corsConfigs.addAllowedHeader("Range");
+        corsConfigs.addExposedHeader("Authorization");
+        corsConfigs.addExposedHeader("Link");
+        corsConfigs.addExposedHeader("X-Total-Count");
+        corsConfigs.addExposedHeader("X-Forwarded-For");
+        source.registerCorsConfiguration("/**", corsConfigs);
+        return source;
     }
 
 }

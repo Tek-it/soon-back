@@ -1,217 +1,527 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c1d0623e-efb9-4bb0-89cf-59b098b50db0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JWTAutorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sendgrid_java_http_client_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sendgrid_sendgrid_java_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_api_0_10_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_impl_0_10_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_jackson_0_10_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_processor_1_3_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/category/CategoryResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/restaurant/RestaurantController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/catergory/CategoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/catergory/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/restaurant/RestaurantDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/restaurant/RestaurantMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/category/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/mailservice/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/restaurant/RestaurantService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/roles/RolesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/token/TokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Utils/Errorhandler/TokenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/TicketType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/authentication/ResetPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/authentication/ResetPasswordModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/authentication/ResetPasswordRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/roles/RolesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/token/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/token/TokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/UserDetailsImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/add-owner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/add-ticket_to-user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/add_column_holder_to_token.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/change-log-add-column-description-category.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/reset-password-table.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/soon-front.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/reset-password/reset-password.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/reset-password/reset-password.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-in/authentication.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-in/sing-in.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-in/sing-in.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-up/sing-up.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-up/sing-up.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-up/sing-up.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/core/layout-viewer/layout-viewer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/core/layout-viewer/layout-viewer.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/core/layout-viewer/layout-viewer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/layout/layout.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/layout/layout.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/layout/layout.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/public-layout-holder/public-layout-holder.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/public-layout-holder/public-layout-holder.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../soon-front/src/assets/i18n/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_33.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_38.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_33.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_33.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_38.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_13_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_16_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_3_8_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_3_8_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_3_0_Beta2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_3_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_26.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/back-end.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/authentication/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/authentication/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/RegisterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/RegisterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/user/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/user/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/user/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/category/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/category/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/category/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/restaurant/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/restaurant/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/restaurant/RestaurantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/restaurant/RestaurantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JWTAutorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/UserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/security/UserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/liquibase/master-change-log.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/liquibase/master-change-log.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/liquibase.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/liquibase/init_changelog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/liquibase/token.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/liquibase/master-change-log.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/authentication/AuthenticationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/profile/ProfileResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/LoginDTO$LoginDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/LoginDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterDTO$RegisterDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserDTO$UserDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/SoonApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/CategoryNotFoundExeption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/CustomBadCredentialsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/EmailDuplicationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/ErrorBuilder$ErrorBuilderBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/ErrorBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/GlobalErrorhandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/MenuNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/NumberPhoneDuplicationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/OrderNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/RestaurantExistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/RestaurantNotFound.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UpdateExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserHasNotOrdersException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserRegisterErrorHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/FrontConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ResponseBuilder$ResponseBuilderBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ServiceMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/MailEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationObject$NotificationObjectBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationPublisher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/validators/UserValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/BillRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/Billing$BillingBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/Billing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/Category$CategoryBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/CategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/Client$ClientBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/ClientRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/Dish$DishBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/Dish.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/DishRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/Order$OrderBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/OrderRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetails$OrderDetailsBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetailsRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderState$OrderStateBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/Rating$RatingBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/Rating.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/RatingRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Coordinate$CoordinateBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Coordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/CoordinateRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Restaurant$RestaurantBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Restaurant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfiguration$RestaurantConfigurationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfigurationRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Authorization$AuthorizationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Authorization.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/RoleContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Roles$RolesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/Address$AddressBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JwtAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JwtProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/SecurityConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/UserDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/authentication/RegisterMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/user/UserMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/soon/io/soon/Restaurant/RestaurantControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/soon/io/soon/SoonApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/browserslist" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/browserslist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/e2e/protractor.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/e2e/protractor.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/e2e/src/app.e2e-spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/e2e/src/app.po.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/e2e/src/app.po.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/e2e/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/e2e/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/good-time.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/good-time.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/karma.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/category.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/restaurant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/restaurant.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/layout/item-menu/item-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/layout/item-menu/item-menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/layout/item-menu/item-menu.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/layout/item-menu/item-menu.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/layout/item-menu/item-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/layout/item-menu/item-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/views/user-avatar/user-avatar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-details/category-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/httpInterceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-details/category-details.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-details/category-details.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-details/category-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-details/category.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-item/category-item.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-item/category-item.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-item/category-item.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/category-item/category-item.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/dialog-category/dialog-category.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/dialog-category/dialog-category.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/dialog-category/dialog-category.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/dialog-category/dialog-category.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/manage-menu.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/manage-menu.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/manage-menu.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/manage-menu.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/menu-item/menu-item.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/menu-item/menu-item.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/menu-item/menu-item.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/manage-menu/menu-item/menu-item.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/models/Category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/Category.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/models/Response.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/models/menu.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/models/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/notification/notification.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/notification/notification.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/resolver/currentRestaurantResolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/notification/notification.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/notification/notification.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/holder-order-details/holder-order-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/holder-order-details/holder-order-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/holder-order-details/holder-order-details.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/holder-order-details/holder-order-details.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/holder-order-details/holder-order-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/holder-order-details/holder-order-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order-card-item-details/order-card-item-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order-card-item-details/order-card-item-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order-card-item-details/order-card-item-details.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order-card-item-details/order-card-item-details.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order-card-item-details/order-card-item-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order-card-item-details/order-card-item-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order-nav/order-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order-nav/order-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order-nav/order-nav.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order-nav/order-nav.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order-nav/order-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order-nav/order-nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-card-item/order-card-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-card-item/order-card-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-card-item/order-card-item.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-card-item/order-card-item.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-card-item/order-card-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-card-item/order-card-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-delivered/order-delivered.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-delivered/order-delivered.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-delivered/order-delivered.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-delivered/order-delivered.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-delivered/order-delivered.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-delivered/order-delivered.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-new/order-new.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-new/order-new.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-new/order-new.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-new/order-new.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-new/order-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-new/order-new.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-preparing/order-preparing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-preparing/order-preparing.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-preparing/order-preparing.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-preparing/order-preparing.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-preparing/order-preparing.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-preparing/order-preparing.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-types.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order.types/order-types.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order/order.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order/order.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order/order.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order/order.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/order/order/order.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/order/order/order.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/restaurant/restaurant.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/routig-app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/routig-app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/services/api/api-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/services/api/api-service.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/services/bloc/com-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/services/bloc/com-service.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-in/authentication.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-in/sing-in.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-in/sing-in.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/reset-password/reset-password.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-in/sing-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-in/sing-in.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-restaurant/sing-restaurant.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-restaurant/sing-restaurant.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/public-layout-holder/public-layout-holder.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-restaurant/sing-restaurant.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-restaurant/sing-restaurant.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-up/sing-up.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-up/sing-up.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-up/sing-up.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-up/sing-up.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/sing-up/sing-up.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/store/store.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/utils/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/utils/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/assets/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/assets/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/assets/tekit.png" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/assets/tekit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/tslint.json" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
+        <option value="TypeScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>mapS</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/RegisterMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/UserDetailService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/authentication/AuthenticationController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/SoonApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/user/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/user/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/AuthenticationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/LoginDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JWTAutorizarionFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JWTAutorizationFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtAuthFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="-1" />
-    <option name="width" value="1600" />
-    <option name="height" value="861" />
-  </component>
+  <component name="ProjectId" id="1iYR124LDWMiL13vhfnHpLba4E1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-              <item name="DTO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1601502748033" />
-    <property name="last_opened_file_path" value="/media/tarfa/9112610f-96d7-4b05-b8ba-8566479d093e/home/tarfa/MySpace/soon-front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/liquibase" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/../soon-front/node_modules/protractor" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/../soon-front/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../soon-front/src/app/authentication" />
+      <recent name="$PROJECT_DIR$/../soon-front/src/app/core/entities" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="soon.io.soon.DTO.restaurant" />
       <recent name="soon.io.soon.security" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/liquibase" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SoonApplication">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="soon.io.soon.Main" />
+      <module name="back-end" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="soon.io.soon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E2E Tests (good-time)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/../soon-front/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/../soon-front/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
     <configuration name="SoonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="back-end" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="soon.io.soon.SoonApplication" />
@@ -219,7 +529,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/../soon-front/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -234,246 +560,169 @@
       <workItem from="1599990252357" duration="2363000" />
       <workItem from="1600801130172" duration="118000" />
       <workItem from="1601501840056" duration="955000" />
+      <workItem from="1602082323306" duration="1415000" />
+      <workItem from="1602086136927" duration="2665000" />
+      <workItem from="1602095970458" duration="6094000" />
+      <workItem from="1602165682680" duration="46000" />
+      <workItem from="1602165867530" duration="84832000" />
+      <workItem from="1602690354620" duration="2228000" />
+      <workItem from="1602692613279" duration="48054000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15919000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1600" height="861" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23042361" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40860215" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5107527" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.3293011" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3293011" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3293011" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.4704301" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3293011" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/UserDetailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/SoonApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/user/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.2.1.RELEASE/spring-security-config-5.2.1.RELEASE.jar!/org/springframework/security/config/annotation/AbstractConfiguredSecurityBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="154" selection-start-line="154" selection-end-line="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.2.1.RELEASE/spring-security-config-5.2.1.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/RegisterDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Services/AuthenticationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Services/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/LoginDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/authentication/RegisterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/authentication/AuthenticationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="132" column="59" lean-forward="true" selection-start-line="132" selection-start-column="59" selection-end-line="132" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/soon/io/soon/SoonApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/soon/io/soon/Restaurant/RestaurantControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.2.1.RELEASE/spring-security-config-5.2.1.RELEASE.jar!/org/springframework/security/config/annotation/web/builders/HttpSecurity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="342" column="24" selection-start-line="342" selection-start-column="24" selection-end-line="342" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtAuthFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="130" selection-start-line="34" selection-start-column="130" selection-end-line="34" selection-end-column="130" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/JWTAutorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/JwtProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="437" y="27" width="482" height="700" key="#Auto_Import" timestamp="1602793964291">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="437" y="27" width="482" height="700" key="#Auto_Import/0.27.1366.700@0.27.1366.700" timestamp="1602793964291" />
+    <state x="166" y="27" width="1024" height="700" key="#Project_Structure" timestamp="1602083211320">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="166" y="27" width="1024" height="700" key="#Project_Structure/0.27.1366.700@0.27.1366.700" timestamp="1602083211320" />
+    <state x="141" y="34" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602083390087">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="141" y="34" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.700@0.27.1366.700" timestamp="1602083390087" />
+    <state x="491" y="85" width="374" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1602711581580">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="491" y="85" width="374" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1366.700@0.27.1366.700" timestamp="1602711581580" />
+    <state x="460" y="248" width="445" height="264" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602331152535">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="460" y="248" width="445" height="264" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1366.700@0.27.1366.700" timestamp="1602331152535" />
+    <state x="416" y="126" width="524" height="500" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602791708787">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="416" y="126" width="524" height="500" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.700@0.27.1366.700" timestamp="1602791708787" />
+    <state x="441" y="123" key="#xdebugger.evaluate" timestamp="1603025293747">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="441" y="123" key="#xdebugger.evaluate/0.27.1366.700@0.27.1366.700" timestamp="1603025293747" />
+    <state x="100" y="125" width="1166" height="502" key="DiffContextDialog" timestamp="1602615637525">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="100" y="125" width="1166" height="502" key="DiffContextDialog/0.27.1366.700@0.27.1366.700" timestamp="1602615637525" />
+    <state x="461" y="89" width="424" height="575" key="FileChooserDialogImpl" timestamp="1602149371146">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="461" y="89" width="424" height="575" key="FileChooserDialogImpl/0.27.1366.700@0.27.1366.700" timestamp="1602149371146" />
+    <state width="1324" height="348" key="GridCell.Tab.0.bottom" timestamp="1603035147813">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.0.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603035147813" />
+    <state width="1324" height="348" key="GridCell.Tab.0.center" timestamp="1603035147811">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.0.center/0.27.1366.700@0.27.1366.700" timestamp="1603035147811" />
+    <state width="1324" height="348" key="GridCell.Tab.0.left" timestamp="1603035147809">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.0.left/0.27.1366.700@0.27.1366.700" timestamp="1603035147809" />
+    <state width="1324" height="348" key="GridCell.Tab.0.right" timestamp="1603035147812">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1603035147812" />
+    <state width="1324" height="348" key="GridCell.Tab.1.bottom" timestamp="1603035147816">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.1.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603035147816" />
+    <state width="1324" height="348" key="GridCell.Tab.1.center" timestamp="1603035147815">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.1.center/0.27.1366.700@0.27.1366.700" timestamp="1603035147815" />
+    <state width="1324" height="348" key="GridCell.Tab.1.left" timestamp="1603035147814">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.1.left/0.27.1366.700@0.27.1366.700" timestamp="1603035147814" />
+    <state width="1324" height="348" key="GridCell.Tab.1.right" timestamp="1603035147816">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="348" key="GridCell.Tab.1.right/0.27.1366.700@0.27.1366.700" timestamp="1603035147816" />
+    <state width="1324" height="342" key="GridCell.Tab.2.bottom" timestamp="1603025356969">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="342" key="GridCell.Tab.2.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603025356969" />
+    <state width="1324" height="342" key="GridCell.Tab.2.center" timestamp="1603025356968">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="342" key="GridCell.Tab.2.center/0.27.1366.700@0.27.1366.700" timestamp="1603025356968" />
+    <state width="1324" height="342" key="GridCell.Tab.2.left" timestamp="1603025356968">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="342" key="GridCell.Tab.2.left/0.27.1366.700@0.27.1366.700" timestamp="1603025356968" />
+    <state width="1324" height="342" key="GridCell.Tab.2.right" timestamp="1603025356969">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="1324" height="342" key="GridCell.Tab.2.right/0.27.1366.700@0.27.1366.700" timestamp="1603025356969" />
+    <state x="216" y="34" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1602361873854">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="216" y="34" width="924" height="684" key="Maven.ArtifactSearchDialog/0.27.1366.700@0.27.1366.700" timestamp="1602361873854" />
+    <state x="316" y="125" width="713" height="503" key="NewModule_or_Project.wizard" timestamp="1602102298495">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="316" y="125" width="713" height="503" key="NewModule_or_Project.wizard/0.27.1366.700@0.27.1366.700" timestamp="1602102298495" />
+    <state x="172" y="27" width="1012" height="700" key="SettingsEditor" timestamp="1602360972392">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="172" y="27" width="1012" height="700" key="SettingsEditor/0.27.1366.700@0.27.1366.700" timestamp="1602360972392" />
+    <state x="226" y="108" width="904" height="535" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602406713970">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="226" y="108" width="904" height="535" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1366.700@0.27.1366.700" timestamp="1602406713970" />
+    <state x="464" y="126" width="428" height="499" key="refactoring.ChangeSignatureDialog" timestamp="1603027574717">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="464" y="126" width="428" height="499" key="refactoring.ChangeSignatureDialog/0.27.1366.700@0.27.1366.700" timestamp="1603027574717" />
+    <state x="347" y="165" key="run.anything.popup" timestamp="1602536279963">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="347" y="165" key="run.anything.popup/0.27.1366.700@0.27.1366.700" timestamp="1602536279963" />
+    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1603035002063">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup/0.27.1366.700@0.27.1366.700" timestamp="1603035002063" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/soon/io/soon/security/SecurityUtils.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

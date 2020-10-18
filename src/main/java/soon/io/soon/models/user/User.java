@@ -1,9 +1,10 @@
 package soon.io.soon.models.user;
 
 import lombok.*;
+import soon.io.soon.models.TicketType;
+import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.roles.Roles;
 
-import javax.management.relation.Role;
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
@@ -53,6 +54,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id_key"))
     private Set<Roles> roles;
 
+    @Enumerated(EnumType.STRING)
+    private TicketType ticket;
 
     @Override
     public boolean equals(Object o) {
