@@ -3,12 +3,13 @@ package soon.io.soon.DTO.restaurant;
 import javax.annotation.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import soon.io.soon.DTO.restaurant.RestaurantDTO.RestaurantDTOBuilder;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.models.restaurant.Restaurant;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-18T21:52:10+0200",
+    date = "2020-10-19T00:03:21+0200",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
 )
 @Component
@@ -44,14 +45,14 @@ public class RestaurantMapperImpl extends RestaurantMapper {
             return null;
         }
 
-        RestaurantDTO restaurantDTO = new RestaurantDTO();
+        RestaurantDTOBuilder restaurantDTO = RestaurantDTO.builder();
 
-        restaurantDTO.setId( restaurant.getId() );
-        restaurantDTO.setName( restaurant.getName() );
-        restaurantDTO.setDescription( restaurant.getDescription() );
-        restaurantDTO.setOwner( userMapper.toDTO( restaurant.getOwner() ) );
-        restaurantDTO.setCategories( toCategory( restaurant.getCategories() ) );
+        restaurantDTO.id( restaurant.getId() );
+        restaurantDTO.name( restaurant.getName() );
+        restaurantDTO.description( restaurant.getDescription() );
+        restaurantDTO.owner( userMapper.toDTO( restaurant.getOwner() ) );
+        restaurantDTO.categories( toCategory( restaurant.getCategories() ) );
 
-        return restaurantDTO;
+        return restaurantDTO.build();
     }
 }
