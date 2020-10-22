@@ -8,6 +8,7 @@ import soon.io.soon.DTO.catergory.CategoryMapper;
 import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.Utils.Errorhandler.RestaurantNotFound;
+import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
 import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantRepository;
@@ -32,11 +33,9 @@ public class CategoryService {
             Restaurant restaurant = restaurantRepository
                     .findById(categoryDTO.getRestaurant())
                     .orElseThrow(() -> new RestaurantNotFound("error.error.notfound"));
-            String filePath = "";
             if (image != null) {
-                filePath = fileStorage.upload(image.getOriginalFilename(), "soon-files", image.getInputStream());
+                fileStorage.upload(image.getOriginalFilename(), "soon-files", image.getInputStream());
             }
-            String finalFilePath = filePath;
             return Optional.of(categoryDTO)
                     .map(categoryMapper::toModel)
                     .map(category -> {
@@ -54,7 +53,9 @@ public class CategoryService {
     }
 
     public List<CategoryDTO> getCategoriesByRestaurantId(Long id) {
-        // TODO: 15/10/2020 first check if the id exist or no
+        // TODO: 20/10/2020 change this implementation to get by current connected restaurant
+        restaurantRepository.findById(id)
+                .orElseThrow(() -> new RestaurantNotFound("error.restaurant.notfound"));
         return categoryRepository
                 .findAllByRestaurantId(id)
                 .stream()
@@ -63,6 +64,7 @@ public class CategoryService {
     }
 
     public CategoryDTO update(CategoryDTO categoryDTO) {
+        // TODO: 20/10/2020 update not work correctly
         return Optional.of(categoryDTO)
                 .map(categoryMapper::toModel)
                 .map(categoryRepository::save)
@@ -72,7 +74,15 @@ public class CategoryService {
 
     @Transactional
     public void delete(Long categoryId) {
-        categoryRepository.deleteById(categoryId);
+        categoryRepository.findById(categoryId)
+                .map(this::deleteImage)
+                .map(Category::getId)
+                .ifPresent(categoryRepository::deleteById);
+    }
+
+    private Category deleteImage(Category category) {
+        fileStorage.delete(category.getImage(), "soon-files");
+        return category;
     }
 
     public byte[] downloadImage(String filename) {

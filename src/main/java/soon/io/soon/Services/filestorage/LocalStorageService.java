@@ -45,6 +45,16 @@ public class LocalStorageService implements FileStorage {
 
     @Override
     public void delete(String fileName, String path) {
+        try {
+            String s = prepareDirectory(path);
+            String fullName = String.format("%s/%s", s, fileName);
+            if (Paths.get(fullName).toFile().exists()) {
+                Files.delete(Paths.get(fullName));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new FileStorageException("error.file.delete");
+        }
     }
 
     private String prepareDirectory(String path) {
