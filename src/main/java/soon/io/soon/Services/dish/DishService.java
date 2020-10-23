@@ -53,5 +53,24 @@ public class DishService {
         dish.setCategory(category);
         return dish;
     }
+
+    public DishDTO updateDish(DishDTO dishDTO) {
+        Dish foundDish = dishRepository.findById(dishDTO.getId())
+                .orElseThrow(() -> new DishException("error.dish.notfound"));
+
+        return Optional.of(dishDTO)
+                .map(dishMapper::toModel)
+                .map(dish -> {
+                    foundDish.setName(dish.getName());
+                    foundDish.setDescription(dish.getDescription());
+                    foundDish.setAvgDelivery(dish.getAvgDelivery());
+                    foundDish.setPreparationTime(dish.getPreparationTime());
+                    foundDish.setAvailable(dish.isAvailable());
+                    return foundDish;
+                })
+                .map(dishRepository::save)
+                .map(dishMapper::toDTO)
+                .orElse(null);
+    }
 }
 

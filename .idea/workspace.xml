@@ -23,30 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1d0623e-efb9-4bb0-89cf-59b098b50db0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Utils/Errorhandler/DishException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/dish.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/create.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/dish/DishResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/dish/DishResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/category/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/dish/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/dish/DishService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/filestorage/LocalStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/filestorage/LocalStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/category/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/category/CategoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/dish/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/dish/DishRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/dish/DishResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/dish/DishResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/category/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/category/CategoryService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/dish/DishService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/dish/DishService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/LocalStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/LocalStorageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/CategoryRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/DishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/DishRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../soon-front/src/app/category-details/category-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/category-details/category-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/category-details/category-details.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/category-details/category-details.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../soon-front/src/app/category-details/category-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/category-details/category-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/category/category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/category/category.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/category/category.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/category/category.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/category/category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/category/category.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-category-model/create-category-model.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-category-model/create-category-model.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-dish-model/create-dish-model.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-dish-model/create-dish-model.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-dish-model/create-dish-model.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-dish-model/create-dish-model.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dish/dish.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dish/dish.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +190,7 @@
       <workItem from="1602165682680" duration="46000" />
       <workItem from="1602165867530" duration="84832000" />
       <workItem from="1602690354620" duration="2228000" />
-      <workItem from="1602692613279" duration="101101000" />
+      <workItem from="1602692613279" duration="108823000" />
     </task>
     <servers />
   </component>
@@ -257,38 +246,38 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="461" y="89" width="424" height="575" key="FileChooserDialogImpl/0.27.1366.700@0.27.1366.700" timestamp="1602149371146" />
-    <state width="1324" height="334" key="GridCell.Tab.0.bottom" timestamp="1603353905658">
+    <state width="1324" height="440" key="GridCell.Tab.0.bottom" timestamp="1603441449494">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.0.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603353905658" />
-    <state width="1324" height="334" key="GridCell.Tab.0.center" timestamp="1603353905657">
+    <state width="1324" height="440" key="GridCell.Tab.0.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603441449494" />
+    <state width="1324" height="440" key="GridCell.Tab.0.center" timestamp="1603441449493">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.0.center/0.27.1366.700@0.27.1366.700" timestamp="1603353905657" />
-    <state width="1324" height="334" key="GridCell.Tab.0.left" timestamp="1603353905656">
+    <state width="1324" height="440" key="GridCell.Tab.0.center/0.27.1366.700@0.27.1366.700" timestamp="1603441449493" />
+    <state width="1324" height="440" key="GridCell.Tab.0.left" timestamp="1603441449493">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.0.left/0.27.1366.700@0.27.1366.700" timestamp="1603353905656" />
-    <state width="1324" height="334" key="GridCell.Tab.0.right" timestamp="1603353905657">
+    <state width="1324" height="440" key="GridCell.Tab.0.left/0.27.1366.700@0.27.1366.700" timestamp="1603441449493" />
+    <state width="1324" height="440" key="GridCell.Tab.0.right" timestamp="1603441449493">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1603353905657" />
-    <state width="1324" height="334" key="GridCell.Tab.1.bottom" timestamp="1603353905661">
+    <state width="1324" height="440" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1603441449493" />
+    <state width="1324" height="440" key="GridCell.Tab.1.bottom" timestamp="1603441449495">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.1.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603353905661" />
-    <state width="1324" height="334" key="GridCell.Tab.1.center" timestamp="1603353905660">
+    <state width="1324" height="440" key="GridCell.Tab.1.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603441449495" />
+    <state width="1324" height="440" key="GridCell.Tab.1.center" timestamp="1603441449494">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.1.center/0.27.1366.700@0.27.1366.700" timestamp="1603353905660" />
-    <state width="1324" height="334" key="GridCell.Tab.1.left" timestamp="1603353905659">
+    <state width="1324" height="440" key="GridCell.Tab.1.center/0.27.1366.700@0.27.1366.700" timestamp="1603441449494" />
+    <state width="1324" height="440" key="GridCell.Tab.1.left" timestamp="1603441449494">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.1.left/0.27.1366.700@0.27.1366.700" timestamp="1603353905659" />
-    <state width="1324" height="334" key="GridCell.Tab.1.right" timestamp="1603353905660">
+    <state width="1324" height="440" key="GridCell.Tab.1.left/0.27.1366.700@0.27.1366.700" timestamp="1603441449494" />
+    <state width="1324" height="440" key="GridCell.Tab.1.right" timestamp="1603441449495">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1324" height="334" key="GridCell.Tab.1.right/0.27.1366.700@0.27.1366.700" timestamp="1603353905660" />
+    <state width="1324" height="440" key="GridCell.Tab.1.right/0.27.1366.700@0.27.1366.700" timestamp="1603441449495" />
     <state width="1324" height="225" key="GridCell.Tab.2.bottom" timestamp="1603135902385">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
@@ -337,9 +326,9 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="347" y="165" key="run.anything.popup/0.27.1366.700@0.27.1366.700" timestamp="1603305694574" />
-    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1603362513359">
+    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1603435866566">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup/0.27.1366.700@0.27.1366.700" timestamp="1603362513359" />
+    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup/0.27.1366.700@0.27.1366.700" timestamp="1603435866566" />
   </component>
 </project>

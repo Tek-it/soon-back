@@ -22,6 +22,12 @@ public class DishResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PutMapping("/category/dishes")
+    private ResponseEntity<DishDTO> updateDish(@RequestBody DishDTO dishDTO) {
+        DishDTO result = dishService.updateDish(dishDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @GetMapping("/category/{id}/dishes")
     private ResponseEntity<List<DishDTO>> getDishesByCategory(@PathVariable("id") long id) {
         List<DishDTO> result = dishService.getDishesByCategoryId(id);
