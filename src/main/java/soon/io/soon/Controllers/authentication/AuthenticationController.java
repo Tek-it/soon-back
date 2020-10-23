@@ -27,20 +27,20 @@ public class AuthenticationController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity logout() {
+    public ResponseEntity<Void> logout() {
         logger.debug("RESOURCE::Request to logout user");
         this.authenticationService.logout();
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PostMapping("/forgot-password")
-    public ResponseEntity forgotPassword(@RequestParam("email") String email) {
+    public ResponseEntity<Void> forgotPassword(@RequestParam("email") String email) {
         this.authenticationService.forgotPassword(email);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity forgotPassword(@RequestBody ResetPasswordModel model) {
+    public ResponseEntity<Void> forgotPassword(@RequestBody ResetPasswordModel model) {
         this.authenticationService.resetPassword(model);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

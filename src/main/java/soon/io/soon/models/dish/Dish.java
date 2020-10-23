@@ -22,7 +22,6 @@ import java.util.Set;
 @Table(name = "dish")
 public class Dish {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
