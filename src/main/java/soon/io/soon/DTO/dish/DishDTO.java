@@ -19,4 +19,5 @@ public class DishDTO {
     private Long categoryId;
     private Set<String> dishImages;
     private boolean available;
+    private String avatar;
 }

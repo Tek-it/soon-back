@@ -14,4 +14,6 @@ public interface DishRepository extends CrudRepository<Dish, String> {
     List<Dish> findByCategoryId(long id);
 
     Optional<Dish> findById(long id);
+
+    void deleteById(Long id);
 }
