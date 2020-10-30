@@ -53,6 +53,8 @@ public class Dish {
     @ElementCollection(targetClass = String.class)
     private Set<String> dishImages;
 
+    private String avatar;
+
     @Column(name = "create_at")
     private LocalDateTime createAt;
 
