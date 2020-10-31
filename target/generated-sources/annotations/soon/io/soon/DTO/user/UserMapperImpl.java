@@ -6,8 +6,8 @@ import soon.io.soon.models.user.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-18T21:52:09+0200",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
+    date = "2020-10-31T17:41:34+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.7 (JetBrains s.r.o.)"
 )
 @Component
 public class UserMapperImpl extends UserMapper {

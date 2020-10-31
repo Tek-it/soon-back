@@ -7,8 +7,8 @@ import soon.io.soon.models.restaurant.Restaurant;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-19T00:03:21+0200",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
+    date = "2020-10-31T17:41:35+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.7 (JetBrains s.r.o.)"
 )
 @Component
 public class CategoryMapperImpl extends CategoryMapper {
