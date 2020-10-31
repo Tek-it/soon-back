@@ -3,14 +3,13 @@ package soon.io.soon.DTO.restaurant;
 import javax.annotation.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import soon.io.soon.DTO.restaurant.RestaurantDTO.RestaurantDTOBuilder;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.models.restaurant.Restaurant;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-19T00:03:21+0200",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (JetBrains s.r.o.)"
+    date = "2020-10-31T17:41:34+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.7 (JetBrains s.r.o.)"
 )
 @Component
 public class RestaurantMapperImpl extends RestaurantMapper {
@@ -45,14 +44,14 @@ public class RestaurantMapperImpl extends RestaurantMapper {
             return null;
         }
 
-        RestaurantDTOBuilder restaurantDTO = RestaurantDTO.builder();
+        RestaurantDTO restaurantDTO = new RestaurantDTO();
 
-        restaurantDTO.id( restaurant.getId() );
-        restaurantDTO.name( restaurant.getName() );
-        restaurantDTO.description( restaurant.getDescription() );
-        restaurantDTO.owner( userMapper.toDTO( restaurant.getOwner() ) );
-        restaurantDTO.categories( toCategory( restaurant.getCategories() ) );
+        restaurantDTO.setId( restaurant.getId() );
+        restaurantDTO.setName( restaurant.getName() );
+        restaurantDTO.setDescription( restaurant.getDescription() );
+        restaurantDTO.setOwner( userMapper.toDTO( restaurant.getOwner() ) );
+        restaurantDTO.setCategories( toCategory( restaurant.getCategories() ) );
 
-        return restaurantDTO.build();
+        return restaurantDTO;
     }
 }
