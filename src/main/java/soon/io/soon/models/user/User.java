@@ -45,7 +45,7 @@ public class User {
     @Column(name = "user_avatar")
     private String profilePicture;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     @ManyToMany(fetch = FetchType.EAGER, targetEntity = Roles.class)

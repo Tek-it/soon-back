@@ -2,6 +2,7 @@ package soon.io.soon.DTO.restaurant;
 
 import lombok.*;
 import soon.io.soon.DTO.user.UserDTO;
+import soon.io.soon.models.user.Address;
 
 import java.util.Set;
 
@@ -18,4 +19,5 @@ public class RestaurantDTO {
     private String avatar;
     private UserDTO owner;
     private Set<Long> categories;
+    private Address address;
 }

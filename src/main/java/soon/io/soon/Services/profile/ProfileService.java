@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.Services.restaurant.RestaurantService;
+import soon.io.soon.Utils.Errorhandler.DishException;
 import soon.io.soon.Utils.Errorhandler.UserNotFoundException;
 import soon.io.soon.models.TicketType;
 import soon.io.soon.models.user.User;
@@ -31,4 +32,6 @@ public class ProfileService {
                 .orElseThrow(() -> new UserNotFoundException("user.not_connected"));
         return restaurantService.findRestaurantByUser(currentConnectedUser.getId());
     }
+
+
 }

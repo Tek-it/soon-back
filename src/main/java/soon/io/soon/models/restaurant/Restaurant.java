@@ -31,7 +31,7 @@ public class Restaurant {
     @Column(name = "restaurant_description")
     private String description;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
 
     @Column(name = "restaurant_phone_number")
