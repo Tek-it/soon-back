@@ -1,14 +1,14 @@
 package soon.io.soon.DTO.catergory;
 
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.restaurant.Restaurant;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-31T17:41:35+0100",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.7 (JetBrains s.r.o.)"
+    date = "2020-11-06T15:30:33+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 15 (Oracle Corporation)"
 )
 @Component
 public class CategoryMapperImpl extends CategoryMapper {

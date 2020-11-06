@@ -26,7 +26,7 @@ public class RestaurantController {
     @PutMapping("/update-account")
     public ResponseEntity<RestaurantDTO> updateCurrentRestaurant(@RequestBody RestaurantDTO restaurantDTO) {
         logger.info("RESOURCE::Request to get the current connected profile");
-        RestaurantDTO restaurant = restaurantService.updateCurrentConnectedRestaurant(restaurantDTO);
+        RestaurantDTO restaurant = restaurantService.updateRestaurant(restaurantDTO);
         return ResponseEntity.status(HttpStatus.OK).body(restaurant);
     }
 

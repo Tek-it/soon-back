@@ -28,7 +28,6 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class AuthenticationService {
-    private final Logger logger = LoggerFactory.getLogger(AuthenticationService.class);
     private final UserService userService;
     private final UserMapper userMapper;
     private final UserRepository userRepository;
@@ -37,7 +36,6 @@ public class AuthenticationService {
     private final MailService mailService;
 
     public UserDTO register(UserDTO userDTO) {
-        logger.info("SERVICE::Request to register new user {}", userDTO);
         if (checkEmailDuplication(userDTO)) {
             throw new EmailDuplicationException("error.email.duplication");
         }
@@ -60,7 +58,6 @@ public class AuthenticationService {
     }
 
     public void logout() {
-        logger.info("SERVICE::Request to logout current connected User");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null) {
             SecurityContextHolder.getContext().setAuthentication(null);

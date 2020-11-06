@@ -22,52 +22,205 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1d0623e-efb9-4bb0-89cf-59b098b50db0" name="Default Changelist" comment="swagger API documentation implemetation">
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/address.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-setting/profile-setting.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-setting/profile-setting.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-setting/profile-setting.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-setting/profile-setting.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.service.ts" afterDir="false" />
+    <list default="true" id="c1d0623e-efb9-4bb0-89cf-59b098b50db0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_core_3_16_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javaparser_javaparser_symbol_solver_core_3_16_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_29_0_jre.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_27_0_GA.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/back-end.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/authentication/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/authentication/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/profile/ProfileResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/restaurant/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/restaurant/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/restaurant/RestaurantDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/DTO/restaurant/RestaurantDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/profile/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/restaurant/RestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/restaurant/RestaurantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/restaurant/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/restaurant/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/models/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/token/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soon/io/soon/Services/token/TokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/authentication/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/authentication/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/category/CategoryResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/category/CategoryResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/dish/DishResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/dish/DishResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/order/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/order/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/profile/ProfileResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/profile/ProfileResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/restaurant/RestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Controllers/restaurant/RestaurantController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/LoginDTO$LoginDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/LoginDTO$LoginDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/LoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/LoginDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterDTO$RegisterDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterDTO$RegisterDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/authentication/RegisterMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/catergory/CategoryDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/catergory/CategoryDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/catergory/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/catergory/CategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/catergory/CategoryMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/catergory/CategoryMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/coordinate/CoordinateDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/coordinate/CoordinateDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishDTO$DishDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishDTO$DishDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/dish/DishMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/item/ItemDTO$ItemDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/item/ItemDTO$ItemDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/item/ItemDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/item/ItemDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/item/ItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/item/ItemMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/order/OrderDTO$OrderDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/order/OrderDTO$OrderDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/order/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/order/OrderDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantDTO$RestaurantDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantDTO$RestaurantDTOBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/restaurant/RestaurantMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserDTO$UserDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserDTO$UserDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/DTO/user/UserMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/category/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/category/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/dish/DishService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/dish/DishService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/FileStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/FileStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/GCStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/GCStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/LocalStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/LocalStorageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/S3Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/filestorage/S3Storage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/mailservice/MailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/mailservice/MailService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/profile/ProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/profile/ProfileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/restaurant/RestaurantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/restaurant/RestaurantService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/roles/RolesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/roles/RolesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/token/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/token/TokenService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Services/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/SoonApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/SoonApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/CategoryNotFoundExeption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/CategoryNotFoundExeption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/CustomBadCredentialsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/CustomBadCredentialsException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/DishException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/DishException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/EmailDuplicationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/EmailDuplicationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/ErrorBuilder$ErrorBuilderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/ErrorBuilder$ErrorBuilderBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/ErrorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/ErrorBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/FileStorageException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/FileStorageException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/GlobalErrorhandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/GlobalErrorhandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/MenuNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/MenuNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/NumberPhoneDuplicationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/NumberPhoneDuplicationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/OrderNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/OrderNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/RestaurantExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/RestaurantExistException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/RestaurantNotFound.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/RestaurantNotFound.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/TokenException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/TokenException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UpdateExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UpdateExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserHasNotOrdersException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserHasNotOrdersException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserRegisterErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Errorhandler/UserRegisterErrorHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/FrontConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/FrontConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ResponseBuilder$ResponseBuilderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ResponseBuilder$ResponseBuilderBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ServiceMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/ServiceMethods.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/SwaggerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/SwaggerConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/MailEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/MailEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationObject$NotificationObjectBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationObject$NotificationObjectBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationPublisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/events/notification/NotificationPublisher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/validators/UserValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/Utils/validators/UserValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/TicketType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/TicketType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPassword$ResetPasswordBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPassword$ResetPasswordBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPasswordModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPasswordModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPasswordRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/authentication/ResetPasswordRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/BillRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/BillRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/Billing$BillingBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/Billing$BillingBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/Billing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/bill/Billing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/Category$CategoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/Category$CategoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/category/CategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/Client$ClientBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/Client$ClientBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/client/ClientRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/Dish$DishBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/Dish$DishBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/Dish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/DishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/dish/DishRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/item/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/item/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/Order$OrderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/Order$OrderBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/order/OrderRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetails$OrderDetailsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetails$OrderDetailsBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetailsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderDetails/OrderDetailsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderState$OrderStateBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderState$OrderStateBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/orderStatus/OrderStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/Rating$RatingBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/Rating$RatingBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/Rating.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/Rating.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/RatingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/rating/RatingRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Coordinate$CoordinateBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Coordinate$CoordinateBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Coordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Coordinate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/CoordinateRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/CoordinateRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Restaurant$RestaurantBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Restaurant$RestaurantBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfiguration$RestaurantConfigurationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfiguration$RestaurantConfigurationBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfigurationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantConfigurationRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/restaurant/RestaurantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Authorization$AuthorizationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Authorization$AuthorizationBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Authorization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Authorization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/RoleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/RoleContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Roles$RolesBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Roles$RolesBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/RolesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/roles/RolesRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/token/Token$TokenBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/token/Token$TokenBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/token/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/token/Token.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/token/TokenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/token/TokenRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/Address$AddressBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/Address$AddressBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/User$UserBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/models/user/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JWTAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JWTAuthorizationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JwtProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/JwtProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/SecurityUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/SecurityUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/UserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/UserDetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/soon/io/soon/security/UserDetailsImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/soon/io/soon/security/UserDetailsImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/authentication/RegisterMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/authentication/RegisterMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/catergory/CategoryMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/catergory/CategoryMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/dish/DishMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/dish/DishMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/restaurant/RestaurantMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/restaurant/RestaurantMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-up/sing-up.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/authentication/sing-up/sing-up.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/category.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/restaurant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/restaurant.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/core/entities/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/core/entities/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/user/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/soon/io/soon/DTO/user/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/soon/io/soon/Restaurant/RestaurantControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/soon/io/soon/Restaurant/RestaurantControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/soon/io/soon/SoonApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/soon/io/soon/SoonApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-category-model/create-category-model.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/create-category-model/create-category-model.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/dialogs/update-profile-model/update-profile-model.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-infos/profile-infos.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile-setting/profile-setting.component.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/profile/profile.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/app/routig-app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/app/routig-app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../soon-front/src/assets/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/../soon-front/src/assets/i18n/en.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,12 +237,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="swagger-documentation" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../soon-front" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -99,15 +247,12 @@
     </option>
   </component>
   <component name="ProjectId" id="1iYR124LDWMiL13vhfnHpLba4E1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -119,7 +264,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1601502748033" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/liquibase" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/soon/io/soon" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -138,21 +283,35 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/../soon-front/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../soon-front/src/app/authentication" />
-      <recent name="$PROJECT_DIR$/../soon-front/src/app/core/entities" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/soon/io/soon" />
+      <recent name="$PROJECT_DIR$/src/main/resources/liquibase" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="soon.io.soon.DTO.restaurant" />
       <recent name="soon.io.soon.security" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/liquibase" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../soon-front/src/app/authentication" />
+      <recent name="$PROJECT_DIR$/../soon-front/src/app/core/entities" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SoonApplication">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="soon.io.soon.Main" />
+      <module name="back-end" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="soon.io.soon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mains" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="soon.io.soon.Mains" />
       <module name="back-end" />
       <extension name="coverage">
         <pattern>
@@ -195,11 +354,12 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Mains" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -225,11 +385,21 @@
       <workItem from="1604100204953" duration="461000" />
       <workItem from="1604139573113" duration="2834000" />
       <workItem from="1604162136044" duration="4117000" />
+      <workItem from="1604579953511" duration="110000" />
+      <workItem from="1604583744756" duration="6000" />
+      <workItem from="1604583860592" duration="1150000" />
+      <workItem from="1604603728193" duration="631000" />
+      <workItem from="1604606759789" duration="376000" />
+      <workItem from="1604607586538" duration="795000" />
+      <workItem from="1604641078553" duration="2506000" />
+      <workItem from="1604644409880" duration="683000" />
+      <workItem from="1604672841001" duration="107000" />
+      <workItem from="1604673273985" duration="9077000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -242,9 +412,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="437" y="27" width="482" height="700" key="#Auto_Import" timestamp="1602793964291">
@@ -271,10 +438,9 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="416" y="126" width="524" height="500" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.700@0.27.1366.700" timestamp="1602791708787" />
-    <state x="444" y="106" key="#xdebugger.evaluate" timestamp="1604404286459">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="441" y="123" key="#xdebugger.evaluate" timestamp="1603708008140">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="444" y="106" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1604404286459" />
     <state x="441" y="123" key="#xdebugger.evaluate/0.27.1366.700@0.27.1366.700" timestamp="1603708008140" />
     <state x="100" y="125" width="1166" height="502" key="DiffContextDialog" timestamp="1602615637525">
       <screen x="0" y="27" width="1366" height="700" />
@@ -284,65 +450,61 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="461" y="89" width="424" height="575" key="FileChooserDialogImpl/0.27.1366.700@0.27.1366.700" timestamp="1602149371146" />
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1604424401505">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="307" key="GridCell.Tab.0.bottom" timestamp="1604693057900">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604424401505" />
-    <state width="1324" height="488" key="GridCell.Tab.0.bottom/0.27.1366.700@0.27.1366.700" timestamp="1604142717669" />
-    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1604424401504">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604173130276" />
+    <state width="1324" height="307" key="GridCell.Tab.0.bottom/0.27.1366.700@0.27.1366.700" timestamp="1604693057900" />
+    <state width="1324" height="307" key="GridCell.Tab.0.center" timestamp="1604693057899">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604424401504" />
-    <state width="1324" height="488" key="GridCell.Tab.0.center/0.27.1366.700@0.27.1366.700" timestamp="1604142717668" />
-    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1604424401504">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604173130276" />
+    <state width="1324" height="307" key="GridCell.Tab.0.center/0.27.1366.700@0.27.1366.700" timestamp="1604693057899" />
+    <state width="1324" height="307" key="GridCell.Tab.0.left" timestamp="1604693057899">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604424401504" />
-    <state width="1324" height="488" key="GridCell.Tab.0.left/0.27.1366.700@0.27.1366.700" timestamp="1604142717668" />
-    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1604424401504">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604173130276" />
+    <state width="1324" height="307" key="GridCell.Tab.0.left/0.27.1366.700@0.27.1366.700" timestamp="1604693057899" />
+    <state width="1324" height="307" key="GridCell.Tab.0.right" timestamp="1604693057899">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604424401504" />
-    <state width="1324" height="488" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1604142717668" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1604424401505">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604173130276" />
+    <state width="1324" height="307" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1604693057899" />
+    <state width="1324" height="307" key="GridCell.Tab.1.bottom" timestamp="1604693057901">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604424401505" />
-    <state width="1324" height="488" key="GridCell.Tab.1.bottom/0.27.1366.700@0.27.1366.700" timestamp="1604142717670" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1604424401505">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604173130277" />
+    <state width="1324" height="307" key="GridCell.Tab.1.bottom/0.27.1366.700@0.27.1366.700" timestamp="1604693057901" />
+    <state width="1324" height="307" key="GridCell.Tab.1.center" timestamp="1604693057900">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1604424401505" />
-    <state width="1324" height="488" key="GridCell.Tab.1.center/0.27.1366.700@0.27.1366.700" timestamp="1604142717669" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1604424401505">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1604173130277" />
+    <state width="1324" height="307" key="GridCell.Tab.1.center/0.27.1366.700@0.27.1366.700" timestamp="1604693057900" />
+    <state width="1324" height="307" key="GridCell.Tab.1.left" timestamp="1604693057900">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1604424401505" />
-    <state width="1324" height="488" key="GridCell.Tab.1.left/0.27.1366.700@0.27.1366.700" timestamp="1604142717669" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1604424401505">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1604173130277" />
+    <state width="1324" height="307" key="GridCell.Tab.1.left/0.27.1366.700@0.27.1366.700" timestamp="1604693057900" />
+    <state width="1324" height="307" key="GridCell.Tab.1.right" timestamp="1604693057900">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1604424401505" />
-    <state width="1324" height="488" key="GridCell.Tab.1.right/0.27.1366.700@0.27.1366.700" timestamp="1604142717670" />
-    <state width="1323" height="320" key="GridCell.Tab.2.bottom" timestamp="1604404291219">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="375" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1604173130277" />
+    <state width="1324" height="307" key="GridCell.Tab.1.right/0.27.1366.700@0.27.1366.700" timestamp="1604693057900" />
+    <state width="1324" height="372" key="GridCell.Tab.2.bottom" timestamp="1603904305978">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="320" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604404291219" />
     <state width="1324" height="372" key="GridCell.Tab.2.bottom/0.27.1366.700@0.27.1366.700" timestamp="1603904305978" />
-    <state width="1323" height="320" key="GridCell.Tab.2.center" timestamp="1604404291219">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="372" key="GridCell.Tab.2.center" timestamp="1603904305977">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="320" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1604404291219" />
     <state width="1324" height="372" key="GridCell.Tab.2.center/0.27.1366.700@0.27.1366.700" timestamp="1603904305977" />
-    <state width="1323" height="320" key="GridCell.Tab.2.left" timestamp="1604404291219">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="372" key="GridCell.Tab.2.left" timestamp="1603904305977">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="320" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1604404291219" />
     <state width="1324" height="372" key="GridCell.Tab.2.left/0.27.1366.700@0.27.1366.700" timestamp="1603904305977" />
-    <state width="1323" height="320" key="GridCell.Tab.2.right" timestamp="1604404291219">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="372" key="GridCell.Tab.2.right" timestamp="1603904305978">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state width="1323" height="320" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1604404291219" />
     <state width="1324" height="372" key="GridCell.Tab.2.right/0.27.1366.700@0.27.1366.700" timestamp="1603904305978" />
     <state x="216" y="34" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1602361873854">
       <screen x="0" y="27" width="1366" height="700" />
@@ -352,11 +514,15 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="316" y="125" width="713" height="503" key="NewModule_or_Project.wizard/0.27.1366.700@0.27.1366.700" timestamp="1602102298495" />
-    <state x="172" y="0" width="1012" height="700" key="SettingsEditor" timestamp="1604162180128">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="172" y="27" width="1012" height="700" key="SettingsEditor" timestamp="1604644008358">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="172" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604162180128" />
-    <state x="172" y="27" width="1012" height="700" key="SettingsEditor/0.27.1366.700@0.27.1366.700" timestamp="1602360972392" />
+    <state x="172" y="27" width="1012" height="700" key="SettingsEditor/0.27.1366.700@0.27.1366.700" timestamp="1604644008358" />
+    <state x="297" y="27" width="762" height="700" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604677128538">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="297" y="27" width="762" height="700" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1366.700@0.27.1366.700" timestamp="1604677128538" />
     <state x="491" y="293" width="373" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603135062691">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
@@ -365,10 +531,10 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="226" y="102" width="904" height="625" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1366.700@0.27.1366.700" timestamp="1603752040097" />
-    <state x="416" y="140" width="524" height="472" key="extract.method.dialog" timestamp="1603292180846">
+    <state x="416" y="140" width="524" height="472" key="extract.method.dialog" timestamp="1604692276313">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="416" y="140" width="524" height="472" key="extract.method.dialog/0.27.1366.700@0.27.1366.700" timestamp="1603292180846" />
+    <state x="416" y="140" width="524" height="472" key="extract.method.dialog/0.27.1366.700@0.27.1366.700" timestamp="1604692276313" />
     <state x="99" y="27" width="1157" height="700" key="new project wizard" timestamp="1603908376161">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
@@ -381,21 +547,9 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="347" y="165" key="run.anything.popup/0.27.1366.700@0.27.1366.700" timestamp="1603305694574" />
-    <state x="346" y="22" width="672" height="706" key="search.everywhere.popup" timestamp="1604404083172">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1604694475530">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="346" y="22" width="672" height="706" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604404083172" />
-    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup/0.27.1366.700@0.27.1366.700" timestamp="1604143302460" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/soon/io/soon/Controllers/restaurant/RestaurantController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="346" y="48" width="672" height="678" key="search.everywhere.popup/0.27.1366.700@0.27.1366.700" timestamp="1604694475530" />
   </component>
 </project>

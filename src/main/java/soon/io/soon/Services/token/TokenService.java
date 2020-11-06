@@ -14,11 +14,9 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class TokenService {
-    private final Logger logger = LoggerFactory.getLogger(TokenService.class);
     private final TokenRepository tokenRepository;
 
     public Token create(String holder) {
-        logger.info("SERVICE::Request to generate token value");
         Token token = Token.builder()
                 .valid(true)
                 .holder(holder)
@@ -29,21 +27,18 @@ public class TokenService {
     }
 
     public boolean isValid(Token token) {
-        logger.info("SERVICE::Request to check validation token");
         Token foundToken = tokenRepository.findById(token.getId())
                 .orElseThrow(() -> new TokenException("error.token.notfound"));
         return foundToken.isValid();
     }
 
     public boolean isValid(String value) {
-        logger.info("SERVICE::Request to check validation token");
         Token foundToken = tokenRepository.findByValue(value)
                 .orElseThrow(() -> new TokenException("error.token.notfound"));
         return foundToken.isValid();
     }
 
     public Token invalidate(Token token) {
-        logger.info("SERVICE::Request to invalidate token");
         token.setValid(false);
         return tokenRepository.save(token);
     }

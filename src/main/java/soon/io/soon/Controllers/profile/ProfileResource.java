@@ -14,19 +14,16 @@ import soon.io.soon.models.user.User;
 @RequestMapping("/api/profile")
 @AllArgsConstructor
 public class ProfileResource {
-    private final Logger logger = LoggerFactory.getLogger(ProfileResource.class);
     private final ProfileService profileService;
 
     @GetMapping("/current-user")
     public ResponseEntity<User> getCurrentUser() {
-        logger.info("RESOURCE::Request to get the current connected profile");
         User currentConnectedUser = profileService.getCurrentConnectedUser();
         return ResponseEntity.status(HttpStatus.OK).body(currentConnectedUser);
     }
 
     @GetMapping("/current-restaurant")
     public ResponseEntity<RestaurantDTO> getCurrentRestaurant() {
-        logger.info("RESOURCE::Request to get the current connected profile");
         RestaurantDTO restaurantDTO = profileService.getCurrentConnectedRestaurant();
         return ResponseEntity.status(HttpStatus.OK).body(restaurantDTO);
     }
