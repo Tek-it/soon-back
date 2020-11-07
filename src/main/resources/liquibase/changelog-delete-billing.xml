@@ -1,0 +1,137 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet author="Tarfa Ali" id="15302020-1">
+        <dropForeignKeyConstraint baseTableName="order" constraintName="FKj4arc59ipyxxc07eyt4y67led"/>
+    </changeSet>
+
+    <changeSet id="15302020-2" author="Tarfa Ali">
+        <dropTable tableName="billing"/>
+    </changeSet>
+
+    <changeSet id="15302020-3" author="Tarfa Ali">
+        <dropForeignKeyConstraint baseTableName="order_state" constraintName="FKn61ogfsxmv0xs3dw1xm14ko3d"/>
+    </changeSet>
+
+    <changeSet id="15302020-4" author="Tarfa Ali">
+        <dropForeignKeyConstraint baseTableName="order_details" constraintName="FKku9bk0148vlool0s4hhynrrxg"/>
+    </changeSet>
+
+    <changeSet id="15302020-5" author="Tarfa Ali">
+        <dropTable tableName="order"/>
+    </changeSet>
+
+    <changeSet id="15302020-6" author="Tarfa Ali">
+        <dropTable tableName="dish_dish_images"/>
+    </changeSet>
+
+    <changeSet id="15302020-7" author="Tarfa Ali">
+        <dropTable tableName="client"/>
+    </changeSet>
+
+    <changeSet id="15302020-8" author="Tarfa">
+        <dropForeignKeyConstraint baseTableName="dish" constraintName="FK2pfnquime4nw2r624c65olhoy"/>
+    </changeSet>
+
+    <changeSet id="15302020-9" author="Tarfa">
+        <dropColumn tableName="dish" columnName="dish_id"/>
+    </changeSet>
+
+
+    <changeSet id="15302020-10" author="Tarfa">
+        <createTable tableName="bill">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="total" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="tax" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="15302020-11" author="Tarfa">
+        <createTable tableName="order">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="create_at" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_state" type="BIGINT"/>
+            <column name="bill_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="15302020-12" author="Tarfa">
+        <addForeignKeyConstraint baseTableName="order"
+                                 baseColumnNames="user_id"
+                                 constraintName="order_user_cst"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="15302020-13" author="Tarfa">
+        <addForeignKeyConstraint baseTableName="order"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="order_restaurant_cst"
+                                 referencedTableName="restaurant"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 onUpdate="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="15302020-14" author="Tarfa">
+        <addForeignKeyConstraint baseTableName="order"
+                                 baseColumnNames="bill_id"
+                                 constraintName="order_bill_cst"
+                                 referencedTableName="bill"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 onUpdate="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="15302020-15" author="Tarfa">
+        <addForeignKeyConstraint baseTableName="order"
+                                 baseColumnNames="order_state"
+                                 constraintName="order_order_state_cst"
+                                 referencedTableName="order_state"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 onUpdate="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="15302020-16" author="Tarfa">
+        <dropColumn tableName="order_details"
+                    columnName="price"/>
+    </changeSet>
+
+    <changeSet id="15302020-17" author="Tarfa">
+        <dropColumn tableName="order_state"
+                    columnName="order_id"/>
+    </changeSet>
+
+    <changeSet id="15302020-18" author="Tarfa">
+        <addForeignKeyConstraint baseTableName="order_details"
+                                 baseColumnNames="order_id_fk"
+                                 constraintName="order_details_order_cnst"
+                                 referencedTableName="order"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

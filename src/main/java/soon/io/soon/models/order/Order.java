@@ -8,8 +8,10 @@ import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.orderStatus.OrderState;
 import soon.io.soon.models.orderStatus.OrderStatus;
 import soon.io.soon.models.restaurant.Restaurant;
+import soon.io.soon.models.user.User;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -29,22 +31,24 @@ public class Order {
     @Column(nullable = false, updatable = false)
     private Long id;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
+    private LocalDateTime createAt;
 
-    @OneToOne()
-    private Client client;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @OneToOne()
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     private OrderState orderState;
 
-    @OneToOne()
-    private Billing billing;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bill_id")
+    private Billing bill;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     @ElementCollection(targetClass = OrderDetails.class)
     private Set<OrderDetails> orderDetails;
 
