@@ -23,15 +23,8 @@ public class Billing {
     @Column(nullable = false, updatable = false)
     private Long id;
 
-    @OneToOne
-    private Order order;
-
     private double total;
 
     private double tax;
-
-
-    private LocalDateTime currentTime;
-
 
 }
