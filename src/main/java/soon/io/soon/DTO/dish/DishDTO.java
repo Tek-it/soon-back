@@ -17,7 +17,6 @@ public class DishDTO {
     private double basePrice;
     private int preparationTime;
     private Long categoryId;
-    private Set<String> dishImages;
     private boolean available;
     private String avatar;
 }

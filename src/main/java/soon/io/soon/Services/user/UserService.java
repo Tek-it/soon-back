@@ -52,6 +52,12 @@ public class UserService {
                 .map(userMapper::toDTO)
                 .orElseThrow(() -> new UserNotFoundException("error.user.notfound"));
     }
+
+    public UserDTO findUserById(Long id) {
+        return userRepository.findById(id)
+                .map(userMapper::toDTO)
+                .orElseThrow(() -> new UserNotFoundException("error.user.notfoud"));
+    }
 }
 
 

@@ -3,7 +3,6 @@ package soon.io.soon.models.dish;
 import lombok.*;
 
 import soon.io.soon.models.category.Category;
-import soon.io.soon.models.order.Order;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.rating.Rating;
 
@@ -48,10 +47,6 @@ public class Dish {
 
     @Column(name = "avg_delivery")
     private int avgDelivery;
-
-    @Column(name = "dish_images")
-    @ElementCollection(targetClass = String.class)
-    private Set<String> dishImages;
 
     private String avatar;
 

@@ -1,7 +1,6 @@
 package soon.io.soon.models.orderStatus;
 
 import lombok.*;
-import soon.io.soon.models.order.Order;
 
 import javax.persistence.*;
 
@@ -25,8 +24,5 @@ public class OrderState {
     private boolean rejected = false;
     private boolean delivered = false;
     private boolean processing = false;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    private Order order;
 
 }

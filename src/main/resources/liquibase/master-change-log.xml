@@ -11,4 +11,5 @@
     <include file="/change-log-add-on-delete-for-dish.xml" relativeToChangelogFile="true"/>
     <include file="/changelog-update-column-dish-image.xml" relativeToChangelogFile="true"/>
     <include file="/changelog-delete-billing.xml" relativeToChangelogFile="true"/>
+    <include file="/change-log-add-constrains-order-details.xml" relativeToChangelogFile="true"/>
  </databaseChangeLog>
