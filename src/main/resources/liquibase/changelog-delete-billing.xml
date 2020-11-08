@@ -60,7 +60,7 @@
 
 
     <changeSet id="15302020-11" author="Tarfa">
-        <createTable tableName="order">
+        <createTable tableName="orders">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
@@ -79,7 +79,7 @@
     </changeSet>
 
     <changeSet id="15302020-12" author="Tarfa">
-        <addForeignKeyConstraint baseTableName="order"
+        <addForeignKeyConstraint baseTableName="orders"
                                  baseColumnNames="user_id"
                                  constraintName="order_user_cst"
                                  referencedTableName="user"
@@ -88,7 +88,7 @@
     </changeSet>
 
     <changeSet id="15302020-13" author="Tarfa">
-        <addForeignKeyConstraint baseTableName="order"
+        <addForeignKeyConstraint baseTableName="orders"
                                  baseColumnNames="restaurant_id"
                                  constraintName="order_restaurant_cst"
                                  referencedTableName="restaurant"
@@ -98,7 +98,7 @@
     </changeSet>
 
     <changeSet id="15302020-14" author="Tarfa">
-        <addForeignKeyConstraint baseTableName="order"
+        <addForeignKeyConstraint baseTableName="orders"
                                  baseColumnNames="bill_id"
                                  constraintName="order_bill_cst"
                                  referencedTableName="bill"
@@ -108,7 +108,7 @@
     </changeSet>
 
     <changeSet id="15302020-15" author="Tarfa">
-        <addForeignKeyConstraint baseTableName="order"
+        <addForeignKeyConstraint baseTableName="orders"
                                  baseColumnNames="order_state"
                                  constraintName="order_order_state_cst"
                                  referencedTableName="order_state"
@@ -127,11 +127,4 @@
                     columnName="order_id"/>
     </changeSet>
 
-    <changeSet id="15302020-18" author="Tarfa">
-        <addForeignKeyConstraint baseTableName="order_details"
-                                 baseColumnNames="order_id_fk"
-                                 constraintName="order_details_order_cnst"
-                                 referencedTableName="order"
-                                 referencedColumnNames="id"/>
-    </changeSet>
 </databaseChangeLog>

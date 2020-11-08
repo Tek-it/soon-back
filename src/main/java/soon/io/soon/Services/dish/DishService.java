@@ -104,5 +104,11 @@ public class DishService {
     public void deleteDish(Long id) {
         dishRepository.deleteById(id);
     }
+
+    public DishDTO getDishById(Long id) {
+        return dishRepository.findById(id)
+                .map(dishMapper::toDTO)
+                .orElseThrow(() -> new DishException("error.dish.notfound"));
+    }
 }
 

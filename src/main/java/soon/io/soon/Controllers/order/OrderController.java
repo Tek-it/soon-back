@@ -1,27 +1,37 @@
 package soon.io.soon.Controllers.order;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import soon.io.soon.DTO.order.OrderDTO;
+import soon.io.soon.Services.order.OrderService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/order")
+@AllArgsConstructor
 public class OrderController {
 
-    public void placeOrder() {
+    private final OrderService orderService;
+
+    @PostMapping
+    public ResponseEntity<OrderDTO> placeOrder(@RequestBody OrderDTO orderDTO) {
+        OrderDTO result = orderService.createOrder(orderDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    public void updateOrder() {
+    @GetMapping("/current-restaurant")
+    public ResponseEntity<List<OrderDTO>> getCurrentRestaurantOrders() {
+        List<OrderDTO> result = orderService.getOrdersByRestaurantId();
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    public void getCurrentRestaurantOrders() {
-
+    @GetMapping("/current-restaurant/{id}")
+    public ResponseEntity<OrderDTO> getCurrentRestaurantOrderById(@PathVariable("id") long id) {
+        OrderDTO result = orderService.getOrderById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    public void getCurrentUserOrders() {
-
-    }
-
-    public void deleteOrder() {
-
-    }
 }

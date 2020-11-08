@@ -8,7 +8,6 @@ import soon.io.soon.models.order.Order;
 import javax.persistence.*;
 
 
-@ToString
 @Builder
 @Setter
 @Getter
@@ -33,8 +32,5 @@ public class OrderDetails {
 
     @Column(name = "quantity")
     private double quantity;
-
-    @Column(name = "price")
-    private double price;
 
 }

@@ -1,7 +1,5 @@
 package soon.io.soon.DTO.dish;
 
-import java.util.HashSet;
-import java.util.Set;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import soon.io.soon.models.category.Category;
@@ -9,7 +7,7 @@ import soon.io.soon.models.dish.Dish;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-11-07T19:04:19+0100",
+    date = "2020-11-08T18:31:14+0100",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 15 (Oracle Corporation)"
 )
 @Component
@@ -29,10 +27,6 @@ public class DishMapperImpl extends DishMapper {
         dish.setDescription( dishDTO.getDescription() );
         dish.setBasePrice( dishDTO.getBasePrice() );
         dish.setPreparationTime( dishDTO.getPreparationTime() );
-        Set<String> set = dishDTO.getDishImages();
-        if ( set != null ) {
-            dish.setDishImages( new HashSet<String>( set ) );
-        }
         dish.setAvatar( dishDTO.getAvatar() );
         dish.setAvailable( dishDTO.isAvailable() );
 
@@ -55,10 +49,6 @@ public class DishMapperImpl extends DishMapper {
         dishDTO.setDescription( dish.getDescription() );
         dishDTO.setBasePrice( dish.getBasePrice() );
         dishDTO.setPreparationTime( dish.getPreparationTime() );
-        Set<String> set = dish.getDishImages();
-        if ( set != null ) {
-            dishDTO.setDishImages( new HashSet<String>( set ) );
-        }
         dishDTO.setAvailable( dish.isAvailable() );
         dishDTO.setAvatar( dish.getAvatar() );
 

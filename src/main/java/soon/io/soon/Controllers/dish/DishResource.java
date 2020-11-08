@@ -44,5 +44,11 @@ public class DishResource {
         dishService.deleteDish(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
+    @GetMapping("/category/dish/{id}")
+    public ResponseEntity<DishDTO> getDishById(@PathVariable("id") Long id) {
+        DishDTO result = dishService.getDishById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 }
 

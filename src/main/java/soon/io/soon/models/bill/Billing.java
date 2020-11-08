@@ -2,10 +2,8 @@ package soon.io.soon.models.bill;
 
 
 import lombok.*;
-import soon.io.soon.models.order.Order;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 
 @ToString
@@ -15,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "billing")
+@Table(name = "bill")
 public class Billing {
 
     @Id
