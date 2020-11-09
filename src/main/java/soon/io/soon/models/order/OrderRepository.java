@@ -2,11 +2,12 @@ package soon.io.soon.models.order;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import soon.io.soon.models.orderStatus.OrderStatus;
 
-import java.util.Optional;
+import java.util.List;
 
 @Repository
-public interface OrderRepository extends CrudRepository<Order, String> {
+public interface OrderRepository extends CrudRepository<Order, Long> {
+
+    List<Order> findByRestaurantId(Long id);
 
 }

@@ -4,7 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -43,7 +42,6 @@ public class JwtProvider {
                 .getBody()
                 .getSubject();
     }
-
 
     public UserDetails loadUserByUsername(String username) {
         User user = userService.findUserByEmail(username)

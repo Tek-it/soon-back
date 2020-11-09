@@ -2,26 +2,22 @@ package soon.io.soon.models.order;
 
 import lombok.*;
 import soon.io.soon.models.bill.Billing;
-import soon.io.soon.models.client.Client;
-import soon.io.soon.models.dish.Dish;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.orderStatus.OrderState;
-import soon.io.soon.models.orderStatus.OrderStatus;
 import soon.io.soon.models.restaurant.Restaurant;
+import soon.io.soon.models.user.User;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 
-
-@ToString
-@Builder
 @Setter
 @Getter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -29,24 +25,26 @@ public class Order {
     @Column(nullable = false, updatable = false)
     private Long id;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
+    @JoinColumn(name = "create_at")
+    private LocalDateTime createAt;
 
-    @OneToOne()
-    private Client client;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @OneToOne()
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "order_state")
     private OrderState orderState;
 
-    @OneToOne()
-    private Billing billing;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "bill_id")
+    private Billing bill;
 
-    @OneToMany(mappedBy = "order")
-    @ElementCollection(targetClass = OrderDetails.class)
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private Set<OrderDetails> orderDetails;
-
 
 }
