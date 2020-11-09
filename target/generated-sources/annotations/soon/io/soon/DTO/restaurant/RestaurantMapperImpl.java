@@ -8,8 +8,8 @@ import soon.io.soon.models.restaurant.Restaurant;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-11-06T15:30:33+0100",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 15 (Oracle Corporation)"
+    date = "2020-11-09T10:51:06+0100",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 14.0.1 (Oracle Corporation)"
 )
 @Component
 public class RestaurantMapperImpl extends RestaurantMapper {
@@ -34,6 +34,7 @@ public class RestaurantMapperImpl extends RestaurantMapper {
         restaurant.setName( restaurantDTO.getName() );
         restaurant.setDescription( restaurantDTO.getDescription() );
         restaurant.setAddress( restaurantDTO.getAddress() );
+        restaurant.setAvailability( restaurantDTO.isAvailability() );
         restaurant.setOwner( userMapper.toModel( restaurantDTO.getOwner() ) );
 
         return restaurant;
@@ -50,6 +51,7 @@ public class RestaurantMapperImpl extends RestaurantMapper {
         restaurantDTO.setId( restaurant.getId() );
         restaurantDTO.setName( restaurant.getName() );
         restaurantDTO.setDescription( restaurant.getDescription() );
+        restaurantDTO.setAvailability( restaurant.isAvailability() );
         restaurantDTO.setOwner( userMapper.toDTO( restaurant.getOwner() ) );
         restaurantDTO.setCategories( toCategory( restaurant.getCategories() ) );
         restaurantDTO.setAddress( restaurant.getAddress() );
