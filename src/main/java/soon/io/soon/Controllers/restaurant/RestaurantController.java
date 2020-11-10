@@ -30,4 +30,12 @@ public class RestaurantController {
         return ResponseEntity.status(HttpStatus.OK).body(restaurant);
     }
 
+    @PutMapping
+    public ResponseEntity<RestaurantDTO> updateRestaurantAvailability(@RequestParam("availability") boolean availability) {
+        logger.info("RESOURCE::Request to get the current connected profile");
+        RestaurantDTO restaurant = restaurantService.updateRestaurantAvailability(availability);
+        return ResponseEntity.status(HttpStatus.OK).body(restaurant);
+    }
+
+
 }
