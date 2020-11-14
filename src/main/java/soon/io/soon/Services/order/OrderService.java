@@ -80,4 +80,34 @@ public class OrderService {
                 .map(orderMapper::toDTO)
                 .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
     }
+
+    public OrderDTO acceptOrderByRestaurant(Long id) {
+        return orderRepository.findById(id)
+                .map(this::setAccepted)
+                .map(orderRepository::save)
+                .map(orderMapper::toDTO)
+                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+    }
+
+    public OrderDTO onDeliveredByDriver(Long id) {
+        return orderRepository.findById(id)
+                .map(this::setDelivered)
+                .map(orderRepository::save)
+                .map(orderMapper::toDTO)
+                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+    }
+
+    @NotNull
+    private Order setAccepted(Order order) {
+        order.getOrderState().setAccepted(true);
+        order.getOrderState().setProcessing(true);
+        return order;
+    }
+
+    @NotNull
+    private Order setDelivered(Order order) {
+        order.getOrderState().setDelivered(true);
+        return order;
+    }
+
 }
