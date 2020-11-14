@@ -45,7 +45,7 @@ public class Restaurant {
     private Coordinate coordinate;
 
     @Column(name = "restaurant_availability")
-    private boolean available;
+    private boolean availability;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     private Set<Category> categories = new HashSet<>();
