@@ -34,4 +34,15 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PutMapping("/current-restaurant/{id}/accept")
+    public ResponseEntity<OrderDTO> acceptOrderByRestaurant(@PathVariable("id") Long id) {
+        OrderDTO result = orderService.acceptOrderByRestaurant(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PutMapping("/{id}/delivered")
+    public ResponseEntity<OrderDTO> orderDelivered(@PathVariable("id") Long id) {
+        OrderDTO result = orderService.onDeliveredByDriver(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 }
