@@ -4,7 +4,9 @@ import lombok.*;
 import soon.io.soon.models.bill.Billing;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.orderStatus.OrderState;
+import soon.io.soon.models.restaurant.Coordinate;
 import soon.io.soon.models.restaurant.Restaurant;
+import soon.io.soon.models.user.Address;
 import soon.io.soon.models.user.User;
 
 import javax.persistence.*;
@@ -47,4 +49,11 @@ public class Order {
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private Set<OrderDetails> orderDetails;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "coordinate_id")
+    private Coordinate coordinate;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "address_id")
+    private Address address;
 }

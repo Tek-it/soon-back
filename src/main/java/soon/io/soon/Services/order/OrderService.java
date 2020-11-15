@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import soon.io.soon.DTO.order.OrderDTO;
 import soon.io.soon.DTO.order.OrderMapper;
+import soon.io.soon.Services.external.geoLocation.GeoLocationResolver;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.OrderNotFoundException;
 import soon.io.soon.models.bill.Billing;
@@ -13,6 +14,7 @@ import soon.io.soon.models.order.OrderRepository;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.orderDetails.OrderDetailsRepository;
 import soon.io.soon.models.orderStatus.OrderState;
+import soon.io.soon.models.user.Address;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
@@ -28,6 +30,7 @@ public class OrderService {
     private final OrderDetailsRepository orderDetailsRepository;
     private final OrderMapper orderMapper;
     private final ProfileService profileService;
+    private final GeoLocationResolver geoLocationResolver;
 
 
     @Transactional
@@ -36,6 +39,7 @@ public class OrderService {
                 .map(orderMapper::toModel)
                 .map(this::setOrderState)
                 .map(this::createOrderBill)
+                .map(this::resolveAddress)
                 .map(orderRepository::save)
                 .map(this::setOrderDetails)
                 .map(orderRepository::save)
@@ -107,6 +111,13 @@ public class OrderService {
     @NotNull
     private Order setDelivered(Order order) {
         order.getOrderState().setDelivered(true);
+        return order;
+    }
+
+    @NotNull
+    private Order resolveAddress(Order order) {
+        Address address = geoLocationResolver.getAddress(order.getCoordinate());
+        order.setAddress(address);
         return order;
     }
 
