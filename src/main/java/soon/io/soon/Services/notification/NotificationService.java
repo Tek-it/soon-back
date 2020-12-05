@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 public class NotificationService {
     private final SimpMessageSendingOperations messagingTemplate;
 
+    // TODO: 05/12/2020 change this to support send to specific user
     public void sendNotification(String to, Object subject) {
-        messagingTemplate.convertAndSend("order-state", to, subject.toString());
+        messagingTemplate.convertAndSend("order-state", subject);
     }
 }

@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 import soon.io.soon.DTO.order.OrderDTO;
 import soon.io.soon.DTO.order.OrderMapper;
 import soon.io.soon.Services.external.geoLocation.GeoLocationResolver;
+import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.OrderNotFoundException;
 import soon.io.soon.models.bill.Billing;
+import soon.io.soon.models.notification.NotificationTypes;
 import soon.io.soon.models.order.Order;
 import soon.io.soon.models.order.OrderRepository;
 import soon.io.soon.models.orderDetails.OrderDetails;
@@ -23,6 +25,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static soon.io.soon.models.notification.NotificationTypes.*;
+
 @Service
 @AllArgsConstructor
 public class OrderService {
@@ -31,7 +35,7 @@ public class OrderService {
     private final OrderMapper orderMapper;
     private final ProfileService profileService;
     private final GeoLocationResolver geoLocationResolver;
-
+    private final NotificationService notificationService;
 
     @Transactional
     public OrderDTO createOrder(OrderDTO orderDTO) {
@@ -103,14 +107,18 @@ public class OrderService {
 
     @NotNull
     private Order setAccepted(Order order) {
+        // TODO: 05/12/2020 i can separate the processing case and add a qeues for the orders
         order.getOrderState().setAccepted(true);
         order.getOrderState().setProcessing(true);
+        notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_ACCEPTED);
+        notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_PREPARING);
         return order;
     }
 
     @NotNull
     private Order setDelivered(Order order) {
         order.getOrderState().setDelivered(true);
+        notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_DELIVERED);
         return order;
     }
 
