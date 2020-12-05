@@ -88,4 +88,11 @@ public class CategoryService {
     public byte[] downloadImage(String filename) {
         return fileStorage.download(filename, "soon-files");
     }
+
+    public List<CategoryDTO> getCategories() {
+        return categoryRepository.findAll()
+                .stream()
+                .map(categoryMapper::toDTO)
+                .collect(Collectors.toList());
+    }
 }

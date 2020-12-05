@@ -14,4 +14,6 @@ public interface CategoryRepository extends CrudRepository<Category, String> {
     void deleteById(Long id);
 
     Optional<Category> findById(Long id);
+
+    List<Category> findAll();
 }

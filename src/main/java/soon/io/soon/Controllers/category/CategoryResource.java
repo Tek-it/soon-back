@@ -48,4 +48,10 @@ public class CategoryResource {
     public byte[] getCategoryImage(@PathVariable("filename") String filename) {
         return categoryService.downloadImage(filename);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<CategoryDTO>> getCategories() {
+        List<CategoryDTO> result = categoryService.getCategories();
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 }
