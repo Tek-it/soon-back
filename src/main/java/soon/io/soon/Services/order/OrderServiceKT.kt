@@ -16,6 +16,4 @@ data class OrderServiceKT(val orderRepository: OrderRepository,
                           val notificationService: NotificationService,
                           val orderDetailsRepository: OrderDetailsRepository
 ) {
-
-
 }
