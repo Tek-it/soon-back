@@ -15,4 +15,6 @@ public interface CategoryRepository extends CrudRepository<Category, String> {
     Optional<Category> findById(Long id);
 
     @NotNull List<Category> findAll();
+
+    @NotNull List<Category> findByRestaurantId(Long id);
 }

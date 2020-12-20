@@ -34,7 +34,7 @@ public class CategoryResource {
 
     @GetMapping
     public ResponseEntity<List<CategoryDTO>> getCategories() {
-        List<CategoryDTO> result = categoryService.getCategories();
+        List<CategoryDTO> result = categoryService.getCategoriesCurrentRestaurant();
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 

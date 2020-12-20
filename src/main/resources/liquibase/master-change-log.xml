@@ -15,4 +15,5 @@
     <include file="changlog-add-address-to-order.xml" relativeToChangelogFile="true"/>
     <include file="changelong-delete-column-from-category.xml" relativeToChangelogFile="true"/>
     <include file="changelong-add-restaurant-id-to-dish.xml" relativeToChangelogFile="true"/>
+    <include file="changelogaddingcolumnrestauranttocategory.xml" relativeToChangelogFile="true"/>
  </databaseChangeLog>

@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.catergory.CategoryDTO;
 import soon.io.soon.DTO.catergory.CategoryMapper;
 import soon.io.soon.Services.filestorage.FileStorage;
+import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.Utils.Errorhandler.RestaurantNotFound;
 import soon.io.soon.models.category.Category;
@@ -27,6 +28,7 @@ public class CategoryService {
     private final CategoryMapper categoryMapper;
     private final RestaurantRepository restaurantRepository;
     private final FileStorage fileStorage;
+    private final ProfileService profileService;
 
     public CategoryDTO create(CategoryDTO categoryDTO, MultipartFile image) {
         try {
@@ -67,7 +69,9 @@ public class CategoryService {
     }
 
     private Category deleteImage(Category category) {
-        fileStorage.delete(category.getImage(), "soon-files");
+        if (category.getImage() != null && !category.getImage().equals("")) {
+            fileStorage.delete(category.getImage(), "soon-files");
+        }
         return category;
     }
 
@@ -77,6 +81,15 @@ public class CategoryService {
 
     public List<CategoryDTO> getCategories() {
         return categoryRepository.findAll()
+                .stream()
+                .map(categoryMapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<CategoryDTO> getCategoriesCurrentRestaurant() {
+        Long id = profileService.getCurrentConnectedRestaurant()
+                .getId();
+        return categoryRepository.findByRestaurantId(id)
                 .stream()
                 .map(categoryMapper::toDTO)
                 .collect(Collectors.toList());

@@ -18,7 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name = "category")
 public class Category {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
@@ -36,6 +36,10 @@ public class Category {
     @OneToMany(mappedBy = "category")
     @ElementCollection(targetClass = Dish.class)
     private Set<Dish> dishes;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 
     @Override
     public boolean equals(Object o) {
