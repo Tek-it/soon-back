@@ -5,6 +5,7 @@ import lombok.*;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.rating.Rating;
+import soon.io.soon.models.restaurant.Restaurant;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -44,6 +45,10 @@ public class Dish {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 
     @Column(name = "avg_delivery")
     private int avgDelivery;

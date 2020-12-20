@@ -2,7 +2,6 @@ package soon.io.soon.models.user;
 
 import lombok.*;
 import soon.io.soon.models.TicketType;
-import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.roles.Roles;
 
 import javax.persistence.*;

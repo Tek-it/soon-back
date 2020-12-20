@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet author="Tarfa Ali" id="11122021-1">
+        <dropForeignKeyConstraint baseTableName="category"
+                                  constraintName="FKp6n44aqw5n74qc4f1d6eyqgha"/>
+    </changeSet>
+
+    <changeSet id="11122021-2" author="Tarfa Ali">
+        <dropColumn tableName="category"
+                    columnName="restaurant_id"/>
+    </changeSet>
+
+</databaseChangeLog>

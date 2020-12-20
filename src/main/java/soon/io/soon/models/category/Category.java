@@ -18,8 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name = "category")
 public class Category {
-
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
@@ -34,9 +33,6 @@ public class Category {
     @Column(name = "image")
     private String image;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Restaurant restaurant;
-
     @OneToMany(mappedBy = "category")
     @ElementCollection(targetClass = Dish.class)
     private Set<Dish> dishes;
@@ -49,12 +45,11 @@ public class Category {
         return Objects.equals(id, category.id) &&
                 Objects.equals(name, category.name) &&
                 Objects.equals(image, category.image) &&
-                Objects.equals(restaurant, category.restaurant) &&
                 Objects.equals(dishes, category.dishes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, image, restaurant, dishes);
+        return Objects.hash(id, name, image, dishes);
     }
 }
