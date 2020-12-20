@@ -30,9 +30,6 @@ public class CategoryService {
 
     public CategoryDTO create(CategoryDTO categoryDTO, MultipartFile image) {
         try {
-            Restaurant restaurant = restaurantRepository
-                    .findById(categoryDTO.getRestaurant())
-                    .orElseThrow(() -> new RestaurantNotFound("error.error.notfound"));
             if (image != null) {
                 fileStorage.upload(image.getOriginalFilename(), "soon-files", image.getInputStream());
             }
@@ -40,7 +37,6 @@ public class CategoryService {
                     .map(categoryMapper::toModel)
                     .map(category -> {
                         category.setImage((image != null ? image.getOriginalFilename() : ""));
-                        category.setRestaurant(restaurant);
                         return category;
                     })
                     .map(categoryRepository::save)
@@ -52,16 +48,6 @@ public class CategoryService {
         }
     }
 
-    public List<CategoryDTO> getCategoriesByRestaurantId(Long id) {
-        // TODO: 20/10/2020 change this implementation to get by current connected restaurant
-        restaurantRepository.findById(id)
-                .orElseThrow(() -> new RestaurantNotFound("error.restaurant.notfound"));
-        return categoryRepository
-                .findAllByRestaurantId(id)
-                .stream()
-                .map(categoryMapper::toDTO)
-                .collect(Collectors.toList());
-    }
 
     public CategoryDTO update(CategoryDTO categoryDTO) {
         // TODO: 20/10/2020 update not work correctly

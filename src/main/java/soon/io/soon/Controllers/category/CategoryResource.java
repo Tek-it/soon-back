@@ -33,8 +33,8 @@ public class CategoryResource {
     }
 
     @GetMapping
-    public ResponseEntity<List<CategoryDTO>> getCategories(@RequestParam("restaurantId") Long restaurantId) {
-        List<CategoryDTO> result = categoryService.getCategoriesByRestaurantId(restaurantId);
+    public ResponseEntity<List<CategoryDTO>> getCategories() {
+        List<CategoryDTO> result = categoryService.getCategories();
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
@@ -47,11 +47,5 @@ public class CategoryResource {
     @GetMapping("/{filename}")
     public byte[] getCategoryImage(@PathVariable("filename") String filename) {
         return categoryService.downloadImage(filename);
-    }
-
-    @GetMapping("/all")
-    public ResponseEntity<List<CategoryDTO>> getCategories() {
-        List<CategoryDTO> result = categoryService.getCategories();
-        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 }

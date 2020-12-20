@@ -47,9 +47,6 @@ public class Restaurant {
     @Column(name = "restaurant_availability")
     private boolean availability;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
-    private Set<Category> categories = new HashSet<>();
-
     @OneToMany(fetch = FetchType.LAZY)
     private Set<RestaurantConfiguration> restaurantConfigurations = new HashSet<>();
 

@@ -13,4 +13,6 @@
     <include file="changelog-delete-billing.xml" relativeToChangelogFile="true"/>
     <include file="change-log-add-constrains-order-details.xml" relativeToChangelogFile="true"/>
     <include file="changlog-add-address-to-order.xml" relativeToChangelogFile="true"/>
+    <include file="changelong-delete-column-from-category.xml" relativeToChangelogFile="true"/>
+    <include file="changelong-add-restaurant-id-to-dish.xml" relativeToChangelogFile="true"/>
  </databaseChangeLog>

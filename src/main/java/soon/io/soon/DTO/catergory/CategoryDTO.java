@@ -14,6 +14,5 @@ public class CategoryDTO {
     private String name;
     private String description;
     private String image;
-    private Long restaurant;
     private Set<Long> dishes;
 }

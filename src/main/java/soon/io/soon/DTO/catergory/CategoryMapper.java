@@ -13,11 +13,9 @@ import java.util.stream.Collectors;
 public abstract class CategoryMapper {
 
     @Mapping(target = "dishes", ignore = true)
-    @Mapping(target = "restaurant.id", source = "restaurant")
     public abstract Category toModel(CategoryDTO categoryDTO);
 
     @Mapping(target = "dishes", expression = "java(getDishes(category))")
-    @Mapping(target = "restaurant", source = "restaurant.id")
     public abstract CategoryDTO toDTO(Category category);
 
     public Set<Long> getDishes(Category category) {
