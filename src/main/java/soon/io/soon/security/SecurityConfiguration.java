@@ -39,8 +39,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/**").permitAll()
                 .antMatchers(REGISTER_URL).permitAll()
-                .anyRequest()
-                .authenticated()
                 .and()
                 .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
