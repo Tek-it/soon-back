@@ -37,11 +37,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/**").permitAll()
-                .antMatchers(REGISTER_URL).permitAll()
+                .antMatchers(REGISTER_URL)
+                .permitAll()
+                .antMatchers("/api/auth/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider));
-                //.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider))
+                .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
     }
 
     @Override
@@ -56,9 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(this.userDetailService);
         return daoAuthenticationProvider;
     }
-
-    ;
-
+;
     @Bean
     PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
