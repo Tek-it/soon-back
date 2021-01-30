@@ -40,8 +40,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .antMatchers(REGISTER_URL).permitAll()
                 .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider))
-                .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider));
+                //.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
     }
 
     @Override
