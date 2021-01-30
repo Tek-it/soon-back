@@ -12,7 +12,7 @@ import soon.io.soon.models.user.User;
 @AllArgsConstructor
 public class SecurityUtils {
 
-    public static final String AUTH_URL = "/api/auth/*";
+    public static final String AUTH_URL = "/api/auth/login";
     public static final String REGISTER_URL = "/api/register";
     public static final String FORGOT_PASSWORD_URL = "/forgot-password/**";
     public static final String TOKE_PREFIX = "Bearer ";

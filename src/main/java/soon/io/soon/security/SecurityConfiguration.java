@@ -17,7 +17,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static soon.io.soon.security.SecurityUtils.*;
+import static soon.io.soon.security.SecurityUtils.FORGOT_PASSWORD_URL;
+import static soon.io.soon.security.SecurityUtils.REGISTER_URL;
 
 @Configuration
 @EnableWebSecurity
@@ -38,7 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(REGISTER_URL)
                 .permitAll()
-                .antMatchers("**")
+                .antMatchers("/api/auth/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
