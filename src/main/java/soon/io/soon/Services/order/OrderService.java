@@ -10,7 +10,6 @@ import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.OrderNotFoundException;
 import soon.io.soon.models.bill.Billing;
-import soon.io.soon.models.notification.NotificationTypes;
 import soon.io.soon.models.order.Order;
 import soon.io.soon.models.order.OrderRepository;
 import soon.io.soon.models.orderDetails.OrderDetails;

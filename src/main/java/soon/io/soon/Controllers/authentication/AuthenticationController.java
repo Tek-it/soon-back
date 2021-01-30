@@ -1,5 +1,6 @@
 package soon.io.soon.Controllers.authentication;
 
+import com.sendgrid.Response;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,12 @@ public class AuthenticationController {
     public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDTO) {
         UserDTO result = authenticationService.register(userDTO);
         return ResponseEntity.ok().body(result);
+    }
+
+    @PostMapping("/register-with-number-phone")
+    public ResponseEntity<Void> registerWithNumberPhone(@RequestParam("number-phone") String numberPhone) {
+        this.authenticationService.registerWithNumberPhone(numberPhone);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PostMapping("/logout")

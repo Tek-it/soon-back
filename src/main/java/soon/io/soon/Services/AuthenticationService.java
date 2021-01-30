@@ -88,4 +88,23 @@ public class AuthenticationService {
             throw new TokenException("error.token.not-valid");
         }
     }
+
+    public void registerWithNumberPhone(String numberPhone) {
+        // check if the number existe
+        if (userService.checkNumberPhoneDuplication(numberPhone)) {
+            throw new NumberPhoneDuplicationException("error.number-phone.duplication");
+        }
+        // first is to sent an sms to this person
+        // save the sms code with number phone in DB
+    }
+
+    public void registerWithNumberPhoneStep2(String numberPhone, String code) {
+        // verify the code if the same from DB using the numberPhone
+        // if same code return true else false
+    }
+
+    public void registerWithNumberPhoneStep3(UserDTO userDTO) {
+        // update the user and return it
+    }
+
 }

@@ -4,6 +4,8 @@ import lombok.*;
 import org.jetbrains.annotations.NotNull;
 import soon.io.soon.models.user.Address;
 
+import javax.validation.constraints.Email;
+
 
 @Builder
 @AllArgsConstructor
@@ -19,6 +21,7 @@ public class UserDTO {
 
     private String lastName;
 
+    @Email(message = "")
     private String email;
 
     private String password;
