@@ -39,15 +39,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(REGISTER_URL)
                 .permitAll()
-                .antMatchers("**")
-                .permitAll()
-                .antMatchers("/v2/api-docs",
-                        "/configuration/ui",
-                        "/swagger-resources/**",
-                        "/configuration/security",
-                        "/swagger-ui.html",
-                        "/webjars/**")
-                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -67,7 +58,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(this.userDetailService);
         return daoAuthenticationProvider;
     }
-;
+
+    ;
+
     @Bean
     PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
