@@ -2,6 +2,7 @@ package soon.io.soon.security;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -16,18 +17,20 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 
-import static soon.io.soon.security.SecurityUtils.FORGOT_PASSWORD_URL;
 import static soon.io.soon.security.SecurityUtils.REGISTER_URL;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 @RequiredArgsConstructor
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final UserDetailService userDetailService;
     private final JwtProvider jwtProvider;
+    @Autowired
+    private HandlerExceptionResolver handlerExceptionResolver;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -38,14 +41,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers(REGISTER_URL).permitAll()
+                .antMatchers("**").permitAll()
                 .antMatchers("/api/restaurant/create-account").permitAll()
                 .antMatchers("/api/auth/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider))
-                .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider));
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider,handlerExceptionResolver))
+                .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider, handlerExceptionResolver));
     }
 
     @Override
@@ -60,7 +64,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(this.userDetailService);
         return daoAuthenticationProvider;
     }
-;
+
+    ;
+
     @Bean
     PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();

@@ -2,13 +2,16 @@ package soon.io.soon.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import soon.io.soon.Utils.Errorhandler.CustomBadCredentialsException;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -23,16 +26,24 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     private final JwtProvider jwtProvider;
     private final AuthenticationManager authenticationManager;
+    private final HandlerExceptionResolver handlerExceptionResolver;
 
-    public JwtAuthenticationFilter(AuthenticationManager authenticationManager, JwtProvider jwtProvider) {
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager, JwtProvider jwtProvider, HandlerExceptionResolver handlerExceptionResolver) {
         this.jwtProvider = jwtProvider;
         this.authenticationManager = authenticationManager;
         setFilterProcessesUrl(AUTH_URL);
+        this.handlerExceptionResolver = handlerExceptionResolver;
     }
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getParameter("username"), request.getParameter("password")));
+        try {
+            return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getParameter("username"), request.getParameter("password")));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            handlerExceptionResolver.resolveException(request, response, null, new CustomBadCredentialsException("error.credentials.bad"));
+        }
+        return null;
     }
 
     @Override
@@ -49,7 +60,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             out.print(TOKE_PREFIX + token);
             out.flush();
         } catch (IOException ex) {
-            logger.error("can't print response token");
+            handlerExceptionResolver.resolveException(request, response, null, ex);
         }
     }
 

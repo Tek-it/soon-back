@@ -1,35 +1,45 @@
 package soon.io.soon.Utils.Errorhandler;
 
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import soon.io.soon.security.JWTAuthorizationFilter;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import java.util.Map;
 
-@ControllerAdvice
-@Order(Ordered.HIGHEST_PRECEDENCE)
+@RestControllerAdvice
 public class GlobalErrorhandler extends ResponseEntityExceptionHandler {
+    private final Logger logger = LoggerFactory.getLogger(JWTAuthorizationFilter.class);
 
-
-    @ExceptionHandler(value = {RestaurantExistException.class})
-    protected ResponseEntity<Object> handlerRestaurantExistException(RestaurantExistException e) {
-        return error(e);
+    @ExceptionHandler({ApplicationException.class})
+    public ResponseEntity<Object> handleGlobalException(ApplicationException e) {
+        Map<String, String> errorBuilder = new ErrorBuilder().addError(e.getMessage());
+        logger.error("Error happened: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorBuilder);
     }
 
-    @ExceptionHandler(value = {TokenException.class})
-    public ResponseEntity<Object> handleInvalidInputException(TokenException ex) {
-        return error(ex);
+    @ExceptionHandler({UserNotFoundException.class})
+    public ResponseEntity<Object> handleUserNotFound(UserNotFoundException e) {
+        Map<String, String> errorBuilder = new ErrorBuilder().addError(e.getMessage());
+        logger.error("Error happened: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorBuilder);
     }
 
-    private ResponseEntity<Object> error(Exception e) {
-        ErrorBuilder response = ErrorBuilder.builder()
-                .error(e.getMessage())
-                .status(BAD_REQUEST.value())
-                .build();
-        return ResponseEntity.status(BAD_REQUEST).body(response);
+    @ExceptionHandler({CustomBadCredentialsException.class})
+    public ResponseEntity<Object> handleBadCredentials(CustomBadCredentialsException e) {
+        Map<String, String> errorBuilder = new ErrorBuilder().addError(e.getMessage());
+        logger.error("Error happened: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorBuilder);
+    }
+
+    @ExceptionHandler({EmailDuplicationException.class})
+    public ResponseEntity<Object> handleBadCredentials(EmailDuplicationException e) {
+        Map<String, String> errorBuilder = new ErrorBuilder().addError(e.getMessage());
+        logger.error("Error happened: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorBuilder);
     }
 }

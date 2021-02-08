@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import soon.io.soon.Services.user.UserService;
+import soon.io.soon.Utils.Errorhandler.UserNotFoundException;
 import soon.io.soon.models.roles.RoleContext;
 import soon.io.soon.models.roles.Roles;
 import soon.io.soon.models.user.User;
@@ -23,7 +24,7 @@ public class UserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userService.findUserByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("error.user.not-found"));
+                .orElseThrow(() -> new RuntimeException("error.user.not-found"));
         List<SimpleGrantedAuthority> roles = user.getRoles()
                 .stream()
                 .map(Roles::getRoleContext)
@@ -36,6 +37,6 @@ public class UserDetailService implements UserDetailsService {
 
     public User getUser(String username) {
         return userService.findUserByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("error.user.not-found"));
+                .orElseThrow(() -> new UserNotFoundException("error.user.not-found"));
     }
 }

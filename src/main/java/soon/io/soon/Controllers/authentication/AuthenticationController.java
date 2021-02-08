@@ -1,6 +1,5 @@
 package soon.io.soon.Controllers.authentication;
 
-import com.sendgrid.Response;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
