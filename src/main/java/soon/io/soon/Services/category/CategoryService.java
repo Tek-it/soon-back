@@ -1,21 +1,21 @@
 package soon.io.soon.Services.category;
 
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.catergory.CategoryDTO;
 import soon.io.soon.DTO.catergory.CategoryMapper;
 import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Services.profile.ProfileService;
+import soon.io.soon.Utils.Errorhandler.CategoryNotFoundExeption;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
-import soon.io.soon.Utils.Errorhandler.RestaurantNotFound;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
-import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantRepository;
 
 import javax.transaction.Transactional;
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CategoryService {
 
+    Logger logger = LoggerFactory.getLogger(CategoryService.class);
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
     private final RestaurantRepository restaurantRepository;
@@ -31,33 +32,45 @@ public class CategoryService {
     private final ProfileService profileService;
 
     public CategoryDTO create(CategoryDTO categoryDTO, MultipartFile image) {
+        uploadImage(image);
+        return Optional.of(categoryDTO)
+                .map(categoryMapper::toModel)
+                .map(category -> {
+                    if (image != null && !image.isEmpty()) {
+                        category.setImage(image.getOriginalFilename());
+                    } else {
+                        category.setImage("");
+                    }
+                    return category;
+                })
+                .map(categoryRepository::save)
+                .map(categoryMapper::toDTO)
+                .orElse(null);
+    }
+
+    public CategoryDTO update(CategoryDTO categoryDTO, MultipartFile image) {
+        uploadImage(image);
+        return categoryRepository.findById(categoryDTO.getId())
+                .map(category -> {
+                    if (image != null && !image.isEmpty()) {
+                        category.setImage(image.getOriginalFilename());
+                    }
+                    category.setName(categoryDTO.getName());
+                    category.setDescription(categoryDTO.getDescription());
+                    return category;
+                }).map(categoryRepository::save)
+                .map(categoryMapper::toDTO)
+                .orElseThrow(() -> new CategoryNotFoundExeption("error.category.notfound"));
+    }
+
+    private void uploadImage(MultipartFile image) {
         try {
             if (image != null) {
                 fileStorage.upload(image.getOriginalFilename(), "soon-files", image.getInputStream());
             }
-            return Optional.of(categoryDTO)
-                    .map(categoryMapper::toModel)
-                    .map(category -> {
-                        category.setImage((image != null ? image.getOriginalFilename() : ""));
-                        return category;
-                    })
-                    .map(categoryRepository::save)
-                    .map(categoryMapper::toDTO)
-                    .orElse(null);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             throw new FileStorageException("error.file.upload");
         }
-    }
-
-
-    public CategoryDTO update(CategoryDTO categoryDTO) {
-        // TODO: 20/10/2020 update not work correctly
-        return Optional.of(categoryDTO)
-                .map(categoryMapper::toModel)
-                .map(categoryRepository::save)
-                .map(categoryMapper::toDTO)
-                .orElse(null);
     }
 
     @Transactional

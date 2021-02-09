@@ -27,8 +27,11 @@ public class CategoryResource {
     }
 
     @PutMapping
-    public ResponseEntity<CategoryDTO> updateCategory(@RequestBody CategoryDTO categoryDTO) {
-        CategoryDTO result = categoryService.update(categoryDTO);
+    public ResponseEntity<CategoryDTO> updateCategory(
+            @RequestPart(value = "category") CategoryDTO categoryDTO,
+            @RequestPart(value = "image", required = false) MultipartFile image
+    ) {
+        CategoryDTO result = categoryService.update(categoryDTO, image);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
