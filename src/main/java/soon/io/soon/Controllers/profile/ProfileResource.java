@@ -1,11 +1,11 @@
 package soon.io.soon.Controllers.profile;
 
 import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.models.user.User;
@@ -28,5 +28,16 @@ public class ProfileResource {
         return ResponseEntity.status(HttpStatus.OK).body(restaurantDTO);
     }
 
+    @PostMapping("/avatar")
+    public ResponseEntity<Void> uploadAvatar(@Param("avatar") MultipartFile avatar) {
+        profileService.uploadAvatar(avatar);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PutMapping("/avatar")
+    public ResponseEntity<Void> updateAvatar(@Param("avatar") MultipartFile avatar) {
+        profileService.uploadAvatar(avatar);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
 }

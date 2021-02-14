@@ -1,8 +1,6 @@
 package soon.io.soon.Services.category;
 
 import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.catergory.CategoryDTO;
@@ -24,7 +22,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CategoryService {
 
-    Logger logger = LoggerFactory.getLogger(CategoryService.class);
+
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
     private final RestaurantRepository restaurantRepository;
