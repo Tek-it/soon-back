@@ -43,7 +43,7 @@ public class CategoryService {
                 })
                 .map(categoryRepository::save)
                 .map(categoryMapper::toDTO)
-                .orElse(null);
+                .orElseThrow(() -> new CategoryNotFoundExeption("error.category.creation.problem"));
     }
 
     public CategoryDTO update(CategoryDTO categoryDTO, MultipartFile image) {
@@ -58,7 +58,7 @@ public class CategoryService {
                     return category;
                 }).map(categoryRepository::save)
                 .map(categoryMapper::toDTO)
-                .orElseThrow(() -> new CategoryNotFoundExeption("error.category.notfound"));
+                .orElseThrow(() -> new CategoryNotFoundExeption("error.category.not.created"));
     }
 
     private void uploadImage(MultipartFile image) {

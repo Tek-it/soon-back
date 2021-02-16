@@ -41,7 +41,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PutMapping("/{id}/delivered")
+    @PutMapping("/current-restaurant/{id}/delivered")
     public ResponseEntity<OrderDTO> orderDelivered(@PathVariable("id") Long id) {
         OrderDTO result = orderService.onDeliveredByDriver(id);
         return ResponseEntity.status(HttpStatus.OK).body(result);
