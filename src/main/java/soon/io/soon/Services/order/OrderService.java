@@ -8,7 +8,7 @@ import soon.io.soon.DTO.order.OrderMapper;
 import soon.io.soon.Services.external.geoLocation.GeoLocationResolver;
 import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
-import soon.io.soon.Utils.Errorhandler.OrderNotFoundException;
+import soon.io.soon.Utils.Errorhandler.OrderException;
 import soon.io.soon.models.bill.Billing;
 import soon.io.soon.models.order.Order;
 import soon.io.soon.models.order.OrderRepository;
@@ -47,7 +47,7 @@ public class OrderService {
                 .map(this::setOrderDetails)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElse(null);
+                .orElseThrow(() -> new OrderException("error.order.creation-problem"));
     }
 
     @NotNull
@@ -85,7 +85,7 @@ public class OrderService {
     public OrderDTO getOrderById(long id) {
         return orderRepository.findById(id)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
     public OrderDTO acceptOrderByRestaurant(Long id) {
@@ -93,7 +93,7 @@ public class OrderService {
                 .map(this::setAccepted)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
     public OrderDTO onDeliveredByDriver(Long id) {
@@ -101,7 +101,7 @@ public class OrderService {
                 .map(this::setDelivered)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
     @NotNull

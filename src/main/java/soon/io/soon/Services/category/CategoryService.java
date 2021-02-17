@@ -7,7 +7,7 @@ import soon.io.soon.DTO.catergory.CategoryDTO;
 import soon.io.soon.DTO.catergory.CategoryMapper;
 import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Services.profile.ProfileService;
-import soon.io.soon.Utils.Errorhandler.CategoryNotFoundExeption;
+import soon.io.soon.Utils.Errorhandler.CategoryExeption;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
@@ -43,7 +43,7 @@ public class CategoryService {
                 })
                 .map(categoryRepository::save)
                 .map(categoryMapper::toDTO)
-                .orElseThrow(() -> new CategoryNotFoundExeption("error.category.creation.problem"));
+                .orElseThrow(() -> new CategoryExeption("error.category.creation.problem"));
     }
 
     public CategoryDTO update(CategoryDTO categoryDTO, MultipartFile image) {
@@ -58,7 +58,7 @@ public class CategoryService {
                     return category;
                 }).map(categoryRepository::save)
                 .map(categoryMapper::toDTO)
-                .orElseThrow(() -> new CategoryNotFoundExeption("error.category.not.created"));
+                .orElseThrow(() -> new CategoryExeption("error.category.not.created"));
     }
 
     private void uploadImage(MultipartFile image) {

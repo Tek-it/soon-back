@@ -5,7 +5,7 @@ import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.Services.profile.ProfileService;
-import soon.io.soon.Utils.Errorhandler.RestaurantNotFound;
+import soon.io.soon.Utils.Errorhandler.RestaurantException;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.dish.Dish;
 import soon.io.soon.models.restaurant.Restaurant;
@@ -45,6 +45,6 @@ public abstract class CategoryMapper {
         return Optional.of("")
                 .map(o -> profileService.getCurrentConnectedRestaurant())
                 .map(restaurantMapper::RestaurantDTOToRestaurant)
-                .orElseThrow(() -> new RestaurantNotFound("error.restaurant.not-connected"));
+                .orElseThrow(() -> new RestaurantException("error.restaurant.not-connected"));
     }
 }

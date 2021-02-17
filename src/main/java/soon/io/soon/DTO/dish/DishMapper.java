@@ -3,11 +3,10 @@ package soon.io.soon.DTO.dish;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.DishException;
-import soon.io.soon.Utils.Errorhandler.RestaurantNotFound;
+import soon.io.soon.Utils.Errorhandler.RestaurantException;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
 import soon.io.soon.models.dish.Dish;
@@ -45,6 +44,6 @@ public abstract class DishMapper {
         return Optional.of(1)
                 .map(aLong -> profileService.getCurrentConnectedRestaurant())
                 .map(restaurantMapper::RestaurantDTOToRestaurant)
-                .orElseThrow(() -> new RestaurantNotFound("error.restaurant.not-connected"));
+                .orElseThrow(() -> new RestaurantException("error.restaurant.not-connected"));
     }
 }
