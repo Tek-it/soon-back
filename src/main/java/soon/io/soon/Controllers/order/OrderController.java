@@ -9,6 +9,7 @@ import soon.io.soon.Services.order.OrderService;
 
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/order")
@@ -26,6 +27,12 @@ public class OrderController {
     @GetMapping("/current-restaurant")
     public ResponseEntity<List<OrderDTO>> getCurrentRestaurantOrders() {
         List<OrderDTO> result = orderService.getOrdersByRestaurantId();
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @GetMapping("/current-restaurant-orders")
+    public ResponseEntity<Map<String, Long>> getWeeklyOrders() {
+        Map<String, Long> result = orderService.getWeeklyOrdersByRestaurantId();
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
