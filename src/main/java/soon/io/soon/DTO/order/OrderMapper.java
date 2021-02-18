@@ -3,8 +3,8 @@ package soon.io.soon.DTO.order;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import soon.io.soon.Utils.Errorhandler.RestaurantNotFound;
-import soon.io.soon.Utils.Errorhandler.UserNotFoundException;
+import soon.io.soon.Utils.Errorhandler.RestaurantException;
+import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.models.order.Order;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.restaurant.Restaurant;
@@ -40,12 +40,12 @@ public abstract class OrderMapper {
 
     public User findUser(Long userId) {
         return userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("error.user.notfound"));
+                .orElseThrow(() -> new UserException("error.user.notfound"));
     }
 
     public Restaurant getRestaurant(long restaurantId) {
         return restaurantRepository.findById(restaurantId)
-                .orElseThrow(() -> new RestaurantNotFound("error.restaurant.notfound"));
+                .orElseThrow(() -> new RestaurantException("error.restaurant.notfound"));
     }
 
     public Set<OrderDetailsDTO> getListOrderDetailsDTO(Set<OrderDetails> detailsSet) {

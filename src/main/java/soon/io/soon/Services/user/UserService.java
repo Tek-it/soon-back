@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.Services.roles.RolesService;
-import soon.io.soon.Utils.Errorhandler.UserNotFoundException;
+import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.models.TicketType;
 import soon.io.soon.models.roles.RoleContext;
 import soon.io.soon.models.roles.Roles;
@@ -50,13 +50,13 @@ public class UserService {
                 })
                 .map(userRepository::save)
                 .map(userMapper::toDTO)
-                .orElseThrow(() -> new UserNotFoundException("error.user.notfound"));
+                .orElseThrow(() -> new UserException("error.user.notfound"));
     }
 
     public UserDTO findUserById(Long id) {
         return userRepository.findById(id)
                 .map(userMapper::toDTO)
-                .orElseThrow(() -> new UserNotFoundException("error.user.notfoud"));
+                .orElseThrow(() -> new UserException("error.user.notfoud"));
     }
 }
 

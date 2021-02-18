@@ -2,7 +2,6 @@ package soon.io.soon.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -11,7 +10,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import soon.io.soon.Utils.Errorhandler.CustomBadCredentialsException;
+import soon.io.soon.Utils.Errorhandler.CustomException;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -41,7 +40,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getParameter("username"), request.getParameter("password")));
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            handlerExceptionResolver.resolveException(request, response, null, new CustomBadCredentialsException("error.credentials.bad"));
+            handlerExceptionResolver.resolveException(request, response, null, new CustomException("error.credentials.bad"));
         }
         return null;
     }

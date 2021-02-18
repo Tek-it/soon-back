@@ -1,5 +1,6 @@
 package soon.io.soon.Services.order;
 
+import liquibase.pro.packaged.L;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
@@ -8,7 +9,7 @@ import soon.io.soon.DTO.order.OrderMapper;
 import soon.io.soon.Services.external.geoLocation.GeoLocationResolver;
 import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
-import soon.io.soon.Utils.Errorhandler.OrderNotFoundException;
+import soon.io.soon.Utils.Errorhandler.OrderException;
 import soon.io.soon.models.bill.Billing;
 import soon.io.soon.models.order.Order;
 import soon.io.soon.models.order.OrderRepository;
@@ -19,9 +20,9 @@ import soon.io.soon.models.user.Address;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static soon.io.soon.models.notification.NotificationTypes.*;
@@ -47,7 +48,7 @@ public class OrderService {
                 .map(this::setOrderDetails)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElse(null);
+                .orElseThrow(() -> new OrderException("error.order.creation-problem"));
     }
 
     @NotNull
@@ -74,6 +75,8 @@ public class OrderService {
         return order;
     }
 
+
+
     public List<OrderDTO> getOrdersByRestaurantId() {
         Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
         return orderRepository.findByRestaurantId(restaurantId)
@@ -82,10 +85,22 @@ public class OrderService {
                 .collect(Collectors.toList());
     }
 
+    public Map<String, Long> getWeeklyOrdersByRestaurantId() {
+        Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
+
+        LocalDateTime firstOfWeek = LocalDateTime.now().with(ChronoField.DAY_OF_WEEK, 1).toLocalDate().atStartOfDay();
+        LocalDateTime today = LocalDateTime.now();
+
+        return orderRepository.findByCreateAtBetweenAndRestaurantIdOrderByCreateAt(firstOfWeek,today,restaurantId)
+                .map(this::countByForEachDate)
+                .orElseThrow(() -> new OrderException("error.order.count.problem"));
+    }
+
+
     public OrderDTO getOrderById(long id) {
         return orderRepository.findById(id)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
     public OrderDTO acceptOrderByRestaurant(Long id) {
@@ -93,7 +108,7 @@ public class OrderService {
                 .map(this::setAccepted)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
     public OrderDTO onDeliveredByDriver(Long id) {
@@ -101,7 +116,7 @@ public class OrderService {
                 .map(this::setDelivered)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderNotFoundException("error.order.notfound"));
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
     @NotNull
@@ -126,6 +141,16 @@ public class OrderService {
         Address address = geoLocationResolver.getAddress(order.getCoordinate());
         order.setAddress(address);
         return order;
+    }
+
+    private Map<String, Long> countByForEachDate(List<Order> orders) {
+
+        Map<String, Long> orderMap = new TreeMap<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        orders.forEach(e -> orderMap.merge(e.getCreateAt().format(formatter), 1L, Long::sum));
+
+
+        return orderMap;
     }
 
 }

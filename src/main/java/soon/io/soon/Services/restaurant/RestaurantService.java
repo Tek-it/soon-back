@@ -9,8 +9,8 @@ import soon.io.soon.Controllers.restaurant.RestaurantController;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.Services.profile.ProfileService;
-import soon.io.soon.Utils.Errorhandler.EmailDuplicationException;
-import soon.io.soon.Utils.Errorhandler.UserNotFoundException;
+import soon.io.soon.Utils.Errorhandler.EmailException;
+import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.models.TicketType;
 import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantRepository;
@@ -49,7 +49,7 @@ public class RestaurantService {
 
     private void checkUniqueEmail(String email) {
         if (userRepository.existsByEmail(email)) {
-            throw new EmailDuplicationException("error.email.duplication");
+            throw new EmailException("error.email.duplication");
         }
     }
 
@@ -57,7 +57,7 @@ public class RestaurantService {
         logger.debug("SERVICE::Request to find restaurant by User Id {}", userId);
         return restaurantRepository.findByOwnerId(userId)
                 .map(restaurantMapper::restaurantToDTO)
-                .orElseThrow(() -> new UserNotFoundException("error.user.notfound"));
+                .orElseThrow(() -> new UserException("error.user.notfound"));
     }
 
     public RestaurantDTO updateRestaurant(RestaurantDTO restaurantDTO) {
