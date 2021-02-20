@@ -100,6 +100,14 @@ public class GlobalErrorHandler extends ResponseEntityExceptionHandler {
     }
 
 
+    @ExceptionHandler({BillException.class})
+    public ResponseEntity<Object> handleBillException(BillException e) {
+        Map<String, String> errorBuilder = new ErrorBuilder().addError(e.getMessage());
+        logger.error("Error happened: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorBuilder);
+    }
+
+
 
 
 }
