@@ -40,8 +40,6 @@ public class OrderService {
     private final ProfileService profileService;
     private final GeoLocationResolver geoLocationResolver;
     private final NotificationService notificationService;
-    private final BillService billService;
-    private final BillMapper billMapper;
     private final BillRepository billRepository;
 
     @Transactional
