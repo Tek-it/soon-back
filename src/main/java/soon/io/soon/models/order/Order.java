@@ -1,7 +1,7 @@
 package soon.io.soon.models.order;
 
 import lombok.*;
-import soon.io.soon.models.bill.Billing;
+import soon.io.soon.models.bill.Bill;
 import soon.io.soon.models.orderDetails.OrderDetails;
 import soon.io.soon.models.orderStatus.OrderState;
 import soon.io.soon.models.restaurant.Coordinate;
@@ -44,7 +44,7 @@ public class Order {
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "bill_id")
-    private Billing bill;
+    private Bill bill;
 
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private Set<OrderDetails> orderDetails;

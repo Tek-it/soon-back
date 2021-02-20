@@ -1,16 +1,20 @@
 package soon.io.soon.Services.order;
 
-import liquibase.pro.packaged.L;
+import liquibase.pro.packaged.B;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
+import soon.io.soon.DTO.bill.BillDTO;
+import soon.io.soon.DTO.bill.BillMapper;
 import soon.io.soon.DTO.order.OrderDTO;
 import soon.io.soon.DTO.order.OrderMapper;
+import soon.io.soon.Services.bill.BillService;
 import soon.io.soon.Services.external.geoLocation.GeoLocationResolver;
 import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.OrderException;
-import soon.io.soon.models.bill.Billing;
+import soon.io.soon.models.bill.Bill;
+import soon.io.soon.models.bill.BillRepository;
 import soon.io.soon.models.order.Order;
 import soon.io.soon.models.order.OrderRepository;
 import soon.io.soon.models.orderDetails.OrderDetails;
@@ -36,6 +40,7 @@ public class OrderService {
     private final ProfileService profileService;
     private final GeoLocationResolver geoLocationResolver;
     private final NotificationService notificationService;
+    private final BillRepository billRepository;
 
     @Transactional
     public OrderDTO createOrder(OrderDTO orderDTO) {
@@ -48,7 +53,7 @@ public class OrderService {
                 .map(this::setOrderDetails)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
-                .orElseThrow(() -> new OrderException("error.order.creation-problem"));
+                .orElseThrow(() -> new OrderException("error.order.creation"));
     }
 
     @NotNull
@@ -64,7 +69,7 @@ public class OrderService {
 
     @NotNull
     private Order createOrderBill(Order order) {
-        order.setBill(Billing.builder().tax(0).total(0).build());
+        order.setBill(billRepository.save(Bill.builder().tax(0).total(0).build()));
         return order;
     }
 
@@ -93,7 +98,7 @@ public class OrderService {
 
         return orderRepository.findByCreateAtBetweenAndRestaurantIdOrderByCreateAt(firstOfWeek,today,restaurantId)
                 .map(this::countByForEachDate)
-                .orElseThrow(() -> new OrderException("error.order.count.problem"));
+                .orElseThrow(() -> new OrderException("error.order.count"));
     }
 
 
