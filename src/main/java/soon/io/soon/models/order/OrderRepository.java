@@ -12,5 +12,5 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
 
     List<Order> findByRestaurantId(Long id);
 
-    Optional<List<Order>> findByCreateAtBetweenAndRestaurantIdOrderByCreateAt(LocalDateTime firstDayOfWeek, LocalDateTime today, Long id);
+    List<Order> findByCreateAtBetweenAndRestaurantIdOrderByCreateAt(LocalDateTime firstDayOfWeek, LocalDateTime today, Long id);
 }
