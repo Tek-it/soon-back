@@ -1,6 +1,6 @@
 package soon.io.soon.Services.order;
 
-import liquibase.pro.packaged.B;
+
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,7 @@ import soon.io.soon.Services.external.geoLocation.GeoLocationResolver;
 import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.OrderException;
+
 import soon.io.soon.models.bill.Bill;
 import soon.io.soon.models.bill.BillRepository;
 import soon.io.soon.models.order.Order;
@@ -81,7 +82,6 @@ public class OrderService {
     }
 
 
-
     public List<OrderDTO> getOrdersByRestaurantId() {
         Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
         return orderRepository.findByRestaurantId(restaurantId)
@@ -91,14 +91,15 @@ public class OrderService {
     }
 
     public Map<String, Long> getWeeklyOrdersByRestaurantId() {
+        Map<String, Long> orderMap = new TreeMap<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
 
         LocalDateTime firstOfWeek = LocalDateTime.now().with(ChronoField.DAY_OF_WEEK, 1).toLocalDate().atStartOfDay();
         LocalDateTime today = LocalDateTime.now();
-
-        return orderRepository.findByCreateAtBetweenAndRestaurantIdOrderByCreateAt(firstOfWeek,today,restaurantId)
-                .map(this::countByForEachDate)
-                .orElseThrow(() -> new OrderException("error.order.count"));
+        orderRepository.findByCreateAtBetweenAndRestaurantIdOrderByCreateAt(firstOfWeek, today, restaurantId)
+                .forEach(e -> orderMap.merge(e.getCreateAt().format(formatter), 1L, Long::sum));
+        return orderMap;
     }
 
 
@@ -146,16 +147,6 @@ public class OrderService {
         Address address = geoLocationResolver.getAddress(order.getCoordinate());
         order.setAddress(address);
         return order;
-    }
-
-    private Map<String, Long> countByForEachDate(List<Order> orders) {
-
-        Map<String, Long> orderMap = new TreeMap<>();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        orders.forEach(e -> orderMap.merge(e.getCreateAt().format(formatter), 1L, Long::sum));
-
-
-        return orderMap;
     }
 
 }
