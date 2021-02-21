@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet author="Hocine KHEDDADJI" id="144921012021-1">
+        <addColumn tableName="bill">
+            <column name="created_at" type="DATE"/>
+            <column name="bill_reference" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+
+        <addForeignKeyConstraint baseTableName="bill"
+                                 baseColumnNames="order_id"
+                                 constraintName="order_bill_constraint"
+                                 referencedTableName="orders"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint baseTableName="bill"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="restaurant_bill_constraint"
+                                 referencedTableName="restaurant"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+
+    </changeSet>
+
+</databaseChangeLog>

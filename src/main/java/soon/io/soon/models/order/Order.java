@@ -56,4 +56,7 @@ public class Order {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
     private Address address;
+
+    @JoinColumn(name = "order_reference")
+    private String orderReference;
 }

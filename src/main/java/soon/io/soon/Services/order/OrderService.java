@@ -3,6 +3,8 @@ package soon.io.soon.Services.order;
 
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import soon.io.soon.DTO.bill.BillDTO;
 import soon.io.soon.DTO.bill.BillMapper;
@@ -14,6 +16,7 @@ import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.OrderException;
 
+import soon.io.soon.Utils.Utils;
 import soon.io.soon.models.bill.Bill;
 import soon.io.soon.models.bill.BillRepository;
 import soon.io.soon.models.order.Order;
@@ -35,6 +38,7 @@ import static soon.io.soon.models.notification.NotificationTypes.*;
 @Service
 @AllArgsConstructor
 public class OrderService {
+
     private final OrderRepository orderRepository;
     private final OrderDetailsRepository orderDetailsRepository;
     private final OrderMapper orderMapper;
@@ -42,16 +46,18 @@ public class OrderService {
     private final GeoLocationResolver geoLocationResolver;
     private final NotificationService notificationService;
     private final BillRepository billRepository;
+    private final Environment environment;
 
     @Transactional
     public OrderDTO createOrder(OrderDTO orderDTO) {
         return Optional.of(orderDTO)
                 .map(orderMapper::toModel)
                 .map(this::setOrderState)
-                .map(this::createOrderBill)
                 .map(this::resolveAddress)
+                .map(this::setOrderReference)
                 .map(orderRepository::save)
                 .map(this::setOrderDetails)
+                .map(this::createOrderBill)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
                 .orElseThrow(() -> new OrderException("error.order.creation"));
@@ -70,7 +76,13 @@ public class OrderService {
 
     @NotNull
     private Order createOrderBill(Order order) {
-        order.setBill(billRepository.save(Bill.builder().tax(0).total(0).build()));
+        order.setBill(billRepository.save(Bill.builder().
+                billReference(Utils.createReference(environment.getProperty("bill.prefix"))).
+                tax(0).
+                total(0).
+                createdAt(LocalDateTime.now()).
+                order(order).
+                restaurant(order.getRestaurant()).build()));
         return order;
     }
 
@@ -78,6 +90,12 @@ public class OrderService {
     private Order setOrderState(Order order) {
         order.setCreateAt(LocalDateTime.now());
         order.setOrderState(OrderState.builder().newOrder(true).build());
+        return order;
+    }
+
+    @NotNull
+    private Order setOrderReference(Order order) {
+        order.setOrderReference(Utils.createReference(environment.getProperty("order.prefix")));
         return order;
     }
 

@@ -25,4 +25,5 @@ public class OrderDTO {
     private Set<OrderDetailsDTO> orderDetails;
     private Coordinate coordinate;
     private Address address;
+    private String orderReference;
 }
