@@ -16,4 +16,6 @@
     <include file="changelong-delete-column-from-category.xml" relativeToChangelogFile="true"/>
     <include file="changelong-add-restaurant-id-to-dish.xml" relativeToChangelogFile="true"/>
     <include file="changelogaddingcolumnrestauranttocategory.xml" relativeToChangelogFile="true"/>
+    <include file="change-log-add-column-bill.xml" relativeToChangelogFile="true"/>
+    <include file="add-column-reference-order.xml" relativeToChangelogFile="true"/>
  </databaseChangeLog>
