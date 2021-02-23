@@ -4,9 +4,9 @@ import java.io.InputStream;
 
 public interface FileStorage {
 
-    public String upload(String fileName, String path, InputStream file);
+     String upload(String fileName, String path, InputStream file);
 
-    public byte[] download(String fileName, String path);
+     byte[] download(String fileName, String path);
 
-    public void delete(String fileName, String path);
+     void delete(String fileName, String path);
 }
