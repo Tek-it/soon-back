@@ -41,7 +41,7 @@ public class ProfileResource {
     }
 
     @GetMapping("/avatar/{filename}")
-    public byte[] getCategoryImage(@PathVariable("filename") String filename) {
+    public byte[] getRestaurantProfileImage(@PathVariable("filename") String filename) {
         return profileService.downloadImage(filename);
     }
 
