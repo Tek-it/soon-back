@@ -13,6 +13,7 @@ import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.DishException;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
+import soon.io.soon.Utils.Utils;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
 import soon.io.soon.models.dish.Dish;
@@ -44,7 +45,7 @@ public class DishService {
     }
 
     public DishDTO createDish(DishDTO dishDTO, MultipartFile image) {
-        saveDishImage(image);
+        Utils.saveFile(image, fileStorage);
         return Optional.of(dishDTO)
                 .map(dishMapper::toModel)
                 .map(dish -> setDishImage(image, dish))
@@ -59,17 +60,6 @@ public class DishService {
         return dish;
     }
 
-    private void saveDishImage(MultipartFile image) {
-        try {
-            if (image != null) {
-                fileStorage.upload(image.getOriginalFilename(),
-                        "soon-files", image.getInputStream());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new FileStorageException("error.file.upload");
-        }
-    }
 
     public DishDTO updateDish(DishDTO dishDTO, MultipartFile image) {
         return dishRepository.findById(dishDTO.getId())
@@ -81,7 +71,7 @@ public class DishService {
                     dish.setAvailable(dishDTO.isAvailable());
                     if (image != null) {
                         if (dish.getAvatar() == null || !dish.getAvatar().equals(image.getOriginalFilename())) {
-                            saveFile(image);
+                            Utils.saveFile(image, fileStorage);
                             dish.setAvatar(image.getOriginalFilename());
                         }
                     }
@@ -92,15 +82,6 @@ public class DishService {
                 .orElseThrow(() -> new DishException("error.dish.notfound"));
     }
 
-
-    private void saveFile(MultipartFile image) {
-        try {
-            fileStorage.upload(image.getOriginalFilename(), "soon-files", image.getInputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new FileStorageException("error.file.upload");
-        }
-    }
 
     @Transactional
     public void deleteDish(Long id) {

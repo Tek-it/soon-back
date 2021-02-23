@@ -9,6 +9,7 @@ import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.Utils.Errorhandler.RestaurantException;
 import soon.io.soon.Utils.Errorhandler.UserException;
+import soon.io.soon.Utils.Utils;
 import soon.io.soon.models.TicketType;
 import soon.io.soon.models.restaurant.RestaurantRepository;
 import soon.io.soon.models.user.User;
@@ -44,17 +45,18 @@ public class ProfileService {
 
     public void uploadAvatar(MultipartFile avatar) {
         RestaurantDTO currentConnectedRestaurant = getCurrentConnectedRestaurant();
-        try {
-            fileStorage.upload(avatar.getOriginalFilename(), "soon-files", avatar.getInputStream());
-            restaurantRepository.findById(currentConnectedRestaurant.getId())
-                    .map(restaurant -> {
-                        restaurant.setImageProfile(avatar.getOriginalFilename());
-                        return restaurant;
-                    })
-                    .map(restaurantRepository::save)
-                    .orElseThrow(() -> new RestaurantException("error.restaurant.notfound"));
-        } catch (IOException e) {
-            throw new FileStorageException("error.file.upload");
-        }
+        Utils.saveFile(avatar, fileStorage);
+        restaurantRepository.findById(currentConnectedRestaurant.getId())
+                .map(restaurant -> {
+                    restaurant.setImageProfile(avatar.getOriginalFilename());
+                    return restaurant;
+                })
+                .map(restaurantRepository::save)
+                .orElseThrow(() -> new RestaurantException("error.restaurant.notfound"));
+
+    }
+
+    public byte[] downloadImage(String filename) {
+        return fileStorage.download(filename, "soon-files");
     }
 }

@@ -40,4 +40,9 @@ public class ProfileResource {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @GetMapping("/avatar/{filename}")
+    public byte[] getRestaurantProfileImage(@PathVariable("filename") String filename) {
+        return profileService.downloadImage(filename);
+    }
+
 }

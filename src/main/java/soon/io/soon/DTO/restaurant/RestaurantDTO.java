@@ -16,7 +16,7 @@ public class RestaurantDTO {
     private Long id;
     private String name;
     private String description;
-    private String avatar;
+    private String imageProfile;
     private boolean availability;
     private UserDTO owner;
     private Set<Long> categories;
