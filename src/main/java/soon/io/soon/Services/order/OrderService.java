@@ -143,6 +143,14 @@ public class OrderService {
                 .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
+    public OrderDTO cancelOrderByRestaurant(Long id) {
+        return orderRepository.findById(id)
+                .map(this::setCanceled)
+                .map(orderRepository::save)
+                .map(orderMapper::toDTO)
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
+    }
+
     @NotNull
     private Order setAccepted(Order order) {
         // TODO: 05/12/2020 i can separate the processing case and add a qeues for the orders
@@ -150,6 +158,14 @@ public class OrderService {
         order.getOrderState().setProcessing(true);
         notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_ACCEPTED);
         notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_PREPARING);
+        return order;
+    }
+
+    @NotNull
+    private Order setCanceled(Order order) {
+        // TODO: 05/12/2020 i can separate the processing case and add a qeues for the orders
+        order.getOrderState().setRejected(true);
+        notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_REJECTED);
         return order;
     }
 
