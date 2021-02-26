@@ -21,4 +21,5 @@ public class RestaurantDTO {
     private UserDTO owner;
     private Set<Long> categories;
     private Address address;
+    private Set<Long> hashtagsIds;
 }

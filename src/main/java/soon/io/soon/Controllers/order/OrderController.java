@@ -53,4 +53,10 @@ public class OrderController {
         OrderDTO result = orderService.onDeliveredByDriver(id);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+
+    @PutMapping("/current-restaurant/{id}/cancel")
+    public ResponseEntity<OrderDTO> cancelOrderByRestaurant(@PathVariable("id") Long id) {
+        OrderDTO result = orderService.cancelOrderByRestaurant(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 }

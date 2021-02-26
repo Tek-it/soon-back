@@ -18,4 +18,5 @@
     <include file="changelogaddingcolumnrestauranttocategory.xml" relativeToChangelogFile="true"/>
     <include file="change-log-add-column-bill.xml" relativeToChangelogFile="true"/>
     <include file="add-column-reference-order.xml" relativeToChangelogFile="true"/>
+    <include file="create-hashtag-table-add-restaurant-variables.xml" relativeToChangelogFile="true"/>
  </databaseChangeLog>

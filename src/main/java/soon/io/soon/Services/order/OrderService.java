@@ -130,14 +130,25 @@ public class OrderService {
     public OrderDTO acceptOrderByRestaurant(Long id) {
         return orderRepository.findById(id)
                 .map(this::setAccepted)
+                .map(this::setNewOrder)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
                 .orElseThrow(() -> new OrderException("error.order.notfound"));
     }
 
+
     public OrderDTO onDeliveredByDriver(Long id) {
         return orderRepository.findById(id)
                 .map(this::setDelivered)
+                .map(orderRepository::save)
+                .map(orderMapper::toDTO)
+                .orElseThrow(() -> new OrderException("error.order.notfound"));
+    }
+
+    public OrderDTO cancelOrderByRestaurant(Long id) {
+        return orderRepository.findById(id)
+                .map(this::setCanceled)
+                .map(this::setNewOrder)
                 .map(orderRepository::save)
                 .map(orderMapper::toDTO)
                 .orElseThrow(() -> new OrderException("error.order.notfound"));
@@ -154,9 +165,23 @@ public class OrderService {
     }
 
     @NotNull
+    private Order setCanceled(Order order) {
+        // TODO: 05/12/2020 i can separate the processing case and add a qeues for the orders
+        order.getOrderState().setRejected(true);
+        notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_REJECTED);
+        return order;
+    }
+
+    @NotNull
     private Order setDelivered(Order order) {
         order.getOrderState().setDelivered(true);
         notificationService.sendNotification(order.getUser().getEmail(), NOTIFICATION_ORDER_DELIVERED);
+        return order;
+    }
+
+    @NotNull
+    private Order setNewOrder(Order order) {
+        order.getOrderState().setNewOrder(false);
         return order;
     }
 

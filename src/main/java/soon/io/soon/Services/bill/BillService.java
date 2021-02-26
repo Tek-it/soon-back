@@ -54,16 +54,14 @@ public class BillService {
                 .map(Bill::getId)
                 .ifPresent(billRepository::deleteById);
 
-
     }
 
     public List<BillDTO> getBillsByRestaurantId() {
         Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
         return billRepository.findByRestaurantId(restaurantId)
                 .stream()
+                .filter(bill-> !bill.getOrder().getOrderState().isNewOrder())
                 .map(billMapper::BillTOBillDTO)
                 .collect(Collectors.toList());
     }
-
-
-    }
+}
