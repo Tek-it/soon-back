@@ -1,6 +1,7 @@
 package soon.io.soon.Services.profile;
 
 import lombok.AllArgsConstructor;
+import org.checkerframework.checker.nullness.Opt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
@@ -11,6 +12,7 @@ import soon.io.soon.Utils.Errorhandler.RestaurantException;
 import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.Utils.Utils;
 import soon.io.soon.models.TicketType;
+import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantRepository;
 import soon.io.soon.models.user.User;
 import soon.io.soon.security.SecurityUtils;
@@ -41,6 +43,11 @@ public class ProfileService {
         return restaurantRepository.findByOwnerId(currentConnectedUser.getId())
                 .map(restaurantMapper::restaurantToDTO)
                 .orElseThrow(() -> new UserException("error.user.notfound"));
+    }
+
+    public Optional<Restaurant> getCurrentRestaurant() {
+        User currentConnectedUser = securityUtils.getCurrentConnectedUser();
+        return restaurantRepository.findByOwnerId(currentConnectedUser.getId());
     }
 
     public void uploadAvatar(MultipartFile avatar) {
