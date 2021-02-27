@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet author="Tarfa Ali" id="111114555-1">
+        <addColumn tableName="restaurant_configuration">
+            <column name="restaurant_id" type="BIGINT"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="TARFA Ali" author="145752757-2">
+        <addForeignKeyConstraint baseTableName="restaurant_configuration"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="restaurant_configuration_constraint"
+                                 referencedTableName="restaurant"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 />
+    </changeSet>
+</databaseChangeLog>

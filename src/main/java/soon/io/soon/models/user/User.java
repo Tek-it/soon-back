@@ -56,6 +56,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     private TicketType ticket;
 
+    @Column(name = "sms_code")
+    private String code;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

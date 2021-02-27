@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import soon.io.soon.Controllers.restaurant.RestaurantController;
+import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
+import soon.io.soon.DTO.restaurant.RestaurantConfMapper;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.Services.profile.ProfileService;
@@ -13,6 +15,8 @@ import soon.io.soon.Utils.Errorhandler.EmailException;
 import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.models.TicketType;
 import soon.io.soon.models.restaurant.Restaurant;
+import soon.io.soon.models.restaurant.RestaurantConfiguration;
+import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
 import soon.io.soon.models.restaurant.RestaurantRepository;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
@@ -28,6 +32,8 @@ public class RestaurantService {
     private final UserRepository userRepository;
     private final RestaurantMapper restaurantMapper;
     private final ProfileService profileService;
+    private final RestaurantConfigurationRepository restaurantConfigurationRepository;
+    private final RestaurantConfMapper restaurantConfMapper;
 
     public RestaurantDTO create(RestaurantDTO restaurantDTO) {
         logger.debug("SERVICE::Request to create restaurant {}", restaurantDTO);
@@ -69,7 +75,7 @@ public class RestaurantService {
                 .orElse(null);
     }
 
-    public RestaurantDTO updateRestaurantAvailability(boolean availability){
+    public RestaurantDTO updateRestaurantAvailability(boolean availability) {
         logger.debug("SERVICE::Request to create restaurant {}", availability);
         return Optional.of(profileService.getCurrentConnectedRestaurant())
                 .map(restaurantDTO -> changeAvailability(availability, restaurantDTO))
@@ -83,5 +89,27 @@ public class RestaurantService {
     private RestaurantDTO changeAvailability(boolean availability, RestaurantDTO restaurantDTO) {
         restaurantDTO.setAvailability(availability);
         return restaurantDTO;
+    }
+
+    // TODO: 22/02/2021 fix exception
+    public RestaurantConfDTO saveConfiguration(RestaurantConfDTO restaurantConfDTO) {
+        RestaurantConfiguration restaurantConfigurationModel = restaurantConfMapper.toModel(restaurantConfDTO);
+        if (!restaurantConfigurationRepository.existsByAttribute(restaurantConfDTO.getAttribute())) {
+            return profileService.getCurrentRestaurant()
+                    .map(restaurant -> {
+                        restaurantConfigurationModel.setRestaurant(restaurant);
+                        return restaurantConfigurationModel;
+                    })
+                    .map(restaurantConfigurationRepository::save)
+                    .map(restaurantConfMapper::toDto)
+                    .orElseThrow(() -> new RuntimeException("error"));
+        } else {
+            return restaurantConfigurationRepository
+                    .findByAttribute(restaurantConfDTO.getAttribute())
+                    .map(restaurantConfiguration -> {
+                        restaurantConfiguration.setValue(restaurantConfDTO.getValue());
+                        return restaurantConfMapper.toDto(restaurantConfigurationRepository.save(restaurantConfiguration));
+                    }).orElseThrow(() -> new RuntimeException(""));
+        }
     }
 }
