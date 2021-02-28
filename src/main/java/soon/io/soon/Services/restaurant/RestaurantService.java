@@ -17,7 +17,9 @@ import soon.io.soon.models.restaurant.RestaurantRepository;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -84,4 +86,14 @@ public class RestaurantService {
         restaurantDTO.setAvailability(availability);
         return restaurantDTO;
     }
+
+    public List<RestaurantDTO> getRestaurantsByHashtags(Long id){
+        logger.debug("SERVICE::Request to get restaurant by hashtags{}", id);
+        return restaurantRepository.findRestaurantsByHashtagsId(id)
+                .stream()
+                .map(restaurantMapper::restaurantToDTO)
+                .collect(Collectors.toList());
+
+    }
+
 }

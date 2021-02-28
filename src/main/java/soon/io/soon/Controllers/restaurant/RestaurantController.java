@@ -10,6 +10,8 @@ import soon.io.soon.Controllers.profile.ProfileResource;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.Services.restaurant.RestaurantService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/restaurant")
 @AllArgsConstructor
@@ -36,6 +38,14 @@ public class RestaurantController {
         RestaurantDTO restaurant = restaurantService.updateRestaurantAvailability(availability);
         return ResponseEntity.status(HttpStatus.OK).body(restaurant);
     }
+
+    @GetMapping("/hashtags/{id}")
+    public ResponseEntity<List<RestaurantDTO>> getRestaurantByHashtag(@PathVariable("id") Long id) {
+        logger.info("RESOURCE::Request to get the current connected profile");
+        List<RestaurantDTO> restaurantList = restaurantService.getRestaurantsByHashtags(id);
+        return ResponseEntity.status(HttpStatus.OK).body(restaurantList);
+    }
+
 
 
 }
