@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import soon.io.soon.Controllers.profile.ProfileResource;
+import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.Services.restaurant.RestaurantService;
 
@@ -47,5 +47,14 @@ public class RestaurantController {
     }
 
 
+    @PostMapping("/configuration")
+    public ResponseEntity<Void> createConfiguration(@RequestBody List<RestaurantConfDTO> restaurantConfDTO) {
+        restaurantService.saveConfiguration(restaurantConfDTO);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
+    @GetMapping("/configuration")
+    public ResponseEntity<List<RestaurantConfDTO>> getConfigurations() {
+        return ResponseEntity.status(HttpStatus.OK).body(restaurantService.getConfigurations());
+    }
 }

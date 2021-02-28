@@ -4,7 +4,6 @@ package soon.io.soon.models.restaurant;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @ToString
 @Builder
@@ -21,22 +20,12 @@ public class RestaurantConfiguration {
     @Column(nullable = false)
     private Long id;
 
-    private String key;
+    private String attribute;
 
     private String value;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RestaurantConfiguration that = (RestaurantConfiguration) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(key, that.key) &&
-                Objects.equals(value, that.value);
-    }
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, key, value);
-    }
 }

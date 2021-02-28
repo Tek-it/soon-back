@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.Services.mailservice.MailService;
+import soon.io.soon.Services.smsservice.SmsEntity;
+import soon.io.soon.Services.smsservice.SmsService;
 import soon.io.soon.Services.token.TokenService;
 import soon.io.soon.Services.user.UserService;
 import soon.io.soon.Utils.Errorhandler.EmailException;
@@ -16,11 +18,15 @@ import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.models.authentication.ResetPassword;
 import soon.io.soon.models.authentication.ResetPasswordModel;
 import soon.io.soon.models.authentication.ResetPasswordRepository;
+import soon.io.soon.models.restaurant.ConfigurationType;
+import soon.io.soon.models.restaurant.RestaurantConfiguration;
+import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
 import soon.io.soon.models.token.Token;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
 
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 @AllArgsConstructor
@@ -31,6 +37,8 @@ public class AuthenticationService {
     private final TokenService tokenService;
     private final ResetPasswordRepository resetPasswordRepository;
     private final MailService mailService;
+    private final SmsService smsService;
+    private final RestaurantConfigurationRepository restaurantConfigurationRepository;
 
     public UserDTO register(UserDTO userDTO) {
         if (checkEmailDuplication(userDTO)) {
@@ -91,17 +99,56 @@ public class AuthenticationService {
         if (userService.checkNumberPhoneDuplication(numberPhone)) {
             throw new NumberPhoneException("error.number-phone.duplication");
         }
-        // first is to sent an sms to this person
-        // save the sms code with number phone in DB
+
+        // todo this is the simple solution i need to apply another solution
+
+        // TODO: 23/02/2021 change the exception to another type
+        RestaurantConfiguration restaurantConfigurationToken = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_AUTH_TOKEN.name())
+                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+        RestaurantConfiguration restaurantConfigurationSid = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_ACCOUNT_SID.name())
+                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+        RestaurantConfiguration restaurantConfigurationSmsBody = restaurantConfigurationRepository.findByAttribute(ConfigurationType.SMS_BODY.name())
+                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+        RestaurantConfiguration restaurantConfigurationPhoneNumber = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_NUMBER_PHONE.name())
+                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+
+        Random rnd = new Random();
+        int code = 1000 + rnd.nextInt(9000);
+
+        // save the code into the data base
+        // todo don't forget the resend sms code method
+        User savedUser = userRepository.save(User.builder()
+                .code(String.valueOf(code))
+                .numberPhone(numberPhone)
+                .build());
+
+        // todo tyr catch in case of problem you need to delete the row
+        smsService.sendSMS(SmsEntity.builder()
+                .to("+" + numberPhone)
+                .from(restaurantConfigurationPhoneNumber.getValue())
+                .body(restaurantConfigurationSmsBody.getValue() + code)
+                .build(), restaurantConfigurationToken.getValue(), restaurantConfigurationSid.getValue());
     }
 
     public void registerWithNumberPhoneStep2(String numberPhone, String code) {
-        // verify the code if the same from DB using the numberPhone
-        // if same code return true else false
+        userRepository.findByNumberPhone(Long.valueOf(numberPhone))
+                .map(user -> {
+                    if (!code.equals(user.getCode())) {
+                        throw new RuntimeException("error.code.not-correct");
+                    }
+                    return user;
+                }).orElseThrow(() -> new UserException("error.user.notfound"));
     }
 
-    public void registerWithNumberPhoneStep3(UserDTO userDTO) {
-        // update the user and return it
+    public UserDTO registerWithNumberPhoneStep3(UserDTO userDTO) {
+        return userRepository.findByNumberPhone(Long.valueOf(userDTO.getNumberPhone()))
+                .map(user -> {
+                    userDTO.setId(user.getId());
+                    return userMapper.toModel(userDTO);
+                })
+                .map(userRepository::save)
+                .map(userMapper::toDTO)
+                .orElseThrow(() -> new UserException("error.user.notfound"));
     }
 
 }
