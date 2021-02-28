@@ -16,6 +16,9 @@
     <include file="changelong-delete-column-from-category.xml" relativeToChangelogFile="true"/>
     <include file="changelong-add-restaurant-id-to-dish.xml" relativeToChangelogFile="true"/>
     <include file="changelogaddingcolumnrestauranttocategory.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-add-restaurant-to-configuration.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-change-name-att.xml" relativeToChangelogFile="true"/>
+    <include file="chagelog-add-code-sms-to-user.xml" relativeToChangelogFile="true"/>
     <include file="change-log-add-column-bill.xml" relativeToChangelogFile="true"/>
     <include file="add-column-reference-order.xml" relativeToChangelogFile="true"/>
     <include file="create-hashtag-table-add-restaurant-variables.xml" relativeToChangelogFile="true"/>
