@@ -10,6 +10,8 @@ import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.Services.restaurant.RestaurantService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/restaurant")
 @AllArgsConstructor
@@ -38,9 +40,13 @@ public class RestaurantController {
     }
 
     @PostMapping("/configuration")
-    public ResponseEntity<RestaurantConfDTO> createConfiguration(@RequestBody RestaurantConfDTO restaurantConfDTO) {
-        RestaurantConfDTO result = restaurantService.saveConfiguration(restaurantConfDTO);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
+    public ResponseEntity<Void> createConfiguration(@RequestBody List<RestaurantConfDTO> restaurantConfDTO) {
+        restaurantService.saveConfiguration(restaurantConfDTO);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @GetMapping("/configuration")
+    public ResponseEntity<List<RestaurantConfDTO>> getConfigurations() {
+        return ResponseEntity.status(HttpStatus.OK).body(restaurantService.getConfigurations());
+    }
 }

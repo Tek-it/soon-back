@@ -21,7 +21,9 @@ import soon.io.soon.models.restaurant.RestaurantRepository;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -92,24 +94,33 @@ public class RestaurantService {
     }
 
     // TODO: 22/02/2021 fix exception
-    public RestaurantConfDTO saveConfiguration(RestaurantConfDTO restaurantConfDTO) {
-        RestaurantConfiguration restaurantConfigurationModel = restaurantConfMapper.toModel(restaurantConfDTO);
-        if (!restaurantConfigurationRepository.existsByAttribute(restaurantConfDTO.getAttribute())) {
-            return profileService.getCurrentRestaurant()
-                    .map(restaurant -> {
-                        restaurantConfigurationModel.setRestaurant(restaurant);
-                        return restaurantConfigurationModel;
-                    })
-                    .map(restaurantConfigurationRepository::save)
-                    .map(restaurantConfMapper::toDto)
-                    .orElseThrow(() -> new RuntimeException("error"));
-        } else {
-            return restaurantConfigurationRepository
-                    .findByAttribute(restaurantConfDTO.getAttribute())
-                    .map(restaurantConfiguration -> {
-                        restaurantConfiguration.setValue(restaurantConfDTO.getValue());
-                        return restaurantConfMapper.toDto(restaurantConfigurationRepository.save(restaurantConfiguration));
-                    }).orElseThrow(() -> new RuntimeException(""));
-        }
+    public void saveConfiguration(List<RestaurantConfDTO> restaurantConfDTOS) {
+        restaurantConfDTOS.forEach(restaurantConfDTO -> {
+            RestaurantConfiguration restaurantConfigurationModel = restaurantConfMapper.toModel(restaurantConfDTO);
+            if (!restaurantConfigurationRepository.existsByAttribute(restaurantConfDTO.getAttribute())) {
+                profileService.getCurrentRestaurant()
+                        .map(restaurant -> {
+                            restaurantConfigurationModel.setRestaurant(restaurant);
+                            return restaurantConfigurationModel;
+                        })
+                        .map(restaurantConfigurationRepository::save)
+                        .map(restaurantConfMapper::toDto)
+                        .orElseThrow(() -> new RuntimeException("error"));
+            } else {
+                restaurantConfigurationRepository
+                        .findByAttribute(restaurantConfDTO.getAttribute())
+                        .map(restaurantConfiguration -> {
+                            restaurantConfiguration.setValue(restaurantConfDTO.getValue());
+                            return restaurantConfMapper.toDto(restaurantConfigurationRepository.save(restaurantConfiguration));
+                        }).orElseThrow(() -> new RuntimeException(""));
+            }
+        });
+    }
+
+    public List<RestaurantConfDTO> getConfigurations() {
+        Long id = profileService.getCurrentConnectedRestaurant().getId();
+        return restaurantConfigurationRepository.findAllByRestaurantId(id)
+                .stream().map(restaurantConfMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
