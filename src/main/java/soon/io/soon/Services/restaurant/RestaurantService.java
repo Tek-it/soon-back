@@ -93,6 +93,16 @@ public class RestaurantService {
         return restaurantDTO;
     }
 
+    public List<RestaurantDTO> getRestaurantsByHashtags(Long id){
+        logger.debug("SERVICE::Request to get restaurant by hashtags{}", id);
+        return restaurantRepository.findRestaurantsByHashtagsId(id)
+                .stream()
+                .map(restaurantMapper::restaurantToDTO)
+                .collect(Collectors.toList());
+
+    }
+
+
     // TODO: 22/02/2021 fix exception
     public void saveConfiguration(List<RestaurantConfDTO> restaurantConfDTOS) {
         restaurantConfDTOS.forEach(restaurantConfDTO -> {

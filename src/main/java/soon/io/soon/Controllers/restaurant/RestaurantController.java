@@ -39,6 +39,14 @@ public class RestaurantController {
         return ResponseEntity.status(HttpStatus.OK).body(restaurant);
     }
 
+    @GetMapping("/hashtags/{id}")
+    public ResponseEntity<List<RestaurantDTO>> getRestaurantByHashtag(@PathVariable("id") Long id) {
+        logger.info("RESOURCE::Request to get the current connected profile");
+        List<RestaurantDTO> restaurantList = restaurantService.getRestaurantsByHashtags(id);
+        return ResponseEntity.status(HttpStatus.OK).body(restaurantList);
+    }
+
+
     @PostMapping("/configuration")
     public ResponseEntity<Void> createConfiguration(@RequestBody List<RestaurantConfDTO> restaurantConfDTO) {
         restaurantService.saveConfiguration(restaurantConfDTO);
