@@ -72,10 +72,6 @@ public class ProfileService {
                     .orElse(null);
     }
 
-    private User setTicket(User user) {
-        user.setTicket(TicketType.SIMPLE_USER);
-        return user;
-    }
 
     public Optional<Restaurant> getCurrentRestaurant() {
         User currentConnectedUser = securityUtils.getCurrentConnectedUser();
