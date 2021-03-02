@@ -105,4 +105,11 @@ public class CategoryService {
                 .map(categoryMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
+    public List<CategoryDTO> getCategoriesRestaurantId(Long id) {
+        return categoryRepository.findByRestaurantId(id)
+                .stream()
+                .map(categoryMapper::toDTO)
+                .collect(Collectors.toList());
+    }
 }
