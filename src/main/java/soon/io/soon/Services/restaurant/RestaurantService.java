@@ -3,7 +3,10 @@ package soon.io.soon.Services.restaurant;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
+import org.springframework.data.domain.Pageable;
+
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import soon.io.soon.Controllers.restaurant.RestaurantController;
 import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
@@ -18,11 +21,8 @@ import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
 import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
 import soon.io.soon.models.restaurant.RestaurantRepository;
-import soon.io.soon.models.roles.RoleContext;
-import soon.io.soon.models.roles.Roles;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -136,7 +136,11 @@ public class RestaurantService {
                 .collect(Collectors.toList());
     }
 
-    public List<RestaurantDTO> findRestaurantByDistance(Long longitude, Long latitude, Long distance) {
-        return null;
+    public List<RestaurantDTO> findRestaurantByDistance(double latitude, double longitude, double distance, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return restaurantRepository.findRestaurantAround(latitude, longitude, distance, pageable)
+                .stream()
+                .map(restaurantMapper::restaurantToDTO)
+                .collect(Collectors.toList());
     }
 }

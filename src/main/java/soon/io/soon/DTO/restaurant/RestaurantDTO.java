@@ -2,6 +2,7 @@ package soon.io.soon.DTO.restaurant;
 
 import lombok.*;
 import soon.io.soon.DTO.user.UserDTO;
+import soon.io.soon.models.restaurant.Coordinate;
 import soon.io.soon.models.user.Address;
 
 import java.util.Set;
@@ -21,4 +22,5 @@ public class RestaurantDTO {
     private Set<Long> categories;
     private Address address;
     private Set<Long> hashtagsIds;
+    private Coordinate coordinate;
 }

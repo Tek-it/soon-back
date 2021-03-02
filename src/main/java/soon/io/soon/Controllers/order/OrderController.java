@@ -59,4 +59,10 @@ public class OrderController {
         OrderDTO result = orderService.cancelOrderByRestaurant(id);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+
+    @GetMapping("/current-user/{id}")
+    public ResponseEntity<List<OrderDTO>> getCurrentUserOrders(@PathVariable("id") long id) {
+        List<OrderDTO> result = orderService.getOrdersByUserId(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 }
