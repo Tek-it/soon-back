@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
+import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.models.user.User;
 
@@ -19,6 +20,18 @@ public class ProfileResource {
     @GetMapping("/current-user")
     public ResponseEntity<User> getCurrentUser() {
         User currentConnectedUser = profileService.getCurrentConnectedUser();
+        return ResponseEntity.status(HttpStatus.OK).body(currentConnectedUser);
+    }
+
+    @GetMapping("/current-simple-user")
+    public ResponseEntity<UserDTO> getCurrentSimpleUser() {
+        UserDTO currentConnectedUser = profileService.getCurrentConnectedUserSimple();
+        return ResponseEntity.status(HttpStatus.OK).body(currentConnectedUser);
+    }
+
+    @PutMapping("/current-simple-user")
+    public ResponseEntity<UserDTO> updateCurrentSimpleUser(@RequestBody UserDTO userDTO) {
+        UserDTO currentConnectedUser = profileService.updateUser(userDTO);
         return ResponseEntity.status(HttpStatus.OK).body(currentConnectedUser);
     }
 

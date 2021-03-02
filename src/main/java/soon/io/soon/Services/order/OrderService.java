@@ -99,10 +99,16 @@ public class OrderService {
         return order;
     }
 
-
     public List<OrderDTO> getOrdersByRestaurantId() {
         Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
         return orderRepository.findByRestaurantId(restaurantId)
+                .stream()
+                .map(orderMapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<OrderDTO> getOrdersByUserId(Long id) {
+        return orderRepository.findByUserId(id)
                 .stream()
                 .map(orderMapper::toDTO)
                 .collect(Collectors.toList());

@@ -51,4 +51,10 @@ public class CategoryResource {
     public byte[] getCategoryImage(@PathVariable("filename") String filename) {
         return categoryService.downloadImage(filename);
     }
+
+    @GetMapping("/restaurant/{id}")
+    public ResponseEntity<List<CategoryDTO>> getCategoriesByRestaurantId(@PathVariable("id") Long id) {
+        List<CategoryDTO> result = categoryService.getCategoriesRestaurantId(id);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 }

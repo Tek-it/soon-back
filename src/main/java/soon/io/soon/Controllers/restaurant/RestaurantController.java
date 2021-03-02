@@ -58,11 +58,16 @@ public class RestaurantController {
         return ResponseEntity.status(HttpStatus.OK).body(restaurantService.getConfigurations());
     }
 
-    public ResponseEntity<List<RestaurantDTO>> findRestaurantByDistance(@RequestParam("distance") Long distance,
-                                                                        @RequestParam("longitude") Long longitude,
-                                                                        @RequestParam("latitude") Long latitude) {
+    @GetMapping("/restaurant-around")
+    public ResponseEntity<List<RestaurantDTO>> findRestaurantByDistance(@RequestParam("distance") double distance,
+                                                                        @RequestParam("longitude") double longitude,
+                                                                        @RequestParam("latitude") double latitude,
+                                                                        @RequestParam("page") int page,
+                                                                        @RequestParam("size") int size) {
         logger.info("RESOURCE::REQUEST TO GET LIST RESTAURANT BY DISTANCE {}", distance);
-        List<RestaurantDTO> result = restaurantService.findRestaurantByDistance(longitude, latitude, distance);
+        List<RestaurantDTO> result = restaurantService.findRestaurantByDistance(latitude, longitude,  distance, page, size);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+
+
 }
