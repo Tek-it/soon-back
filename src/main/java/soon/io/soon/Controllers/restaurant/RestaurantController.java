@@ -1,5 +1,6 @@
 package soon.io.soon.Controllers.restaurant;
 
+import com.sendgrid.Response;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,5 +57,13 @@ public class RestaurantController {
     @GetMapping("/configuration")
     public ResponseEntity<List<RestaurantConfDTO>> getConfigurations() {
         return ResponseEntity.status(HttpStatus.OK).body(restaurantService.getConfigurations());
+    }
+
+    public ResponseEntity<List<RestaurantDTO>> findRestaurantByDistance(@RequestParam("distance") Long distance,
+                                                                        @RequestParam("longitude") Long longitude,
+                                                                        @RequestParam("latitude") Long latitude) {
+        logger.info("RESOURCE::REQUEST TO GET LIST RESTAURANT BY DISTANCE {}", distance);
+        List<RestaurantDTO> result = restaurantService.findRestaurantByDistance(longitude, latitude, distance);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 }
