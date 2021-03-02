@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import soon.io.soon.DTO.authentication.RegisterNbrDTO;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.Services.AuthenticationService;
 import soon.io.soon.models.authentication.ResetPasswordModel;
@@ -22,8 +23,8 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register-with-number-phone")
-    public ResponseEntity<Void> registerWithNumberPhone(@RequestParam("number-phone") String numberPhone) {
-        this.authenticationService.registerWithNumberPhone(numberPhone);
+    public ResponseEntity<Void> registerWithNumberPhone(@RequestBody RegisterNbrDTO registerNbrDTO) {
+        this.authenticationService.registerWithNumberPhone(registerNbrDTO);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
