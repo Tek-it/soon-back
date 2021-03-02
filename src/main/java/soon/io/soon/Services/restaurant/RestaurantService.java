@@ -18,6 +18,8 @@ import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
 import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
 import soon.io.soon.models.restaurant.RestaurantRepository;
+import soon.io.soon.models.roles.RoleContext;
+import soon.io.soon.models.roles.Roles;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
 
@@ -132,5 +134,9 @@ public class RestaurantService {
         return restaurantConfigurationRepository.findAllByRestaurantId(id)
                 .stream().map(restaurantConfMapper::toDto)
                 .collect(Collectors.toList());
+    }
+
+    public List<RestaurantDTO> findRestaurantByDistance(Long longitude, Long latitude, Long distance) {
+        return null;
     }
 }
