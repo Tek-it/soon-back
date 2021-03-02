@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import soon.io.soon.DTO.authentication.RegisterNbrDTO;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.Services.mailservice.MailService;
@@ -94,61 +95,63 @@ public class AuthenticationService {
         }
     }
 
-    public void registerWithNumberPhone(String numberPhone) {
-        // check if the number existe
-        if (userService.checkNumberPhoneDuplication(numberPhone)) {
-            throw new NumberPhoneException("error.number-phone.duplication");
+    public void registerWithNumberPhone(RegisterNbrDTO registerNbrDTO) {
+
+        if (registerNbrDTO.getStep().equalsIgnoreCase("STEP_1")) {
+            if (userService.checkNumberPhoneDuplication(registerNbrDTO.getNumberPhone())) {
+                throw new NumberPhoneException("error.number-phone.duplication");
+            }
+            // todo this is the simple solution i need to apply another solution
+
+            // TODO: 23/02/2021 change the exception to another type
+            RestaurantConfiguration restaurantConfigurationToken = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_AUTH_TOKEN.name())
+                    .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+            RestaurantConfiguration restaurantConfigurationSid = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_ACCOUNT_SID.name())
+                    .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+            RestaurantConfiguration restaurantConfigurationSmsBody = restaurantConfigurationRepository.findByAttribute(ConfigurationType.SMS_BODY.name())
+                    .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+            RestaurantConfiguration restaurantConfigurationPhoneNumber = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_NUMBER_PHONE.name())
+                    .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+
+            Random rnd = new Random();
+            int SmsCode = 1000 + rnd.nextInt(9000);
+
+            // save the code into the data base
+            // todo don't forget the resend sms code method
+            User savedUser = userRepository.save(User.builder()
+                    .code(String.valueOf(SmsCode))
+                    .numberPhone(registerNbrDTO.getNumberPhone())
+                    .build());
+
+            // todo tyr catch in case of problem you need to delete the row
+            smsService.sendSMS(SmsEntity.builder()
+                    .to("+" + registerNbrDTO.getNumberPhone().trim())
+                    .from(restaurantConfigurationPhoneNumber.getValue())
+                    .body(restaurantConfigurationSmsBody.getValue() + SmsCode)
+                    .build(), restaurantConfigurationToken.getValue(), restaurantConfigurationSid.getValue());
         }
 
-        // todo this is the simple solution i need to apply another solution
 
-        // TODO: 23/02/2021 change the exception to another type
-        RestaurantConfiguration restaurantConfigurationToken = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_AUTH_TOKEN.name())
-                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
-        RestaurantConfiguration restaurantConfigurationSid = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_ACCOUNT_SID.name())
-                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
-        RestaurantConfiguration restaurantConfigurationSmsBody = restaurantConfigurationRepository.findByAttribute(ConfigurationType.SMS_BODY.name())
-                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
-        RestaurantConfiguration restaurantConfigurationPhoneNumber = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_NUMBER_PHONE.name())
-                .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
+        if (registerNbrDTO.getStep().equalsIgnoreCase("STEP_2")) {
+            userRepository.findByNumberPhone(registerNbrDTO.getNumberPhone())
+                    .map(user -> {
+                        if (!registerNbrDTO.getCode().equals(user.getCode())) {
+                            throw new RuntimeException("error.code.not-correct");
+                        }
+                        return user;
+                    }).orElseThrow(() -> new UserException("error.user.notfound"));
+        }
 
-        Random rnd = new Random();
-        int code = 1000 + rnd.nextInt(9000);
+        if (registerNbrDTO.getStep().equalsIgnoreCase("STEP_3")) {
+            userRepository.findByNumberPhone(registerNbrDTO.getUserDTO().getNumberPhone())
+                    .map(user -> {
+                        registerNbrDTO.getUserDTO().setId(user.getId());
+                        return userMapper.toModel(registerNbrDTO.getUserDTO());
+                    })
+                    .map(userRepository::save)
+                    .map(userMapper::toDTO)
+                    .orElseThrow(() -> new UserException("error.user.notfound"));
+        }
 
-        // save the code into the data base
-        // todo don't forget the resend sms code method
-        User savedUser = userRepository.save(User.builder()
-                .code(String.valueOf(code))
-                .numberPhone(numberPhone)
-                .build());
-
-        // todo tyr catch in case of problem you need to delete the row
-        smsService.sendSMS(SmsEntity.builder()
-                .to("+" + numberPhone)
-                .from(restaurantConfigurationPhoneNumber.getValue())
-                .body(restaurantConfigurationSmsBody.getValue() + code)
-                .build(), restaurantConfigurationToken.getValue(), restaurantConfigurationSid.getValue());
     }
-
-    public void registerWithNumberPhoneStep2(String numberPhone, String code) {
-        userRepository.findByNumberPhone(Long.valueOf(numberPhone))
-                .map(user -> {
-                    if (!code.equals(user.getCode())) {
-                        throw new RuntimeException("error.code.not-correct");
-                    }
-                    return user;
-                }).orElseThrow(() -> new UserException("error.user.notfound"));
-    }
-
-    public UserDTO registerWithNumberPhoneStep3(UserDTO userDTO) {
-        return userRepository.findByNumberPhone(Long.valueOf(userDTO.getNumberPhone()))
-                .map(user -> {
-                    userDTO.setId(user.getId());
-                    return userMapper.toModel(userDTO);
-                })
-                .map(userRepository::save)
-                .map(userMapper::toDTO)
-                .orElseThrow(() -> new UserException("error.user.notfound"));
-    }
-
 }
