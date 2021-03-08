@@ -7,4 +7,7 @@ public enum ConfigurationType {
     TWILIO_NUMBER_PHONE,
     CURRENCY,
     LANGUAGE,
+    DROPBOX_TOKEN,
+    ROOT_FOLDER_NAME
+    ;
 }

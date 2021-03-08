@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.catergory.CategoryDTO;
 import soon.io.soon.DTO.catergory.CategoryMapper;
+import soon.io.soon.Services.filestorage.DropBoxStorage;
 import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.CategoryExeption;
 import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
-import soon.io.soon.models.restaurant.RestaurantRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -25,8 +25,7 @@ public class CategoryService {
 
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
-    private final RestaurantRepository restaurantRepository;
-    private final FileStorage fileStorage;
+    private final DropBoxStorage fileStorage;
     private final ProfileService profileService;
 
     public CategoryDTO create(CategoryDTO categoryDTO, MultipartFile image) {

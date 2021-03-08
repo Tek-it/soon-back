@@ -1,15 +1,14 @@
 package soon.io.soon.Services.profile;
 
 import lombok.AllArgsConstructor;
-import org.checkerframework.checker.nullness.Opt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
+import soon.io.soon.Services.filestorage.DropBoxStorage;
 import soon.io.soon.Services.filestorage.FileStorage;
-import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.Utils.Errorhandler.RestaurantException;
 import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.Utils.Utils;
@@ -20,7 +19,6 @@ import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
 import soon.io.soon.security.SecurityUtils;
 
-import java.io.IOException;
 import java.util.Optional;
 
 @Service
@@ -30,7 +28,7 @@ public class ProfileService {
     private final SecurityUtils securityUtils;
     private final RestaurantRepository restaurantRepository;
     private final RestaurantMapper restaurantMapper;
-    private final FileStorage fileStorage;
+    private final DropBoxStorage fileStorage;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
