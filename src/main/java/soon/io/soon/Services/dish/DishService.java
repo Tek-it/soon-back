@@ -6,22 +6,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.dish.DishDTO;
 import soon.io.soon.DTO.dish.DishMapper;
-import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
-import soon.io.soon.Services.AuthenticationService;
-import soon.io.soon.Services.filestorage.FileStorage;
+import soon.io.soon.Services.filestorage.DropBoxStorage;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.DishException;
-import soon.io.soon.Utils.Errorhandler.FileStorageException;
 import soon.io.soon.Utils.Utils;
-import soon.io.soon.models.category.Category;
 import soon.io.soon.models.category.CategoryRepository;
 import soon.io.soon.models.dish.Dish;
 import soon.io.soon.models.dish.DishRepository;
-import soon.io.soon.models.restaurant.Restaurant;
 
 import javax.transaction.Transactional;
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -32,10 +26,7 @@ public class DishService {
 
     private final DishRepository dishRepository;
     private final DishMapper dishMapper;
-    private final CategoryRepository categoryRepository;
-    private final FileStorage fileStorage;
-    private final ProfileService profileService;
-    private final RestaurantMapper restaurantMapper;
+    private final DropBoxStorage fileStorage;
 
     public List<DishDTO> getDishesByCategoryId(long id) {
         return dishRepository.findByCategoryId(id)

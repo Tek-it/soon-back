@@ -201,6 +201,12 @@
             <version>2.9.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.dropbox.core</groupId>
+            <artifactId>dropbox-core-sdk</artifactId>
+            <version>3.1.5</version>
+        </dependency>
+
     </dependencies>
 
     <build>

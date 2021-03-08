@@ -1,5 +1,7 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="tarfa (generated)" id="1594722135953-1">
         <createTable tableName="address">
             <column autoIncrement="true" name="id" type="BIGINT">
@@ -211,66 +213,110 @@
         <addUniqueConstraint columnNames="id" constraintName="UC_USERID_COL" tableName="user"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-20">
-        <addUniqueConstraint columnNames="restaurant_configurations_id" constraintName="UK_2h2xc44sun58d0e1ii0yh8e1b" tableName="restaurant_restaurant_configurations"/>
+        <addUniqueConstraint columnNames="restaurant_configurations_id" constraintName="UK_2h2xc44sun58d0e1ii0yh8e1b"
+                             tableName="restaurant_restaurant_configurations"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-21">
-        <addForeignKeyConstraint baseColumnNames="dish_id" baseTableName="dish_dish_images" constraintName="FK2o3jptbauobe9ouqkk05w8lkl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"  />
+        <addForeignKeyConstraint baseColumnNames="dish_id" baseTableName="dish_dish_images"
+                                 constraintName="FK2o3jptbauobe9ouqkk05w8lkl" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-22">
-        <addForeignKeyConstraint baseColumnNames="dish_id" baseTableName="dish" constraintName="FK2pfnquime4nw2r624c65olhoy" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"  />
+        <addForeignKeyConstraint baseColumnNames="dish_id" baseTableName="dish"
+                                 constraintName="FK2pfnquime4nw2r624c65olhoy" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-23">
-        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="dish" constraintName="FK3h7qfevodvyk24ss68mwu8ap6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="category"  />
+        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="dish"
+                                 constraintName="FK3h7qfevodvyk24ss68mwu8ap6" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="category"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-24">
-        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="restaurant_restaurant_configurations" constraintName="FK4lpwfiwh2s2ojmqiskkg9yfpn" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"  />
+        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="restaurant_restaurant_configurations"
+                                 constraintName="FK4lpwfiwh2s2ojmqiskkg9yfpn" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-25">
-        <addForeignKeyConstraint baseColumnNames="restaurant_configurations_id" baseTableName="restaurant_restaurant_configurations" constraintName="FK52pvtkpf8h7lqpxlqcygq21p8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant_configuration"  />
+        <addForeignKeyConstraint baseColumnNames="restaurant_configurations_id"
+                                 baseTableName="restaurant_restaurant_configurations"
+                                 constraintName="FK52pvtkpf8h7lqpxlqcygq21p8" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="restaurant_configuration"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-26">
-        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="order" constraintName="FK64rch5g46ue4a83ww6cq7r92w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"  />
+        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="order"
+                                 constraintName="FK64rch5g46ue4a83ww6cq7r92w" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-27">
-        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="authorization" constraintName="FK804ttdh164wo6xn15tp1nrc5t" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"  />
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="authorization"
+                                 constraintName="FK804ttdh164wo6xn15tp1nrc5t" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-28">
-        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="restaurant" constraintName="FK96q13p1ptpewvus590a8o83xt" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address"  />
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="restaurant"
+                                 constraintName="FK96q13p1ptpewvus590a8o83xt" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-29">
-        <addForeignKeyConstraint baseColumnNames="order_state_id" baseTableName="order" constraintName="FK9aic5c086nl3jsslo9vcjjyou" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order_state"  />
+        <addForeignKeyConstraint baseColumnNames="order_state_id" baseTableName="order"
+                                 constraintName="FK9aic5c086nl3jsslo9vcjjyou" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="order_state"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-30">
-        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="billing" constraintName="FK9mwc19cseuhrxnqqm4lq1ljte" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"  />
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="billing"
+                                 constraintName="FK9mwc19cseuhrxnqqm4lq1ljte" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-31">
-        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="order" constraintName="FKbb5wakyppwqmfuhp53p3jvs5u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="client"  />
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="order"
+                                 constraintName="FKbb5wakyppwqmfuhp53p3jvs5u" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="client"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-32">
-        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="user" constraintName="FKddefmvbrws3hvl5t0hnnsv8ox" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address"  />
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="user"
+                                 constraintName="FKddefmvbrws3hvl5t0hnnsv8ox" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-33">
-        <addForeignKeyConstraint baseColumnNames="coordinate_id" baseTableName="restaurant" constraintName="FKe4brfxep9hgjosuq25kgg3122" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="coordinate"  />
+        <addForeignKeyConstraint baseColumnNames="coordinate_id" baseTableName="restaurant"
+                                 constraintName="FKe4brfxep9hgjosuq25kgg3122" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="coordinate"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-34">
-        <addForeignKeyConstraint baseColumnNames="role_id_key" baseTableName="user_roles" constraintName="FKiv3nlfpwxe1behku9j43ysbb9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"  />
+        <addForeignKeyConstraint baseColumnNames="role_id_key" baseTableName="user_roles"
+                                 constraintName="FKiv3nlfpwxe1behku9j43ysbb9" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-35">
-        <addForeignKeyConstraint baseColumnNames="billing_id" baseTableName="order" constraintName="FKj4arc59ipyxxc07eyt4y67led" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="billing"  />
+        <addForeignKeyConstraint baseColumnNames="billing_id" baseTableName="order"
+                                 constraintName="FKj4arc59ipyxxc07eyt4y67led" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="billing"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-36">
-        <addForeignKeyConstraint baseColumnNames="user_id_fk" baseTableName="user_roles" constraintName="FKjcqwtqywj0ny5jfwhqt028826" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user"  />
+        <addForeignKeyConstraint baseColumnNames="user_id_fk" baseTableName="user_roles"
+                                 constraintName="FKjcqwtqywj0ny5jfwhqt028826" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-37">
-        <addForeignKeyConstraint baseColumnNames="order_id_fk" baseTableName="order_details" constraintName="FKku9bk0148vlool0s4hhynrrxg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"  />
+        <addForeignKeyConstraint baseColumnNames="order_id_fk" baseTableName="order_details"
+                                 constraintName="FKku9bk0148vlool0s4hhynrrxg" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-38">
-        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="order_state" constraintName="FKn61ogfsxmv0xs3dw1xm14ko3d" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"  />
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="order_state"
+                                 constraintName="FKn61ogfsxmv0xs3dw1xm14ko3d" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="order"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-39">
-        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="category" constraintName="FKp6n44aqw5n74qc4f1d6eyqgha" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"  />
+        <addForeignKeyConstraint baseColumnNames="restaurant_id" baseTableName="category"
+                                 constraintName="FKp6n44aqw5n74qc4f1d6eyqgha" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="restaurant"/>
     </changeSet>
     <changeSet author="tarfa (generated)" id="1594722135953-40">
-        <addForeignKeyConstraint baseColumnNames="dish_id_fk" baseTableName="order_details" constraintName="FKqls7y813sft2ic2dqff2biwok" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"  />
+        <addForeignKeyConstraint baseColumnNames="dish_id_fk" baseTableName="order_details"
+                                 constraintName="FKqls7y813sft2ic2dqff2biwok" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dish"/>
     </changeSet>
 </databaseChangeLog>
