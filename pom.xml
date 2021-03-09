@@ -303,6 +303,10 @@
             <id>dev</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>env</name>
+                    <value>dev</value>
+                </property>
             </activation>
             <properties>
                 <spring.profiles.active>dev</spring.profiles.active>

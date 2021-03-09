@@ -6,12 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.dish.DishDTO;
 import soon.io.soon.DTO.dish.DishMapper;
-import soon.io.soon.DTO.restaurant.RestaurantMapper;
-import soon.io.soon.Services.filestorage.DropBoxStorage;
-import soon.io.soon.Services.profile.ProfileService;
+import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Utils.Errorhandler.DishException;
 import soon.io.soon.Utils.Utils;
-import soon.io.soon.models.category.CategoryRepository;
 import soon.io.soon.models.dish.Dish;
 import soon.io.soon.models.dish.DishRepository;
 
@@ -26,7 +23,7 @@ public class DishService {
 
     private final DishRepository dishRepository;
     private final DishMapper dishMapper;
-    private final DropBoxStorage fileStorage;
+    private final FileStorage fileStorage;
 
     public List<DishDTO> getDishesByCategoryId(long id) {
         return dishRepository.findByCategoryId(id)

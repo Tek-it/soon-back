@@ -8,6 +8,7 @@ import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 import lombok.AllArgsConstructor;
 import org.apache.commons.io.IOUtils;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import soon.io.soon.models.restaurant.ConfigurationType;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
+@Profile({"prod"})
 public class DropBoxStorage implements FileStorage {
 
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;

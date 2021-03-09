@@ -30,8 +30,6 @@ public class BillService {
                 .map(billRepository::save)
                 .map(billMapper::BillTOBillDTO)
                 .orElseThrow(() -> new BillException("error.bill.creation"));
-
-
     }
 
     public BillDTO update(BillDTO billDTO) {
