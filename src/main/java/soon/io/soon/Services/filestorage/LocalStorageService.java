@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 @Service
-@AllArgsConstructor
+@Profile({"dev"})
 public class LocalStorageService implements FileStorage {
 
     @Override

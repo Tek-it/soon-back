@@ -7,7 +7,6 @@ import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
-import soon.io.soon.Services.filestorage.DropBoxStorage;
 import soon.io.soon.Services.filestorage.FileStorage;
 import soon.io.soon.Utils.Errorhandler.RestaurantException;
 import soon.io.soon.Utils.Errorhandler.UserException;
@@ -28,7 +27,7 @@ public class ProfileService {
     private final SecurityUtils securityUtils;
     private final RestaurantRepository restaurantRepository;
     private final RestaurantMapper restaurantMapper;
-    private final DropBoxStorage fileStorage;
+    private final FileStorage fileStorage;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
