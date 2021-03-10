@@ -53,6 +53,12 @@ public class ProfileResource {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @PostMapping("/avatar-owner")
+    public ResponseEntity<Void> updateOwnerUserAvatar(@Param("avatar") MultipartFile avatar) {
+        profileService.uploadOwnerUserAvatar(avatar);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
     @GetMapping("/avatar/{filename}")
     public byte[] getRestaurantProfileImage(@PathVariable("filename") String filename) {
         return profileService.downloadImage(filename);
