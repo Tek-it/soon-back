@@ -1,6 +1,7 @@
 package soon.io.soon.models.restaurant;
 
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -20,16 +21,18 @@ public interface RestaurantRepository extends CrudRepository<Restaurant, String>
 
     List<Restaurant> findRestaurantsByHashtagsId(Long hashtagId);
 
+    Page<Restaurant> findRestaurantsByNameContaining(String name, Pageable page);
+
+
+
+   /* @Query( value = " SELECT\n" +
+            " *, st_distance_sphere(POINT( :latitude, :longitude) , POINT(coordinate.latitude, coordinate.longitude )) AS distance\n" +
+            "FROM restaurant , coordinate where coordinate.id = restaurant.coordinate_id\n" +
+            "HAVING distance < :distance\n" +
+            "ORDER BY distance\n" , nativeQuery = true)*/
+
     @Query( value = " SELECT\n" +
-            "  *, ( \n" +
-            "    3959 * acos (\n" +
-            "      cos ( radians(:latitude) )\n" +
-            "      * cos( radians( coordinate.latitude ) )\n" +
-            "      * cos( radians( coordinate.longitude ) - radians(:longitude) )\n" +
-            "      + sin ( radians(:latitude) )\n" +
-            "      * sin( radians( coordinate.latitude ) )\n" +
-            "    )\n" +
-            "  ) AS distance\n" +
+            " *, st_distance(POINT( :latitude, :longitude) , POINT(coordinate.latitude, coordinate.longitude )) AS distance\n" +
             "FROM restaurant , coordinate where coordinate.id = restaurant.coordinate_id\n" +
             "HAVING distance < :distance\n" +
             "ORDER BY distance\n" , nativeQuery = true)

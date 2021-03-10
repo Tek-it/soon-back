@@ -4,6 +4,7 @@ import lombok.*;
 import org.jetbrains.annotations.NotNull;
 import soon.io.soon.models.user.Address;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 
 
@@ -25,6 +26,8 @@ public class UserDTO {
     private String email;
 
     private String password;
+
+    private String profilePicture;
 
     @NotNull("error.numberPhone.required")
     private String numberPhone;

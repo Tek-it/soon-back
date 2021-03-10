@@ -3,10 +3,9 @@ package soon.io.soon.Services.restaurant;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import soon.io.soon.Controllers.restaurant.RestaurantController;
 import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
@@ -136,11 +135,21 @@ public class RestaurantService {
                 .collect(Collectors.toList());
     }
 
-    public List<RestaurantDTO> findRestaurantByDistance(double latitude, double longitude, double distance, int page, int size) {
+    public Page<RestaurantDTO> findRestaurantByDistance(double latitude, double longitude, double distance, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        return restaurantRepository.findRestaurantAround(latitude, longitude, distance, pageable)
+        return new PageImpl<>(restaurantRepository.findRestaurantAround(latitude, longitude, distance, pageable)
                 .stream()
                 .map(restaurantMapper::restaurantToDTO)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
+    }
+
+    public Page<RestaurantDTO> findRestaurantByName(String name, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Restaurant> restaurantPage = restaurantRepository.findRestaurantsByNameContaining(name, pageable);
+
+        return new PageImpl<>( restaurantPage.getContent()
+                .stream()
+                .map(restaurantMapper::restaurantToDTO)
+                .collect(Collectors.toList()),restaurantPage.getPageable(), restaurantPage.getTotalElements());
     }
 }

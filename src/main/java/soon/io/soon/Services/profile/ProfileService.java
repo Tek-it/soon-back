@@ -60,7 +60,7 @@ public class ProfileService {
             return Optional.of(userDTO)
                     .map(userMapper::toModel)
                     .map(userResult->{
-                        userResult.setTicket(TicketType.SIMPLE_USER);
+                        userResult.setTicket(user.getTicket());
                         userResult.setPassword(user.getPassword());
                         return userResult;
                     })
@@ -85,6 +85,19 @@ public class ProfileService {
                 })
                 .map(restaurantRepository::save)
                 .orElseThrow(() -> new RestaurantException("error.restaurant.notfound"));
+
+    }
+
+    public void uploadOwnerUserAvatar(MultipartFile avatar) {
+        User currentConnectedUser = getCurrentConnectedUser();
+        Utils.saveFile(avatar, fileStorage);
+        userRepository.findById(currentConnectedUser.getId())
+                .map(user -> {
+                    user.setProfilePicture(avatar.getOriginalFilename());
+                    return user;
+                })
+                .map(userRepository::save)
+                .orElseThrow(() -> new RestaurantException("error.user.notfound"));
 
     }
 
