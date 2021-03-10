@@ -29,8 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final UserDetailService userDetailService;
     private final JwtProvider jwtProvider;
-    @Autowired
-    private HandlerExceptionResolver handlerExceptionResolver;
+    private final HandlerExceptionResolver handlerExceptionResolver;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -48,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider,handlerExceptionResolver))
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtProvider, handlerExceptionResolver))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtProvider, handlerExceptionResolver));
     }
 
@@ -64,8 +63,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(this.userDetailService);
         return daoAuthenticationProvider;
     }
-
-    ;
 
     @Bean
     PasswordEncoder passwordEncoder() {

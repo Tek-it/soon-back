@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 
 import static soon.io.soon.security.SecurityUtils.*;
 
-public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter implements WebMvcConfigurer {
+public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private final JwtProvider jwtProvider;
     private final AuthenticationManager authenticationManager;
@@ -61,14 +61,5 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         } catch (IOException ex) {
             handlerExceptionResolver.resolveException(request, response, null, ex);
         }
-    }
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }
