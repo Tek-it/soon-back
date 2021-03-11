@@ -8,6 +8,7 @@ import soon.io.soon.DTO.authentication.RegisterNbrDTO;
 import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.Services.mailservice.MailService;
+import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.smsservice.SmsEntity;
 import soon.io.soon.Services.smsservice.SmsService;
 import soon.io.soon.Services.token.TokenService;

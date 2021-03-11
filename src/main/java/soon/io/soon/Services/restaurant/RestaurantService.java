@@ -12,6 +12,7 @@ import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
 import soon.io.soon.DTO.restaurant.RestaurantConfMapper;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
+import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Utils.Errorhandler.EmailException;
 import soon.io.soon.Utils.Errorhandler.UserException;
@@ -22,6 +23,7 @@ import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
 import soon.io.soon.models.restaurant.RestaurantRepository;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -37,6 +39,7 @@ public class RestaurantService {
     private final ProfileService profileService;
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;
     private final RestaurantConfMapper restaurantConfMapper;
+    private final NotificationService notificationService;
 
     public RestaurantDTO create(RestaurantDTO restaurantDTO) {
         logger.debug("SERVICE::Request to create restaurant {}", restaurantDTO);
@@ -45,6 +48,7 @@ public class RestaurantService {
                 .map(restaurantMapper::RestaurantDTOToRestaurant)
                 .map(this::saveUser)
                 .map(restaurantRepository::save)
+                .map(this::createConfigurationNotification)
                 .map(restaurantMapper::restaurantToDTO)
                 .orElse(null);
     }
@@ -94,7 +98,7 @@ public class RestaurantService {
         return restaurantDTO;
     }
 
-    public List<RestaurantDTO> getRestaurantsByHashtags(Long id){
+    public List<RestaurantDTO> getRestaurantsByHashtags(Long id) {
         logger.debug("SERVICE::Request to get restaurant by hashtags{}", id);
         return restaurantRepository.findRestaurantsByHashtagsId(id)
                 .stream()
@@ -151,5 +155,10 @@ public class RestaurantService {
                 .stream()
                 .map(restaurantMapper::restaurantToDTO)
                 .collect(Collectors.toList()),restaurantPage.getPageable(), restaurantPage.getTotalElements());
+    }
+
+    private Restaurant createConfigurationNotification(Restaurant restaurant) {
+        this.notificationService.createConfigurationNotification(restaurant);
+        return restaurant;
     }
 }
