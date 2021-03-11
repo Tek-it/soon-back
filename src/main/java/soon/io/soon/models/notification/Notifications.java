@@ -25,6 +25,6 @@ public class Notifications {
     @Enumerated(EnumType.STRING)
     private NotificationTypes notificationType;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "restuarant_id")
+    @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 }

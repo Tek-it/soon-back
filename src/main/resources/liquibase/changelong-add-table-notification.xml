@@ -31,4 +31,14 @@
             <column name="notification_type" type="VARCHAR(30)"/>
         </addColumn>
     </changeSet>
+
+    <changeSet id="09422021-4" author="Tarfa Ali">
+        <dropColumn tableName="notifications" columnName="notification_type"/>
+    </changeSet>
+
+    <changeSet id="09422021-5" author="Tarfa Ali">
+        <addColumn tableName="notifications">
+            <column name="notification_type" type="TEXT"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
