@@ -3,6 +3,8 @@ package soon.io.soon.Services.notification;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Service;
@@ -55,14 +57,12 @@ public class NotificationService {
         notificationRepository.saveAll(notifications);
     }
 
-    public List<NotificationDTO> getNotificationByRestaurant(Pageable pageable) {
+    public Page<NotificationDTO> getNotificationByRestaurant(Pageable pageable) {
         logger.debug("SERVICE::GET LIST OF CURRENT CONNECTED RESTAURANT");
         Long restaurantId = profileService.getCurrentConnectedRestaurant().getId();
         return notificationRepository
                 .findAllByRestaurantId(restaurantId, pageable)
-                .stream()
-                .map(notificationMapper::toDTO)
-                .collect(Collectors.toList());
+                .map(notificationMapper::toDTO);
     }
 
     public NotificationDTO updateNotificationStatus(Long id) {
