@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.models.restaurant.ConfigurationType;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
 import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
@@ -16,6 +17,7 @@ import java.io.IOException;
 public class MailService {
     private final Logger logger = LoggerFactory.getLogger(MailService.class);
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;
+    private final ProfileService profileService;
 
     public void send(String receiver, String subject, String body) {
         String token = getEmailToken().getValue();
@@ -43,18 +45,22 @@ public class MailService {
     }
 
     private RestaurantConfiguration getFromEmail() {
-        return restaurantConfigurationRepository.findByAttribute(ConfigurationType.FROM_EMAIL.name())
+        return restaurantConfigurationRepository.findByAttributeAndRestaurantId(ConfigurationType.FROM_EMAIL.name(), getRestaurantId())
                 .orElseThrow(() -> new RuntimeException("error.configuration.from.email.notfound"));
     }
 
     private RestaurantConfiguration getEmailToken() {
-        return restaurantConfigurationRepository.findByAttribute(ConfigurationType.TOKEN_EMAIL.name())
+        return restaurantConfigurationRepository.findByAttributeAndRestaurantId(ConfigurationType.TOKEN_EMAIL.name(), getRestaurantId())
                 .orElseThrow(() -> new RuntimeException("error.configuration.email.token.notfound"));
     }
 
     private RestaurantConfiguration getDomainName() {
-        return restaurantConfigurationRepository.findByAttribute(ConfigurationType.DOMAIN_NAME.name())
+        return restaurantConfigurationRepository.findByAttributeAndRestaurantId(ConfigurationType.DOMAIN_NAME.name(), getRestaurantId())
                 .orElseThrow(() -> new RuntimeException("error.configuration.domain.name.notfound"));
+    }
+
+    private Long getRestaurantId() {
+        return profileService.getCurrentConnectedRestaurant().getId();
     }
 
 }

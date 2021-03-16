@@ -9,9 +9,9 @@ import java.util.Optional;
 @Repository
 public interface RestaurantConfigurationRepository extends CrudRepository<RestaurantConfiguration, Long> {
 
-    Optional<RestaurantConfiguration> findByAttribute(String attribute);
+    Optional<RestaurantConfiguration> findByAttributeAndRestaurantId(String attribute, Long id);
 
-    boolean existsByAttribute(String attribute);
+    boolean existsByAttributeAndRestaurantId(String attribute, Long id);
 
     List<RestaurantConfiguration> findAllByRestaurantId(Long restaurantId);
 }

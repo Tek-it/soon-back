@@ -9,6 +9,7 @@ import soon.io.soon.DTO.user.UserDTO;
 import soon.io.soon.DTO.user.UserMapper;
 import soon.io.soon.Services.mailservice.MailService;
 import soon.io.soon.Services.notification.NotificationService;
+import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.Services.smsservice.SmsEntity;
 import soon.io.soon.Services.smsservice.SmsService;
 import soon.io.soon.Services.token.TokenService;
@@ -41,6 +42,7 @@ public class AuthenticationService {
     private final MailService mailService;
     private final SmsService smsService;
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;
+    private final ProfileService profileService;
 
     public UserDTO register(UserDTO userDTO) {
         if (checkEmailDuplication(userDTO)) {
@@ -105,13 +107,17 @@ public class AuthenticationService {
             // todo this is the simple solution i need to apply another solution
 
             // TODO: 23/02/2021 change the exception to another type
-            RestaurantConfiguration restaurantConfigurationToken = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_AUTH_TOKEN.name())
+            RestaurantConfiguration restaurantConfigurationToken = restaurantConfigurationRepository
+                    .findByAttributeAndRestaurantId(ConfigurationType.TWILIO_AUTH_TOKEN.name(), profileService.getRestaurantId())
                     .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
-            RestaurantConfiguration restaurantConfigurationSid = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_ACCOUNT_SID.name())
+            RestaurantConfiguration restaurantConfigurationSid = restaurantConfigurationRepository
+                    .findByAttributeAndRestaurantId(ConfigurationType.TWILIO_ACCOUNT_SID.name(), profileService.getRestaurantId())
                     .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
-            RestaurantConfiguration restaurantConfigurationSmsBody = restaurantConfigurationRepository.findByAttribute(ConfigurationType.SMS_BODY.name())
+            RestaurantConfiguration restaurantConfigurationSmsBody = restaurantConfigurationRepository
+                    .findByAttributeAndRestaurantId(ConfigurationType.SMS_BODY.name(), profileService.getRestaurantId())
                     .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
-            RestaurantConfiguration restaurantConfigurationPhoneNumber = restaurantConfigurationRepository.findByAttribute(ConfigurationType.TWILIO_NUMBER_PHONE.name())
+            RestaurantConfiguration restaurantConfigurationPhoneNumber = restaurantConfigurationRepository
+                    .findByAttributeAndRestaurantId(ConfigurationType.TWILIO_NUMBER_PHONE.name(), profileService.getRestaurantId())
                     .orElseThrow(() -> new RuntimeException("error.configuration.sms.not_configured"));
 
             Random rnd = new Random();

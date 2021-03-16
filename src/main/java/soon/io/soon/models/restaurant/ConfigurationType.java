@@ -12,5 +12,4 @@ public enum ConfigurationType {
     FROM_EMAIL,
     TOKEN_EMAIL,
     DOMAIN_NAME
-    ;
 }
