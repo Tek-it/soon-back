@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 @ToString
@@ -30,7 +29,6 @@ public class Roles {
     @OneToMany(mappedBy = "role")
     @ElementCollection(targetClass = Authorization.class)
     private Collection<Authorization> authorizations;
-
 
     @Override
     public boolean equals(Object o) {

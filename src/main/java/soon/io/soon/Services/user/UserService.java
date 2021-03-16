@@ -36,7 +36,7 @@ public class UserService {
     }
 
     public User create(User user) {
-        Roles roles = rolesService.create(Roles.builder().roleContext(RoleContext.USER).build());
+        Roles roles = rolesService.create(Roles.builder().roleContext(RoleContext.SIMPLE_USER).build());
         user.setRoles(Collections.singleton(roles));
         user.setTicket(TicketType.SIMPLE_USER);
         return userRepository.save(user);

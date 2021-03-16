@@ -194,3 +194,5 @@ README.md
 /.project
 /**/target
 /**/target/**
+
+/create.sql

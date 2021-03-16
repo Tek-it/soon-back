@@ -14,6 +14,7 @@ import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.DTO.restaurant.RestaurantMapper;
 import soon.io.soon.Services.notification.NotificationService;
 import soon.io.soon.Services.profile.ProfileService;
+import soon.io.soon.Services.roles.RolesService;
 import soon.io.soon.Utils.Errorhandler.EmailException;
 import soon.io.soon.Utils.Errorhandler.UserException;
 import soon.io.soon.models.TicketType;
@@ -21,9 +22,12 @@ import soon.io.soon.models.restaurant.Restaurant;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
 import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
 import soon.io.soon.models.restaurant.RestaurantRepository;
+import soon.io.soon.models.roles.RoleContext;
+import soon.io.soon.models.roles.Roles;
 import soon.io.soon.models.user.User;
 import soon.io.soon.models.user.UserRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -40,6 +44,7 @@ public class RestaurantService {
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;
     private final RestaurantConfMapper restaurantConfMapper;
     private final NotificationService notificationService;
+    private final RolesService rolesService;
 
     public RestaurantDTO create(RestaurantDTO restaurantDTO) {
         logger.debug("SERVICE::Request to create restaurant {}", restaurantDTO);
@@ -55,6 +60,8 @@ public class RestaurantService {
 
     private Restaurant saveUser(Restaurant restaurant) {
         User user = restaurant.getOwner();
+        Roles roles = rolesService.create(Roles.builder().roleContext(RoleContext.RESTAURANT_MANAGER).build());
+        user.setRoles(Collections.singleton(roles));
         user.setTicket(TicketType.RESTAURANT);
         userRepository.save(user);
         return restaurant;
