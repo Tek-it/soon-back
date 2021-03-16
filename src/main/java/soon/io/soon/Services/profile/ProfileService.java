@@ -104,4 +104,8 @@ public class ProfileService {
     public byte[] downloadImage(String filename) {
         return fileStorage.download(filename, "soon-files");
     }
+
+    public Long getRestaurantId() {
+        return getCurrentConnectedRestaurant().getId();
+    }
 }

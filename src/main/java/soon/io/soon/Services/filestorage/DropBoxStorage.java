@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import soon.io.soon.Services.profile.ProfileService;
 import soon.io.soon.models.restaurant.ConfigurationType;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
 import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
@@ -26,13 +27,14 @@ import java.util.stream.Collectors;
 public class DropBoxStorage implements FileStorage {
 
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;
+    private final ProfileService profileService;
 
     private void setupDropBox() {
         DbxClientV2 instance = getInstance();
         String path = getPath();
         try {
-            if (!listFolders().contains("/"+path)) {
-                instance.files().createFolderV2("/"+path);
+            if (!listFolders().contains("/" + path)) {
+                instance.files().createFolderV2("/" + path);
             }
         } catch (DbxException e) {
             System.out.println(e.getMessage());
@@ -61,7 +63,7 @@ public class DropBoxStorage implements FileStorage {
     private DbxClientV2 getInstance() {
         //todo check this again next time don't forgot the exception to fix it
         RestaurantConfiguration ACCESS_TOKEN = restaurantConfigurationRepository
-                .findByAttribute(ConfigurationType.DROPBOX_TOKEN.name())
+                .findByAttributeAndRestaurantId(ConfigurationType.DROPBOX_TOKEN.name(), profileService.getRestaurantId())
                 .orElseThrow(() -> new RuntimeException("error.dropbox.token.notfound"));
         DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
         return new DbxClientV2(config, ACCESS_TOKEN.getValue());
@@ -100,7 +102,8 @@ public class DropBoxStorage implements FileStorage {
     }
 
     private String getPath() {
-        return restaurantConfigurationRepository.findByAttribute(ConfigurationType.ROOT_FOLDER_NAME.name())
+        return restaurantConfigurationRepository
+                .findByAttributeAndRestaurantId(ConfigurationType.ROOT_FOLDER_NAME.name(), profileService.getRestaurantId())
                 .orElseThrow(() -> new RuntimeException("error.storage.root_folder_name")).getValue();
     }
 }

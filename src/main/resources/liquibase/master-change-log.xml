@@ -24,4 +24,5 @@
     <include file="add-column-reference-order.xml" relativeToChangelogFile="true"/>
     <include file="create-hashtag-table-add-restaurant-variables.xml" relativeToChangelogFile="true"/>
     <include file="changelong-add-table-notification.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-drop-uniqe-from-configuration.xml" relativeToChangelogFile="true"/>
  </databaseChangeLog>

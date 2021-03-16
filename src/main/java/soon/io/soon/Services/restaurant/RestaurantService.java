@@ -114,12 +114,11 @@ public class RestaurantService {
 
     }
 
-
     // TODO: 22/02/2021 fix exception
     public void saveConfiguration(List<RestaurantConfDTO> restaurantConfDTOS) {
         restaurantConfDTOS.forEach(restaurantConfDTO -> {
             RestaurantConfiguration restaurantConfigurationModel = restaurantConfMapper.toModel(restaurantConfDTO);
-            if (!restaurantConfigurationRepository.existsByAttribute(restaurantConfDTO.getAttribute())) {
+            if (!restaurantConfigurationRepository.existsByAttributeAndRestaurantId(restaurantConfDTO.getAttribute(), restaurantConfDTO.getRestaurantId())) {
                 profileService.getCurrentRestaurant()
                         .map(restaurant -> {
                             restaurantConfigurationModel.setRestaurant(restaurant);
@@ -130,7 +129,7 @@ public class RestaurantService {
                         .orElseThrow(() -> new RuntimeException("error"));
             } else {
                 restaurantConfigurationRepository
-                        .findByAttribute(restaurantConfDTO.getAttribute())
+                        .findByAttributeAndRestaurantId(restaurantConfDTO.getAttribute(), restaurantConfDTO.getRestaurantId())
                         .map(restaurantConfiguration -> {
                             restaurantConfiguration.setValue(restaurantConfDTO.getValue());
                             return restaurantConfMapper.toDto(restaurantConfigurationRepository.save(restaurantConfiguration));
@@ -158,10 +157,10 @@ public class RestaurantService {
         Pageable pageable = PageRequest.of(page, size);
         Page<Restaurant> restaurantPage = restaurantRepository.findRestaurantsByNameContaining(name, pageable);
 
-        return new PageImpl<>( restaurantPage.getContent()
+        return new PageImpl<>(restaurantPage.getContent()
                 .stream()
                 .map(restaurantMapper::restaurantToDTO)
-                .collect(Collectors.toList()),restaurantPage.getPageable(), restaurantPage.getTotalElements());
+                .collect(Collectors.toList()), restaurantPage.getPageable(), restaurantPage.getTotalElements());
     }
 
     private Restaurant createConfigurationNotification(Restaurant restaurant) {
