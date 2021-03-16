@@ -10,14 +10,21 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import soon.io.soon.Services.profile.ProfileService;
+import soon.io.soon.DTO.restaurant.RestaurantDTO;
+import soon.io.soon.DTO.restaurant.RestaurantMapper;
+import soon.io.soon.Utils.Errorhandler.UserException;
+import soon.io.soon.models.TicketType;
 import soon.io.soon.models.restaurant.ConfigurationType;
 import soon.io.soon.models.restaurant.RestaurantConfiguration;
 import soon.io.soon.models.restaurant.RestaurantConfigurationRepository;
+import soon.io.soon.models.restaurant.RestaurantRepository;
+import soon.io.soon.models.user.User;
+import soon.io.soon.security.SecurityUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -27,7 +34,9 @@ import java.util.stream.Collectors;
 public class DropBoxStorage implements FileStorage {
 
     private final RestaurantConfigurationRepository restaurantConfigurationRepository;
-    private final ProfileService profileService;
+    private final SecurityUtils securityUtils;
+    private final RestaurantRepository restaurantRepository;
+    private final RestaurantMapper restaurantMapper;
 
     private void setupDropBox() {
         DbxClientV2 instance = getInstance();
@@ -63,7 +72,7 @@ public class DropBoxStorage implements FileStorage {
     private DbxClientV2 getInstance() {
         //todo check this again next time don't forgot the exception to fix it
         RestaurantConfiguration ACCESS_TOKEN = restaurantConfigurationRepository
-                .findByAttributeAndRestaurantId(ConfigurationType.DROPBOX_TOKEN.name(), profileService.getRestaurantId())
+                .findByAttributeAndRestaurantId(ConfigurationType.DROPBOX_TOKEN.name(), getCurrentConnectedRestaurant().getId())
                 .orElseThrow(() -> new RuntimeException("error.dropbox.token.notfound"));
         DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
         return new DbxClientV2(config, ACCESS_TOKEN.getValue());
@@ -103,7 +112,18 @@ public class DropBoxStorage implements FileStorage {
 
     private String getPath() {
         return restaurantConfigurationRepository
-                .findByAttributeAndRestaurantId(ConfigurationType.ROOT_FOLDER_NAME.name(), profileService.getRestaurantId())
+                .findByAttributeAndRestaurantId(ConfigurationType.ROOT_FOLDER_NAME.name(), getCurrentConnectedRestaurant().getId())
                 .orElseThrow(() -> new RuntimeException("error.storage.root_folder_name")).getValue();
+    }
+
+
+    public RestaurantDTO getCurrentConnectedRestaurant() {
+        User currentConnectedUser = securityUtils.getCurrentConnectedUser();
+        Optional.ofNullable(currentConnectedUser)
+                .filter(user -> user.getTicket() == TicketType.RESTAURANT)
+                .orElseThrow(() -> new UserException("user.not_connected"));
+        return restaurantRepository.findByOwnerId(currentConnectedUser.getId())
+                .map(restaurantMapper::restaurantToDTO)
+                .orElseThrow(() -> new UserException("error.user.notfound"));
     }
 }
