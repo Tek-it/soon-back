@@ -8,6 +8,9 @@ public enum ConfigurationType {
     CURRENCY,
     LANGUAGE,
     DROPBOX_TOKEN,
-    ROOT_FOLDER_NAME
+    ROOT_FOLDER_NAME,
+    FROM_EMAIL,
+    TOKEN_EMAIL,
+    DOMAIN_NAME
     ;
 }

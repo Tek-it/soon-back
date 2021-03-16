@@ -82,7 +82,7 @@ public class AuthenticationService {
         resetPasswordRepository.save(build);
         mailService.send(user.getEmail(),
                 "Reset Password",
-                "http://localhost:4200/reset-password?token=" + token.getValue());
+                token.getValue());
     }
 
     public UserDTO resetPassword(ResetPasswordModel model) {
