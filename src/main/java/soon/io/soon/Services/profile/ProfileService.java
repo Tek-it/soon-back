@@ -1,6 +1,7 @@
 package soon.io.soon.Services.profile;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
@@ -27,9 +28,14 @@ public class ProfileService {
     private final SecurityUtils securityUtils;
     private final RestaurantRepository restaurantRepository;
     private final RestaurantMapper restaurantMapper;
-    private final FileStorage fileStorage;
+    private FileStorage fileStorage;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+
+    @Autowired
+    public void setFileStorage(FileStorage fileStorage) {
+        this.fileStorage = fileStorage;
+    }
 
     public User getCurrentConnectedUser() {
         User currentConnectedUser = securityUtils.getCurrentConnectedUser();
