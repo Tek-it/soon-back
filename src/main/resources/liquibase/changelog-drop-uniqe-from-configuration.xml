@@ -4,8 +4,10 @@
                    xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
 
-    <changeSet author="Tarfa Ali" id="20502021-1">
-        <dropIndex tableName="restaurant_configuration" indexName="restaurant_configuration_attribute_uindex"/>
+    <changeSet author="Tarfa Ali" id="20502021-2">
+        <dropColumn tableName="restaurant_configuration" columnName="attribute"/>
+        <addColumn tableName="restaurant_configuration">
+            <column name="attribute" type="TEXT"/>
+        </addColumn>
     </changeSet>
-
 </databaseChangeLog>
