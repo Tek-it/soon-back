@@ -1,5 +1,5 @@
 package soon.io.soon.models.roles;
 
 public enum RoleContext {
-    USER, ADMIN, GUESS
+    SIMPLE_USER, ADMIN, GUESS, RESTAURANT_MANAGER
 }

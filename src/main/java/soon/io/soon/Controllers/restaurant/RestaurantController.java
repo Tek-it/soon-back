@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import soon.io.soon.DTO.restaurant.RestaurantConfDTO;
 import soon.io.soon.DTO.restaurant.RestaurantDTO;
 import soon.io.soon.Services.restaurant.RestaurantService;
-import soon.io.soon.models.restaurant.Restaurant;
 
 import java.util.List;
 
@@ -67,14 +66,14 @@ public class RestaurantController {
                                                                         @RequestParam("page") int page,
                                                                         @RequestParam("size") int size) {
         logger.info("RESOURCE::REQUEST TO GET LIST RESTAURANT BY DISTANCE {}", distance);
-        Page<RestaurantDTO> result = restaurantService.findRestaurantByDistance(latitude, longitude,  distance, page, size);
+        Page<RestaurantDTO> result = restaurantService.findRestaurantByDistance(latitude, longitude, distance, page, size);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @GetMapping("/restaurant-name")
     public ResponseEntity<Page<RestaurantDTO>> findRestaurantByName(@RequestParam("name") String name,
-                                                                        @RequestParam("page") int page,
-                                                                        @RequestParam("size") int size) {
+                                                                    @RequestParam("page") int page,
+                                                                    @RequestParam("size") int size) {
         logger.info("RESOURCE::REQUEST TO GET LIST RESTAURANT BY NAME {}", name);
         Page<RestaurantDTO> result = restaurantService.findRestaurantByName(name, page, size);
         return ResponseEntity.status(HttpStatus.OK).body(result);

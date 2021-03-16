@@ -4,15 +4,13 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import org.springframework.web.server.ResponseStatusException;
 import soon.io.soon.Services.user.UserService;
-import soon.io.soon.Utils.Errorhandler.TokenException;
 import soon.io.soon.models.roles.RoleContext;
 import soon.io.soon.models.roles.Roles;
 import soon.io.soon.models.user.User;
@@ -22,16 +20,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
+@AllArgsConstructor
 public class JwtProvider {
 
-    private String SECRET_KEY = "secret";
-    @Autowired
-    private UserService userService;
+    // todo change the Secret from this place
+    private final String SECRET_KEY = "secret";
+    private final UserService userService;
 
     public String generateToken(UserDetailsImp userDetails) {
+        String roles = userDetails.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.joining(","));
         return Jwts.builder()
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .setSubject(userDetails.getUsername())
+                .claim("roles", roles)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
                 .compact();
